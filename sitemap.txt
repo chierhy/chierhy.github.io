@@ -1,4 +1,6 @@
+http://example.com/2022/11/14/blog%20history/
 http://example.com/2022/11/14/hello-world/
 http://example.com/categories/index.html
 http://example.com/tags/index.html
 http://example.com/
+http://example.com/categories/blog/
