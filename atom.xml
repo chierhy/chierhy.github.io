@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-14T09:36:48.162Z</updated>
+  <updated>2022-11-15T02:09:32.900Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2022/11/14/hello-world/"/>
-    <id>http://example.com/2022/11/14/hello-world/</id>
-    <published>2022-11-14T08:18:05.186Z</published>
-    <updated>2022-11-14T09:36:48.162Z</updated>
+    <link href="http://example.com/2022/11/15/hello-world/"/>
+    <id>http://example.com/2022/11/15/hello-world/</id>
+    <published>2022-11-15T02:09:32.900Z</published>
+    <updated>2022-11-15T02:09:32.900Z</updated>
     
     <content type="html"><![CDATA[<p>blog history<br>the process</p><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
@@ -38,11 +38,26 @@
   </entry>
   
   <entry>
+    <title>辩论</title>
+    <link href="http://example.com/2022/11/15/%E8%BE%A9%E8%AE%BA/"/>
+    <id>http://example.com/2022/11/15/%E8%BE%A9%E8%AE%BA/</id>
+    <published>2022-11-15T01:59:00.000Z</published>
+    <updated>2022-11-15T02:09:32.901Z</updated>
+    
+    
+    
+    
+    <category term="辩论" scheme="http://example.com/categories/%E8%BE%A9%E8%AE%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>blog history</title>
     <link href="http://example.com/2022/11/14/blog%20history/"/>
     <id>http://example.com/2022/11/14/blog%20history/</id>
     <published>2022-11-13T16:00:00.000Z</published>
-    <updated>2022-11-14T15:50:07.089Z</updated>
+    <updated>2022-11-15T02:09:32.900Z</updated>
     
     <content type="html"><![CDATA[<ol><li>搭建流程 <a href="https://blog.csdn.net/weixin_45019350/article/details/121901433">(32条消息) Hexo-零基础搭建个人博客(详解)_〆清峰ㄟ的博客-CSDN博客_hexo</a></li><li>换主题的bug <a href="https://blog.csdn.net/qq_41387939/article/details/109714508">(32条消息) Hexo启动页面显示extends includes&#x2F;layout.pug block content include includes&#x2F;recent-posts.pug include_小肖学数据分析的博客-CSDN博客</a></li><li>设置butterfly<a href="https://blog.csdn.net/sunxiaobai1/article/details/122863031">(32条消息) hexo-butterfly主题配置_A孙大壮的博客-CSDN博客_butterfly主题配置</a></li><li>中文乱码 <a href="https://blog.csdn.net/Crazy_Diamond_/article/details/114902456">(32条消息) Hexo解决中文乱码问题_知命不惧的博客-CSDN博客_hexo 中文乱码</a></li><li>hexo d后没更新 <a href="https://blog.csdn.net/ruvikm/article/details/122419378">(1条消息) hexo 本地显示部署后博客页面未更新（Github已更新）_一只小小萌新的博客-CSDN博客</a></li><li>同步obsidian <a href="https://zhuanlan.zhihu.com/p/554333805">Obsidian+Git完美维护Hexo博客 - 知乎 (zhihu.com)</a>   <a href="https://juejin.cn/post/7120189614660255781#heading-6">Hexo + Obsidian + Git 完美的博客部署与编辑方案 - 掘金 (juejin.cn)</a></li><li>同步obsidian 不是git库<a href="https://blog.csdn.net/wenb1bai/article/details/89363588">(1条消息) 解决 fatal: Not a git repository (or any of the parent directories): .git 问题_蜗牛有力量的博客-CSDN博客_fatal: not a git repository (or any of the parent</a></li><li>git插件同步失败, git init, git remote add nickname url_of_github</li><li>git pull 报错 <a href="https://developer.aliyun.com/article/614459">解决Git中fatal: refusing to merge unrelated histories-阿里云开发者社区 (aliyun.com)</a></li><li>标题显示object object . 是先设置好模板，在文中插入，就正常了。 <a href="https://zhuanlan.zhihu.com/p/554333805">Obsidian+Git完美维护Hexo博客 - 知乎 (zhihu.com)</a></li></ol>]]></content>
     
