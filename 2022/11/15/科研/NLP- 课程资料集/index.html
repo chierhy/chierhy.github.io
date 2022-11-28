@@ -1,166 +1,32 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>NLP-课程资料集 | chiblog</title><meta name="author" content="chierhy"><meta name="copyright" content="chierhy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="快速上手搞NLP 这里放一个有课件并且有作业答案的链接 Deeplearning.ai-Natural-Language-Processing-Specialization 。  这个课程有以下内容： Natural Language Processing with Classification and Vector Spaces Natural Language Processing with">
-<meta property="og:type" content="article">
-<meta property="og:title" content="NLP-课程资料集">
-<meta property="og:url" content="http://example.com/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/index.html">
-<meta property="og:site_name" content="chiblog">
-<meta property="og:description" content="快速上手搞NLP 这里放一个有课件并且有作业答案的链接 Deeplearning.ai-Natural-Language-Processing-Specialization 。  这个课程有以下内容： Natural Language Processing with Classification and Vector Spaces Natural Language Processing with">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
-<meta property="article:published_time" content="2022-11-15T05:43:00.000Z">
-<meta property="article:modified_time" content="2022-11-15T05:47:51.193Z">
-<meta property="article:author" content="chierhy">
-<meta property="article:tag" content="NLP">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="http://example.com/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'NLP-课程资料集',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-11-15 13:47:51'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+extends includes/layout.pug
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">NLP-课程资料集</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-15T05:43:00.000Z" title="发表于 2022-11-15 13:43:00">2022-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-15T05:47:51.193Z" title="更新于 2022-11-15 13:47:51">2022-11-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="NLP-课程资料集"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ol>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/ibrahimjelliti/Deeplearning.ai-Natural-Language-Processing-Specialization">快速上手搞NLP</a><br> 这里放一个有课件并且有作业答案的链接 Deeplearning.ai-Natural-Language-Processing-Specialization 。  这个课程有以下内容：<br> Natural Language Processing with Classification and Vector Spaces<br> Natural Language Processing with Probabilistic Models<br> Natural Language Processing with Sequence Models<br> Natural Language Processing with Attention Models<br> 建议大家看课程材料，然后去把课程任务做一遍，没时间的直接把别人做好的作业下载下来跑一边也不错，上手就是那么快。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://link.springer.com/book/10.1007/978-981-15-5573-2">深度学习是怎么搞NLP</a><br>这本书是清华大学NLP组的刘知远老师、林衍凯大佬和孙茂松老师在2020年上半年出的书，书是全英文的，讲到的技术都很新，基本上是以表征学习的角度在讲深度学习在NLP的应用。在深度学习领域里面，各种模型(CNN、RNN、BERT等)只认识数字，如何将文本表示模型能理解的语义表示，这就是这本书讨论的东西。这本书开篇对表征学习做了整体的介绍，然后分各个课题展开细节。从最早的词表示开始讲起，也就是word2vec、pre-trained LanguageModel这些。好的词表示能够方便找到词之间的语义相关性，或者在下游任务中提供一个较好的初始值、提升模型的效果。接着讲语义构造的方法，怎么从词到句子再到文档。建议大家先看第一章建立一个体系，然后再按需看其他的章节，查看目录，对感兴趣的点进行细看。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="http://59.108.48.5/course/mining/12-13spring/index.html">传统角度，没有深度学习是怎么搞NLP的</a></p>
-</li>
-<li><p><a href="jiqizhixin.com/articles/2018-12-10-8">从Word Embedding到Bert模型——自然语言处理预训练技术发展史</a><br> 对于当前 NLP 的发展方向，我个人觉得有两点非常重要，一个是需要更强的特征抽取器，目前看 Transformer 会逐渐担当大任，但是肯定还是不够强的，需要发展更强的特征抽取器；第二个就是如何优雅地引入大量无监督数据中包含的语言学知识，注意我这里强调地是优雅，而不是引入，此前相当多的工作试图做各种语言学知识的嫁接或者引入，但是很多方法看着让人牙疼，就是我说的不优雅。目前看预训练这种两阶段方法还是很有效的，也非常简洁，当然后面肯定还会有更好的模型出现。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhuanzhi.ai/document/af3e531558c27854f70724ba47be3213">中文对比英文自然语言处理NLP的区别综述</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/MarvinBertin/Stanford-NLP-Course">Stanford-NLP-Course</a>  斯坦福传统NLP技术作业和作业答案。<br> <a target="_blank" rel="noopener" href="https://web.stanford.edu/~jurafsky/NLPCourseraSlides.html">课件地址</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106203084">NLP之预训练技术发展</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/pre-processing-in-natural-language-machine-learning-898a84b8bd47">Pre-Processing in Natural Language Machine Learning</a> </p>
-</li>
-<li><p>kaggle——<a target="_blank" rel="noopener" href="https://www.kaggle.com/shashanksai/text-preprocessing-using-python">text-preprocessing-using-python</a></p>
-</li>
-</ol>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">chierhy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/">http://example.com/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/NLP/">NLP</a></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/11/15/%E7%A7%91%E7%A0%94/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-Pytorch%20CNN%20model/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">学习记录-Pytorch CNN model</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">chierhy</div><div class="author-info__description">神经蛙</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/" title="NLP-课程资料集"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NLP-课程资料集"/></a><div class="content"><a class="title" href="/2022/11/15/%E7%A7%91%E7%A0%94/NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/" title="NLP-课程资料集">NLP-课程资料集</a><time datetime="2022-11-15T05:43:00.000Z" title="发表于 2022-11-15 13:43:00">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/%E7%A7%91%E7%A0%94/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-Pytorch%20CNN%20model/" title="学习记录-Pytorch CNN model"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习记录-Pytorch CNN model"/></a><div class="content"><a class="title" href="/2022/11/15/%E7%A7%91%E7%A0%94/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-Pytorch%20CNN%20model/" title="学习记录-Pytorch CNN model">学习记录-Pytorch CNN model</a><time datetime="2022-11-15T05:20:00.000Z" title="发表于 2022-11-15 13:20:00">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/15/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B/%E7%BE%8E%E8%B5%9B-%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/" title="美赛-论文阅读总结"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="美赛-论文阅读总结"/></a><div class="content"><a class="title" href="/2022/11/15/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B/%E7%BE%8E%E8%B5%9B-%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/" title="美赛-论文阅读总结">美赛-论文阅读总结</a><time datetime="2022-11-15T03:22:00.000Z" title="发表于 2022-11-15 11:22:00">2022-11-15</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By chierhy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
+
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
+
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      
