@@ -1,0 +1,147 @@
+/*https://b.leonus.cn/2022/hexoCenter.html*/
+/* ����ǹ̶����м�
+#nav .menus_items {
+    display: inline;
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+}
+*/
+
+/*https://cloud.tencent.com/developer/article/2149886*/
+/* ҳͷ */
+i.fas.fa-chevron-down {
+    display: none;
+}
+#nav .menus_items .menus_item {
+    display: inline;
+    padding: 0 0 0 .7rem;
+    margin: 3px 15px;
+    padding: .2rem .6rem .3rem .6rem !important;  /*����ǵ���home�ȷ���Ĵ�С��*/
+    box-shadow: var(--card-box-shadow);
+    border-radius: 10px;
+    transition: color .3s ease-out, transform .3s ease-out
+}
+
+#nav .site-page:not(.child):hover:after {
+    width: 1;  /*��ʼʱ�������ĸ�仯������auto�� û�� Ȼ�����ڵ�����û��Ӧ �Զ���*/
+	background: var(--lyx-theme)
+}
+
+#nav .menus_items .menus_item .menus_item_child li:hover {
+    margin: 0 auto;
+    border-radius: 12px;
+    background: var(--btn-bg)
+}
+
+#nav .menus_items .menus_item .menus_item_child {
+    padding: 6px 8px 8px 8px;
+    border-radius: 12px;
+    width: 3px;
+    background: var(--card-bg)
+}
+/* ����ǲ���ʾ���� �ұ����ĸ�
+#menus .site-page:not(.child) span {
+    display: none
+}
+*/
+
+/* https://yisous.xyz/posts/895003b5/?time=1668678135004#%E9%A1%B6%E6%A0%8F%E5%B8%B8%E9%A9%BB*/
+/*������פ*/
+.nav-fixed #nav{
+    transform: translateY(58px)!important;
+    -webkit-transform: translateY(58px)!important;
+    -moz-transform: translateY(58px)!important;
+    -ms-transform: translateY(58px)!important;
+    -o-transform: translateY(58px)!important;
+}
+#nav{
+    transition: none!important;
+    -webkit-transition: none!important;
+    -moz-transition: none!important;
+    -ms-transition: none!important;
+    -o-transition: none!important;
+}
+
+
+/* �����ҳʵ����ǿ���滻 https://yisous.xyz/posts/895003b5/?time=1668678135004#%E5%88%86%E7%A6%BB%E6%90%9C%E7%B4%A2%E6%A0%8F%E4%B8%8E%E8%8F%9C%E5%8D%95%E6%A0%8F */
+#site-name::before{
+    opacity: 0;
+    background-color: var(--lyx-theme)!important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    position:absolute;
+    top:0!important;
+    right:0!important;
+    width:110%;
+    height:110%;
+    content: "\f015";
+    box-shadow: 0 0 10px var(--lyx-theme);
+    font-family: "Font Awesome 6 Free";
+    text-align: center;
+    color:white;
+    line-height:34px;/*�����������ߴ�ֱ�����е�����΢��һ���������*/
+    font-size: 20px;/*���ݸ���ϲ��*/
+}
+#site-name:hover::before{
+    opacity: 1;
+    scale:1.14;
+}
+#site-name{
+    position: relative;
+    font-size: 24px; /*һ��Ҫ���������㣬����Ч���Ҳ��̶ã�*/
+}
+
+/*serach button*/
+
+#search-button::before{
+    opacity: 0;
+    background-color: var(--lyx-theme)!important;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+	position:absolute;
+    top:0!important;
+	left:5px;
+	width:110%;
+    height:110%;
+    content: "";
+    box-shadow: 0 0 1px var(--lyx-theme);
+    font-family: "Font Awesome 6 Free";
+    text-align: center;
+    color:white;
+    line-height:37px;/*�����������ߴ�ֱ�����е�����΢��һ���������*/
+    font-size: 17px;/*���ݸ���ϲ��*/
+
+}
+
+#search-button:hover::before{
+	opacity: 1; //��͸��
+	scale:1.14;
+}
+
+#search-button{
+    position:absolute;
+    top:12px;
+	right:17px;
+}
+
+:root{
+    --lyx-theme:#ed709b /*�ҵ�����ɫ*/
+}
