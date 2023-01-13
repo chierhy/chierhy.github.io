@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>课程mark</title>
+    <url>/2-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>食用指南</title>
     <url>/1-%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/fce5e23f/</url>
     <content><![CDATA[]]></content>
@@ -13,15 +24,21 @@
       </tags>
   </entry>
   <entry>
-    <title>课程mark</title>
-    <url>/2-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
+    <title>NLP-课程资料集</title>
+    <url>/%E7%A7%91%E7%A0%94/1-NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/13940d2a/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>科研</category>
       </categories>
       <tags>
-        <tag>持更⌛</tag>
+        <tag>笔记🎫</tag>
+        <tag>AI👾</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>chatGPT</title>
+    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>技术杂谈</title>
@@ -33,11 +50,6 @@
       <tags>
         <tag>持更⌛</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>chatGPT</title>
-    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>我读-荒原狼</title>
@@ -85,14 +97,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大四寒假日记📖</title>
-    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-  </entry>
-  <entry>
     <title>旅行-简阳一日游</title>
     <url>/%E7%94%9F%E6%B4%BB/17-%E6%97%85%E8%A1%8C-%E7%AE%80%E9%98%B3%E4%B8%80%E6%97%A5%E6%B8%B8/446245a5/</url>
     <content><![CDATA[]]></content>
@@ -104,23 +108,12 @@
       </tags>
   </entry>
   <entry>
-    <title>探店-书店-成都</title>
-    <url>/%E7%94%9F%E6%B4%BB/18-%E6%8E%A2%E5%BA%97-%E4%B9%A6%E5%BA%97-%E6%88%90%E9%83%BD/5efaa57c/</url>
+    <title>大四寒假日记📖</title>
+    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
-  </entry>
-  <entry>
-    <title>我读=法治的细节</title>
-    <url>/%E7%94%9F%E6%B4%BB/19-%E6%88%91%E8%AF%BB=%E6%B3%95%E6%B2%BB%E7%9A%84%E7%BB%86%E8%8A%82/e5a02544/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>书📖</tag>
-      </tags>
   </entry>
   <entry>
     <title>我看=电影+电视+纪录片等</title>
@@ -135,16 +128,36 @@
       </tags>
   </entry>
   <entry>
-    <title>待看mark</title>
-    <url>/%E7%94%9F%E6%B4%BB/4-%E5%BE%85%E7%9C%8Bmark/d385df75/</url>
+    <title>我读=法治的细节</title>
+    <url>/%E7%94%9F%E6%B4%BB/19-%E6%88%91%E8%AF%BB=%E6%B3%95%E6%B2%BB%E7%9A%84%E7%BB%86%E8%8A%82/e5a02544/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>持更⌛</tag>
         <tag>书📖</tag>
-        <tag>电影🎬</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我读=苏轼</title>
+    <url>/%E7%94%9F%E6%B4%BB/20-%E6%88%91%E8%AF%BB=%E8%8B%8F%E8%BD%BC/9f0c4f0c/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>书📖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我读=麦克白夫人</title>
+    <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>书📖</tag>
       </tags>
   </entry>
   <entry>
@@ -167,6 +180,19 @@
       </categories>
       <tags>
         <tag>持更⌛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>待看mark</title>
+    <url>/%E7%94%9F%E6%B4%BB/4-%E5%BE%85%E7%9C%8Bmark/d385df75/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+        <tag>书📖</tag>
+        <tag>电影🎬</tag>
       </tags>
   </entry>
   <entry>
@@ -201,18 +227,6 @@
       </categories>
       <tags>
         <tag>书📖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NLP-课程资料集</title>
-    <url>/%E7%A7%91%E7%A0%94/1-NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/13940d2a/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
       </tags>
   </entry>
   <entry>
