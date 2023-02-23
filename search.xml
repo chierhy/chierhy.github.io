@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>食用指南✔</title>
+    <url>/1-%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97%E2%9C%94/fce5e23f/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+        <tag>blog🏛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>课程mark</title>
     <url>/2-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
     <content><![CDATA[]]></content>
@@ -12,35 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>食用指南</title>
-    <url>/1-%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/fce5e23f/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>持更⌛</tag>
-        <tag>blog🏛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NLP-课程资料集</title>
-    <url>/%E7%A7%91%E7%A0%94/1-NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/13940d2a/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>科研</category>
-      </categories>
-      <tags>
-        <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>chatGPT</title>
-    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>技术杂谈</title>
     <url>/%E6%8A%80%E6%9C%AF/3-%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/bf4ee09f/</url>
     <content><![CDATA[]]></content>
@@ -50,6 +33,11 @@
       <tags>
         <tag>持更⌛</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>chatGPT</title>
+    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>我读-荒原狼</title>
@@ -97,6 +85,17 @@
       </tags>
   </entry>
   <entry>
+    <title>大四寒假日记📖</title>
+    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>日记📖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>旅行-简阳一日游</title>
     <url>/%E7%94%9F%E6%B4%BB/17-%E6%97%85%E8%A1%8C-%E7%AE%80%E9%98%B3%E4%B8%80%E6%97%A5%E6%B8%B8/446245a5/</url>
     <content><![CDATA[]]></content>
@@ -108,24 +107,12 @@
       </tags>
   </entry>
   <entry>
-    <title>大四寒假日记📖</title>
-    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
+    <title>探店-书店-成都</title>
+    <url>/%E7%94%9F%E6%B4%BB/18-%E6%8E%A2%E5%BA%97-%E4%B9%A6%E5%BA%97-%E6%88%90%E9%83%BD/5efaa57c/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
-  </entry>
-  <entry>
-    <title>我看=电影+电视+纪录片等</title>
-    <url>/%E7%94%9F%E6%B4%BB/2-%E6%88%91%E7%9C%8B=%E7%94%B5%E5%BD%B1+%E7%94%B5%E8%A7%86+%E7%BA%AA%E5%BD%95%E7%89%87%E7%AD%89/72a6007b/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>持更⌛</tag>
-        <tag>电影🎬</tag>
-      </tags>
   </entry>
   <entry>
     <title>我读=法治的细节</title>
@@ -150,6 +137,18 @@
       </tags>
   </entry>
   <entry>
+    <title>我看=电影+电视+纪录片等</title>
+    <url>/%E7%94%9F%E6%B4%BB/2-%E6%88%91%E7%9C%8B=%E7%94%B5%E5%BD%B1+%E7%94%B5%E8%A7%86+%E7%BA%AA%E5%BD%95%E7%89%87%E7%AD%89/72a6007b/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+        <tag>电影🎬</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我读=麦克白夫人</title>
     <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
     <content><![CDATA[]]></content>
@@ -161,19 +160,19 @@
       </tags>
   </entry>
   <entry>
-    <title>碎碎叨叨</title>
-    <url>/%E7%94%9F%E6%B4%BB/3-%E7%A2%8E%E7%A2%8E%E5%8F%A8%E5%8F%A8/4eccaac2/</url>
+    <title>大四下记录📖</title>
+    <url>/%E7%94%9F%E6%B4%BB/22-%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AE%B0%E5%BD%95%F0%9F%93%96/738e7ba0/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>持更⌛</tag>
+        <tag>日记📖</tag>
       </tags>
   </entry>
   <entry>
-    <title>生活Tips</title>
-    <url>/%E7%94%9F%E6%B4%BB/5-%E7%94%9F%E6%B4%BBTips/340b0170/</url>
+    <title>碎碎叨叨</title>
+    <url>/%E7%94%9F%E6%B4%BB/3-%E7%A2%8E%E7%A2%8E%E5%8F%A8%E5%8F%A8/4eccaac2/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -193,6 +192,17 @@
         <tag>持更⌛</tag>
         <tag>书📖</tag>
         <tag>电影🎬</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生活Tips</title>
+    <url>/%E7%94%9F%E6%B4%BB/5-%E7%94%9F%E6%B4%BBTips/340b0170/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
       </tags>
   </entry>
   <entry>
@@ -230,6 +240,41 @@
       </tags>
   </entry>
   <entry>
+    <title>现代控制理论</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B/2-%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/28b1475/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学科</category>
+      </categories>
+      <tags>
+        <tag>笔记🎫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NLP-课程资料集</title>
+    <url>/%E7%A7%91%E7%A0%94/1-NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/13940d2a/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>笔记🎫</tag>
+        <tag>AI👾</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Quantum Machine Learning</title>
+    <url>/%E7%A7%91%E7%A0%94/16-Quantum%20Machine%20Learning/d71cdc79/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>笔记🎫</tag>
+        <tag>AI👾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>辩论-历史题材游戏戏说历史的作法弊大于利</title>
     <url>/%E7%94%9F%E6%B4%BB/10-%E8%BE%A9%E8%AE%BA-%E5%8E%86%E5%8F%B2%E9%A2%98%E6%9D%90%E6%B8%B8%E6%88%8F%E6%88%8F%E8%AF%B4%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E6%B3%95%E5%BC%8A%E5%A4%A7%E4%BA%8E%E5%88%A9/2c084ed0/</url>
     <content><![CDATA[]]></content>
@@ -259,7 +304,6 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>持更⌛</tag>
         <tag>blog🏛</tag>
       </tags>
   </entry>
@@ -410,7 +454,7 @@
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B/1-%E7%BE%8E%E8%B5%9B-%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/959eff48/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>学科-竞赛</category>
+        <category>学科</category>
       </categories>
       <tags>
         <tag>笔记🎫</tag>
