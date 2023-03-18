@@ -9,6 +9,17 @@
       </categories>
   </entry>
   <entry>
+    <title>课程mark</title>
+    <url>/2-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>现代控制理论</title>
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B/2-%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/28b1475/</url>
     <content><![CDATA[]]></content>
@@ -28,14 +39,53 @@
       </categories>
   </entry>
   <entry>
-    <title>课程mark</title>
-    <url>/2-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
+    <title>技术杂谈</title>
+    <url>/%E6%8A%80%E6%9C%AF/3-%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/bf4ee09f/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>科研</category>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>持更⌛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chatGPT</title>
+    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>zotero</title>
+    <url>/%E6%8A%80%E6%9C%AF/5-zotero/6a5c3625/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫b站音频视频</title>
+    <url>/%E6%8A%80%E6%9C%AF/%E7%88%AC%E8%99%ABb%E7%AB%99%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/ef12e2b3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>code💻</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从容老去</title>
+    <url>/%E7%94%9F%E6%B4%BB/12-%E4%BB%8E%E5%AE%B9%E8%80%81%E5%8E%BB/8625304d/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>杂谈💬</tag>
       </tags>
   </entry>
   <entry>
@@ -50,14 +100,15 @@
       </tags>
   </entry>
   <entry>
-    <title>从容老去</title>
-    <url>/%E7%94%9F%E6%B4%BB/12-%E4%BB%8E%E5%AE%B9%E8%80%81%E5%8E%BB/8625304d/</url>
+    <title>Gallery-旅行</title>
+    <url>/%E7%94%9F%E6%B4%BB/14-Gallery-%E6%97%85%E8%A1%8C/889641a6/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>杂谈💬</tag>
+        <tag>Gallery📷</tag>
+        <tag>旅行✈</tag>
       </tags>
   </entry>
   <entry>
@@ -80,18 +131,6 @@
       </categories>
       <tags>
         <tag>日记📖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Gallery-旅行</title>
-    <url>/%E7%94%9F%E6%B4%BB/14-Gallery-%E6%97%85%E8%A1%8C/889641a6/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>Gallery📷</tag>
-        <tag>旅行✈</tag>
       </tags>
   </entry>
   <entry>
@@ -125,8 +164,8 @@
       </tags>
   </entry>
   <entry>
-    <title>我读=苏轼</title>
-    <url>/%E7%94%9F%E6%B4%BB/20-%E6%88%91%E8%AF%BB=%E8%8B%8F%E8%BD%BC/9f0c4f0c/</url>
+    <title>我读=麦克白夫人</title>
+    <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -136,8 +175,8 @@
       </tags>
   </entry>
   <entry>
-    <title>我读=麦克白夫人</title>
-    <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
+    <title>我读=苏轼</title>
+    <url>/%E7%94%9F%E6%B4%BB/20-%E6%88%91%E8%AF%BB=%E8%8B%8F%E8%BD%BC/9f0c4f0c/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -169,18 +208,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我读=摘抄+时评</title>
-    <url>/%E7%94%9F%E6%B4%BB/6-%E6%88%91%E8%AF%BB=%E6%91%98%E6%8A%84+%E6%97%B6%E8%AF%84/daa3e831/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>持更⌛</tag>
-        <tag>书📖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>待看mark</title>
     <url>/%E7%94%9F%E6%B4%BB/4-%E5%BE%85%E7%9C%8Bmark/d385df75/</url>
     <content><![CDATA[]]></content>
@@ -202,6 +229,18 @@
       </categories>
       <tags>
         <tag>持更⌛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我读=摘抄+时评</title>
+    <url>/%E7%94%9F%E6%B4%BB/6-%E6%88%91%E8%AF%BB=%E6%91%98%E6%8A%84+%E6%97%B6%E8%AF%84/daa3e831/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>持更⌛</tag>
+        <tag>书📖</tag>
       </tags>
   </entry>
   <entry>
@@ -227,25 +266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>技术杂谈</title>
-    <url>/%E6%8A%80%E6%9C%AF/3-%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/bf4ee09f/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>持更⌛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>chatGPT</title>
-    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-  </entry>
-  <entry>
     <title>NLP-课程资料集</title>
     <url>/%E7%A7%91%E7%A0%94/1-NLP-%20%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E9%9B%86/13940d2a/</url>
     <content><![CDATA[]]></content>
@@ -255,14 +275,6 @@
       <tags>
         <tag>AI👾</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>zotero</title>
-    <url>/%E6%8A%80%E6%9C%AF/zotero/6a5c3625/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
   </entry>
   <entry>
     <title>Quantum Machine Learning</title>
@@ -330,9 +342,9 @@
       </categories>
       <tags>
         <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
         <tag>python</tag>
         <tag>code💻</tag>
+        <tag>AI👾</tag>
       </tags>
   </entry>
   <entry>
@@ -344,9 +356,9 @@
       </categories>
       <tags>
         <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
         <tag>python</tag>
         <tag>code💻</tag>
+        <tag>AI👾</tag>
       </tags>
   </entry>
   <entry>
@@ -358,9 +370,9 @@
       </categories>
       <tags>
         <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
         <tag>python</tag>
         <tag>code💻</tag>
+        <tag>AI👾</tag>
       </tags>
   </entry>
   <entry>
@@ -427,9 +439,9 @@
       </categories>
       <tags>
         <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
         <tag>python</tag>
         <tag>code💻</tag>
+        <tag>AI👾</tag>
       </tags>
   </entry>
   <entry>
