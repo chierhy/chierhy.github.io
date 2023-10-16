@@ -6,6 +6,11 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>加密模板</title>
+    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E5%8A%A0%E5%AF%86%E6%A8%A1%E6%9D%BF/0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>食用指南✔</title>
     <url>/1-%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97%E2%9C%94/fce5e23f/</url>
     <content><![CDATA[]]></content>
@@ -14,13 +19,18 @@
       </categories>
   </entry>
   <entry>
-    <title>加密模板</title>
-    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E5%8A%A0%E5%AF%86%E6%A8%A1%E6%9D%BF/0/</url>
+    <title>音乐模板</title>
+    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E9%9F%B3%E4%B9%90%E6%A8%A1%E6%9D%BF/0/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>音乐模板</title>
-    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E9%9F%B3%E4%B9%90%E6%A8%A1%E6%9D%BF/0/</url>
+    <title>置顶模板</title>
+    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E7%BD%AE%E9%A1%B6%E6%A8%A1%E6%9D%BF/0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>项目模板</title>
+    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/0/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -36,34 +46,8 @@
       </tags>
   </entry>
   <entry>
-    <title>置顶模板</title>
-    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E7%BD%AE%E9%A1%B6%E6%A8%A1%E6%9D%BF/0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>项目模板</title>
-    <url>/obsidian-%E6%A8%A1%E6%9D%BF/%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>研一课程</title>
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/12-%E7%A0%94%E4%B8%80%E8%AF%BE%E7%A8%8B/d1ee4bb9/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学科</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>综述</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/13-%E7%BB%BC%E8%BF%B0/85fdc25d/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学科</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>facial_expression-2</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/14-facial_expression-2/da710926/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学科</category>
@@ -81,12 +65,28 @@
       </tags>
   </entry>
   <entry>
+    <title>综述</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/13-%E7%BB%BC%E8%BF%B0/85fdc25d/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学科</category>
+      </categories>
+  </entry>
+  <entry>
     <title>组会论文分享-研1</title>
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/16-%E7%BB%84%E4%BC%9A%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E7%A0%941/4e79bab9/</url>
     <content><![CDATA[]]></content>
       <tags>
         <tag>论文✏</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>数字信号处理</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/17-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/ddac2bd0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学科</category>
+      </categories>
   </entry>
   <entry>
     <title>现代控制理论</title>
@@ -108,14 +108,6 @@
       </categories>
   </entry>
   <entry>
-    <title>未来</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/6-%E6%9C%AA%E6%9D%A5/88c3656e/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>学科</category>
-      </categories>
-  </entry>
-  <entry>
     <title>课程mark</title>
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/5-%E8%AF%BE%E7%A8%8Bmark/8d900baf/</url>
     <content><![CDATA[]]></content>
@@ -127,8 +119,16 @@
       </tags>
   </entry>
   <entry>
-    <title>科研笔记</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/9-%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/8ecab538/</url>
+    <title>未来</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/6-%E6%9C%AA%E6%9D%A5/88c3656e/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学科</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>研究生</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/7-%E7%A0%94%E7%A9%B6%E7%94%9F/9ecb8d5a/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学科</category>
@@ -147,46 +147,62 @@
       </tags>
   </entry>
   <entry>
-    <title>研究生</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/7-%E7%A0%94%E7%A9%B6%E7%94%9F/9ecb8d5a/</url>
+    <title>科研笔记</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/9-%E7%A7%91%E7%A0%94%E7%AC%94%E8%AE%B0/8ecab538/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学科</category>
       </categories>
   </entry>
   <entry>
-    <title>技术杂谈</title>
-    <url>/%E6%8A%80%E6%9C%AF/3-%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/bf4ee09f/</url>
+    <title>claude</title>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/10-claude/8e8947b2/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>技术杂谈</title>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/3-%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/bf4ee09f/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术工具</category>
       </categories>
       <tags>
         <tag>持更⌛</tag>
       </tags>
   </entry>
   <entry>
-    <title>科研工具</title>
-    <url>/%E6%8A%80%E6%9C%AF/5-%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/6a5c3625/</url>
+    <title>学习网站</title>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/11-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/52e318f2/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
       </categories>
   </entry>
   <entry>
     <title>chatGPT</title>
-    <url>/%E6%8A%80%E6%9C%AF/4-chatGPT/20f23efb/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/4-chatGPT/20f23efb/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>科研工具</title>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/5-%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/6a5c3625/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术工具</category>
       </categories>
   </entry>
   <entry>
     <title>爬虫b站音频视频</title>
-    <url>/%E6%8A%80%E6%9C%AF/6-%E7%88%AC%E8%99%ABb%E7%AB%99%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/ef12e2b3/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/6-%E7%88%AC%E8%99%ABb%E7%AB%99%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/ef12e2b3/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -195,10 +211,10 @@
   </entry>
   <entry>
     <title>python-同步 异步</title>
-    <url>/%E6%8A%80%E6%9C%AF/7-python-%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/37d6918a/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/7-python-%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/37d6918a/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
       </categories>
       <tags>
         <tag>python</tag>
@@ -206,8 +222,16 @@
       </tags>
   </entry>
   <entry>
+    <title>slack入门</title>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/9-slack%E5%85%A5%E9%97%A8/5e55cb8c/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术工具</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python debug日常</title>
-    <url>/%E6%8A%80%E6%9C%AF/python%20debug%E6%97%A5%E5%B8%B8/8b0ad846/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/8-python%20debug%E6%97%A5%E5%B8%B8/8b0ad846/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>技术</category>
@@ -264,28 +288,6 @@
       </tags>
   </entry>
   <entry>
-    <title>旅行-简阳一日游</title>
-    <url>/%E7%94%9F%E6%B4%BB/17-%E6%97%85%E8%A1%8C-%E7%AE%80%E9%98%B3%E4%B8%80%E6%97%A5%E6%B8%B8/446245a5/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>旅行✈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大四寒假日记📖</title>
-    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>日记📖</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>探店-书店-成都</title>
     <url>/%E7%94%9F%E6%B4%BB/18-%E6%8E%A2%E5%BA%97-%E4%B9%A6%E5%BA%97-%E6%88%90%E9%83%BD/5efaa57c/</url>
     <content><![CDATA[]]></content>
@@ -296,17 +298,6 @@
   <entry>
     <title>我读=法治的细节</title>
     <url>/%E7%94%9F%E6%B4%BB/19-%E6%88%91%E8%AF%BB=%E6%B3%95%E6%B2%BB%E7%9A%84%E7%BB%86%E8%8A%82/e5a02544/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>书📖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我读=麦克白夫人</title>
-    <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -327,14 +318,25 @@
       </tags>
   </entry>
   <entry>
-    <title>大四下记录📖</title>
-    <url>/%E7%94%9F%E6%B4%BB/22-%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AE%B0%E5%BD%95%F0%9F%93%96/738e7ba0/</url>
+    <title>旅行-简阳一日游</title>
+    <url>/%E7%94%9F%E6%B4%BB/17-%E6%97%85%E8%A1%8C-%E7%AE%80%E9%98%B3%E4%B8%80%E6%97%A5%E6%B8%B8/446245a5/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>日记📖</tag>
+        <tag>旅行✈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我读=麦克白夫人</title>
+    <url>/%E7%94%9F%E6%B4%BB/21-%E6%88%91%E8%AF%BB=%E9%BA%A6%E5%85%8B%E7%99%BD%E5%A4%AB%E4%BA%BA/bfbd0ff/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>书📖</tag>
       </tags>
   </entry>
   <entry>
@@ -346,8 +348,19 @@
       </categories>
   </entry>
   <entry>
-    <title>2023</title>
-    <url>/%E7%94%9F%E6%B4%BB/24-2023/dad3fc1/</url>
+    <title>大四下记录📖</title>
+    <url>/%E7%94%9F%E6%B4%BB/22-%E5%A4%A7%E5%9B%9B%E4%B8%8B%E8%AE%B0%E5%BD%95%F0%9F%93%96/738e7ba0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>日记📖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大四寒假日记📖</title>
+    <url>/%E7%94%9F%E6%B4%BB/16-%E5%A4%A7%E5%9B%9B%E5%AF%92%E5%81%87%E6%97%A5%E8%AE%B0%F0%9F%93%96/ba943917/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -368,14 +381,13 @@
       </tags>
   </entry>
   <entry>
-    <title>一些自我审思</title>
-    <url>/%E7%94%9F%E6%B4%BB/28-%E4%B8%80%E4%BA%9B%E8%87%AA%E6%88%91%E5%AE%A1%E6%80%9D/d91cb395/</url>
+    <title>2023</title>
+    <url>/%E7%94%9F%E6%B4%BB/24-2023/dad3fc1/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>杂谈💬</tag>
         <tag>日记📖</tag>
       </tags>
   </entry>
@@ -386,6 +398,31 @@
       <categories>
         <category>生活</category>
       </categories>
+  </entry>
+  <entry>
+    <title>我读=虚拟显示：引领未来的人机交互革命</title>
+    <url>/%E7%94%9F%E6%B4%BB/27-%E6%88%91%E8%AF%BB=%E8%99%9A%E6%8B%9F%E6%98%BE%E7%A4%BA%EF%BC%9A%E5%BC%95%E9%A2%86%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E9%9D%A9%E5%91%BD/e8c5707d/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>笔记🎫</tag>
+        <tag>AI👾</tag>
+        <tag>书📖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些自我审思</title>
+    <url>/%E7%94%9F%E6%B4%BB/28-%E4%B8%80%E4%BA%9B%E8%87%AA%E6%88%91%E5%AE%A1%E6%80%9D/d91cb395/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>杂谈💬</tag>
+        <tag>日记📖</tag>
+      </tags>
   </entry>
   <entry>
     <title>我思故我在</title>
@@ -399,16 +436,16 @@
       </tags>
   </entry>
   <entry>
-    <title>我读=虚拟显示：引领未来的人机交互革命</title>
-    <url>/%E7%94%9F%E6%B4%BB/27-%E6%88%91%E8%AF%BB=%E8%99%9A%E6%8B%9F%E6%98%BE%E7%A4%BA%EF%BC%9A%E5%BC%95%E9%A2%86%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E9%9D%A9%E5%91%BD/e8c5707d/</url>
+    <title>待看mark</title>
+    <url>/%E7%94%9F%E6%B4%BB/4-%E5%BE%85%E7%9C%8Bmark/d385df75/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
       </categories>
       <tags>
-        <tag>笔记🎫</tag>
-        <tag>AI👾</tag>
+        <tag>持更⌛</tag>
         <tag>书📖</tag>
+        <tag>电影🎬</tag>
       </tags>
   </entry>
   <entry>
@@ -432,19 +469,6 @@
       </categories>
       <tags>
         <tag>持更⌛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>待看mark</title>
-    <url>/%E7%94%9F%E6%B4%BB/4-%E5%BE%85%E7%9C%8Bmark/d385df75/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>持更⌛</tag>
-        <tag>书📖</tag>
-        <tag>电影🎬</tag>
       </tags>
   </entry>
   <entry>
@@ -517,31 +541,40 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>论文撰写</title>
-    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/11-%E8%AE%BA%E6%96%87%E6%92%B0%E5%86%99/df6b6cbf/</url>
+    <title>Zero-Shot Learning</title>
+    <url>/%E7%A7%91%E7%A0%94/30-Zero-Shot%20Learning/252518b4/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Active learning</title>
+    <url>/%E7%A7%91%E7%A0%94/31-Active%20learning/9256e787/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>多模态</title>
+    <url>/%E7%A7%91%E7%A0%94/%E5%A4%9A%E6%A8%A1%E6%80%81/8ad9c549/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>科研</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>facial_expression-2</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/14-facial_expression-2/da710926/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>学科</category>
       </categories>
-      <tags>
-        <tag>笔记\U0001F3AB</tag>
-        <tag>论文✏</tag>
-      </tags>
   </entry>
   <entry>
     <title>辩论-历史题材游戏戏说历史的作法弊大于利</title>
     <url>/%E7%94%9F%E6%B4%BB/10-%E8%BE%A9%E8%AE%BA-%E5%8E%86%E5%8F%B2%E9%A2%98%E6%9D%90%E6%B8%B8%E6%88%8F%E6%88%8F%E8%AF%B4%E5%8E%86%E5%8F%B2%E7%9A%84%E4%BD%9C%E6%B3%95%E5%BC%8A%E5%A4%A7%E4%BA%8E%E5%88%A9/2c084ed0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>辩论🗣</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>辩论-女神节的命名比妇女节更好</title>
-    <url>/%E7%94%9F%E6%B4%BB/15-%E8%BE%A9%E8%AE%BA-%E5%A5%B3%E7%A5%9E%E8%8A%82%E7%9A%84%E5%91%BD%E5%90%8D%E6%AF%94%E5%A6%87%E5%A5%B3%E8%8A%82%E6%9B%B4%E5%A5%BD/ac1e34a4/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>生活</category>
@@ -560,6 +593,17 @@
       <tags>
         <tag>持更⌛</tag>
         <tag>电影🎬</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>辩论-女神节的命名比妇女节更好</title>
+    <url>/%E7%94%9F%E6%B4%BB/15-%E8%BE%A9%E8%AE%BA-%E5%A5%B3%E7%A5%9E%E8%8A%82%E7%9A%84%E5%91%BD%E5%90%8D%E6%AF%94%E5%A6%87%E5%A5%B3%E8%8A%82%E6%9B%B4%E5%A5%BD/ac1e34a4/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>辩论🗣</tag>
       </tags>
   </entry>
   <entry>
@@ -599,6 +643,18 @@
       </tags>
   </entry>
   <entry>
+    <title>论文撰写</title>
+    <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/11-%E8%AE%BA%E6%96%87%E6%92%B0%E5%86%99/df6b6cbf/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学科</category>
+      </categories>
+      <tags>
+        <tag>笔记\U0001F3AB</tag>
+        <tag>论文✏</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>facial_expression-1</title>
     <url>/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/4-facial_expression-1/c4e1f94b/</url>
     <content><![CDATA[]]></content>
@@ -630,10 +686,10 @@
   </entry>
   <entry>
     <title>blog history</title>
-    <url>/%E6%8A%80%E6%9C%AF/1-blog%20history/be3c4ef4/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-blog%20history/be3c4ef4/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
       </categories>
   </entry>
   <entry>
@@ -658,10 +714,10 @@
   </entry>
   <entry>
     <title>语法</title>
-    <url>/%E6%8A%80%E6%9C%AF/2-%E8%AF%AD%E6%B3%95/e441c771/</url>
+    <url>/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/2-%E8%AF%AD%E6%B3%95/e441c771/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>技术</category>
+        <category>技术工具</category>
       </categories>
       <tags>
         <tag>持更⌛</tag>
