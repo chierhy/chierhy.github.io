@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>method-多模态 | chiblog</title><meta name="author" content="chierhy"><meta name="copyright" content="chierhy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="太全了！多模态深度学习的综述！ (qq.com)IEEE. Trans. Pattern. Anal. Mach. Intell. |从视觉到文本多模态数据融合综述 (qq.com)   模态人工智能 - 一站式解读多模态——Transformer、Embedding、主流模型与通用任务实战（上） - 百度飞桨 - SegmentFault 思否上述的大多多模态模型结构可以总结为五个主要关键组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="method-多模态">
+<meta property="og:url" content="https://chierhy.github.io/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E5%A4%9A%E6%A8%A1%E6%80%81/0/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="太全了！多模态深度学习的综述！ (qq.com)IEEE. Trans. Pattern. Anal. Mach. Intell. |从视觉到文本多模态数据融合综述 (qq.com)   模态人工智能 - 一站式解读多模态——Transformer、Embedding、主流模型与通用任务实战（上） - 百度飞桨 - SegmentFault 思否上述的大多多模态模型结构可以总结为五个主要关键组件">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2024-07-28T06:16:00.000Z">
+<meta property="article:modified_time" content="2024-07-28T06:16:58.064Z">
+<meta property="article:author" content="chierhy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E5%A4%9A%E6%A8%A1%E6%80%81/0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":299,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: chierhy","link":"链接: ","source":"来源: chiblog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'method-多模态',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-28 14:16:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/middle.css?v1"><link rel="stylesheet" href="/css/background.css?v1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CodeByZach/pace/themes/green/pace-theme-fill-left.css"><link rel="stylesheet" href="/css/commentbackground.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">method-多模态</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-28T06:16:00.000Z" title="发表于 2024-07-28 14:16:00">2024-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-28T06:16:58.064Z" title="更新于 2024-07-28 14:16:58">2024-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E5%A4%9A%E6%A8%A1%E6%80%81/0/" data-flag-title="method-多模态"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T3nDpNjOK7HxRd9Z1MFM9g">太全了！多模态深度学习的综述！ (qq.com)</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fAsbbd19qX-XrIsRUFVssQ">IEEE. Trans. Pattern. Anal. Mach. Intell. |从视觉到文本多模态数据融合综述 (qq.com)</a></p>
+</blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/8ydcibaqvaRIQpkIwEDYk0I5SN16v7L70PXOhKk4QQ5an3JGGUhJNiaicebib0Spfa9SpDPSZo0BEogNjibpXSyEU2w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></p>
+<h1 id="模态"><a href="#模态" class="headerlink" title="模态"></a>模态</h1><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000044778456">人工智能 - 一站式解读多模态——Transformer、Embedding、主流模型与通用任务实战（上） - 百度飞桨 - SegmentFault 思否</a><br>上述的大多多模态模型结构可以总结为五个主要关键组件，具体如下图所示：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/93dce18bafe0496fb4cea38e64c25b09.png" alt="在这里插入图片描述"><br><strong>模态编码器（Modality Encoder, ME）</strong>：图像编码器（Image Encoder）、视频编码器（Video Encoder）、音频编码器（Audio Encoder）</p>
+<p><strong>输入投影器（Input Projector, IP）</strong>：线性投影器（Linear Projector）、多层感知器（Multi-Layer Perceptron, MLP）、交叉注意力（Cross-Attention）、Q-Former等</p>
+<p><strong>大模型基座（LLM Backbone）</strong>：ChatGLM、LLaMA、Qwen、Vicuna等</p>
+<p><strong>输出投影器（Output Projector, OP）</strong>：Tiny Transformer、Multi-Layer Perceptron (MLP)等</p>
+<p><strong>模态生成器（Modality Generator, MG）</strong>：Stable Diffusion、Zeroscope、AudioLDM</p>
+<p>按上述五部分结构对经典多模态模型进行总结，结果如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/ac48628d4a174b4a80c66a4dd83e3106.png" alt="在这里插入图片描述"><br>以VIT为基础视觉预训练可以通过Transformers模型对视觉进行有效表征，逐渐成为视觉信息编码的主流手段。此部分主要梳理以VIT为延伸的预训练和多模态对齐工作，具体分类如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/76cfc673f89e41c59a80c16df2782323.png" alt="在这里插入图片描述"><br>上述多模态预训练模型发展关系如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/cd7052cc95fd4441877879e884a8d163.png" alt="在这里插入图片描述"></p>
+<h2 id="embedding"><a href="#embedding" class="headerlink" title="embedding"></a>embedding</h2><p><strong>1.文本转 Embedding</strong></p>
+<p>Tokenization:</p>
+<p>Tokenization也称作分词，是把一段文本切分成模型能够处理的token或子词的过程，通常会使用BPE或WordPiece的分词算法，有助于控制词典大小的同时保留了表示文本序列的能力。Tokenization的知识点总结如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/c748ab6c398441e2b2809411c41e3400.png" alt="在这里插入图片描述"><br>Embedding:</p>
+<p>Embedding将token或子词用映射到多维空间中的向量表示，用以捕捉语义含义。这些连续的向量使模型能够在神经网络中处理离散的token，从而使其学习单词之间的复杂关系。经典的文本转Embedding可采用 Tramsformer(bert) 模型</p>
+<p>具体步骤：</p>
+<ul>
+<li>输入文本：“thank you very much”</li>
+<li>Tokenization后: [“thank”, “you”, “very”,“much”]</li>
+<li>Embedding：假设每个token被映射到一个2048维的向量，“thank you very much”被转换成4*2048的embeddings</li>
+</ul>
+<p><strong>2.图像转换Embedding</strong></p>
+<p>图像转Emdedding一般采用Vit Transformer模型。首先，把图像分成固定大小的patch，类比于LLM中的Tokenization操作；然后通过线性变换得到patch embedding，类比LLM中的Embedding操作。由于Transformer的输入就是token embeddings序列，所以将图像的patch embedding送入Transformer后就能够直接进行特征提取，得到图像全局特征的embeddings。具体步骤如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/42e0f11abb604b9781b09931a9d339fa.png" alt="在这里插入图片描述"><br>图像预处理：</p>
+<ul>
+<li>输入图像大小：224x224像素，3个颜色通道（RGB）+ 预处理：归一化，但不改变图像大小图像切分：</li>
+<li>假设每个patch大小为14x14像素，图像被切分成(224&#x2F;14) × (224&#x2F;14) &#x3D;256个patches 线性嵌入：</li>
+<li>将每个14x14x3的patch展平成一个一维向量，向量大小为 14×14×3&#x3D;588</li>
+<li>通过一个线性层将每个patch的向量映射到其他维的空间（假设是D维），例如D&#x3D;768 , 每个patch被表示为一个D维的向量。最后，由于Transformer内部不改变这些向量的大小，就可以用256*768的embeddings表示一张图像。</li>
+</ul>
+<h1 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h1><ul>
+<li>多模态数据联合预训练的典型方法经常遇到模态数据冲突和整合新知识成本高的问题</li>
+<li></li>
+</ul>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>多模态应用分类为两个主要方向：辨别性和生成性应用</p>
+<p>结合多模态数据进行分类任务是一个常见的挑战，特别是在处理不同类型的数据，如文本、图像、音频等。以下是一些常见的方法：</p>
+<ol>
+<li><strong>融合层级模型（Multimodal Fusion Models）：</strong><ul>
+<li>建立多个模态数据的独立模型，然后通过一个融合层将它们的表示整合在一起。这个融合可以是简单的拼接、加权求和、注意力机制等。这样的模型通常包括一个用于每个模态的子模型和一个用于融合的主模型。</li>
+</ul>
+</li>
+<li><strong>多模态注意力（Multimodal Attention）：</strong><ul>
+<li>使用注意力机制来赋予不同模态数据不同的重要性。这可以帮助模型在处理多模态输入时更好地关注关键信息。</li>
+</ul>
+</li>
+<li><strong>共享表示学习（Shared Representation Learning）：</strong><ul>
+<li>尝试学习一个共享的表示，使得不同模态数据在共享空间中有意义的对应。这通常涉及到使用联合训练或对抗性训练来确保学到的表示能够更好地适应不同模态。</li>
+</ul>
+</li>
+<li><strong>循环神经网络（Recurrent Neural Networks，RNNs）：</strong><ul>
+<li>对于时序性的多模态数据，可以使用RNNs来处理序列信息。这对于处理时间序列、视频等数据类型特别有效。</li>
+</ul>
+</li>
+<li><strong>特征融合（Feature Fusion）：</strong><ul>
+<li>直接融合提取的特征。这可以通过将来自不同模态的特征连接在一起，然后馈送到分类器中。</li>
+</ul>
+</li>
+<li><strong>迁移学习（Transfer Learning）：</strong><ul>
+<li>如果某些模态的数据量较小，可以通过迁移学习从其他大数据模态中学到的知识，然后迁移到小数据模态上。</li>
+</ul>
+</li>
+<li><strong>Ensemble Methods：</strong><ul>
+<li>将多个单模态模型的输出进行组合，例如投票、平均值等。</li>
+</ul>
+</li>
+<li><strong>生成对抗网络（Generative Adversarial Networks，GANs）：</strong><ul>
+<li>使用生成模型来生成缺失的模态数据，以增加数据的丰富性。<br>选择合适的方法通常取决于你的数据特性、任务需求和可用的计算资源。在实践中，一些方法可能需要更多的调整和实验来找到最佳配置。</li>
+</ul>
+</li>
+</ol>
+<p>对于多模态自编码器，分类层通常位于编码器之后，解码器之前。<br>输入为多模态数据，怎么通过encoder和decoder进行分类？</p>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><p>多模态大型语言模型的训练流程主要分为两个阶段：多模态预训练（MM PT）和多模态指令调优（MM IT）。以下为两阶段介绍：</p>
+<p>（1）多模态预训练：</p>
+<p>目标：预训练阶段的目标是通过训练输入和输出投影器（IP和OP）来实现不同模态之间的对齐，以便LLM主干能够有效地处理多模态输入。</p>
+<p>数据集：通常使用X-Text数据集，包含图像-文本（Image-Text）、视频-文本（Video-Text）和音频-文本（Audio-Text）对，以及交错的图像-文本语料库等。</p>
+<p>优化：训练过程中，主要优化的是输入和输出投影器的参数，以最小化条件文本生成损失。通常涉及到将模态编码器的输出特征与文本特征对齐，生成的对齐特征作为LLM主干的输入。</p>
+<p>（2）多模态指令调优：</p>
+<p>目标：指令调优阶段的目标是通过指令格式化的数据集对预训练的MM-LLM进行微调，以提高模型遵循新指令的能力，从而增强其在未见任务上的性能。</p>
+<p>方法：指令调优的训练方法可以分为监督式微调（SFT）和基于人类反馈的强化学习（RLHF）。SFT将PT阶段的数据转换为指令感知格式，而RLHF则依赖于对模型响应的人类反馈进行进一步微调。</p>
+<p>数据集：使用的数据集通常包括视觉问答（VQA）、指令遵循任务等，数据集结构可以是单轮问答或多轮对话</p>
+<h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><ul>
+<li>一种可能的方法是在获取各自特征空间的数据表示后建立映射，可以被视为一种两阶段方法，称为“各模态领域内的表示学习 + 模态之间的映射”，通常第一阶段的特征提取使用固定的骨干模型。另一种解决多模态表示问题的方式是以端到端的方式为给定的数据对学习统一的表示，自由优化特征提取的骨干模型。</li>
+<li>对于第一种方法，Liu 等人利用现有的从视觉内容中预训练的语义嵌入，并提出了协作专家模型来聚合多模态信息。Wang 等人关注视频和文本表示的全局局部序列对齐。对于第二种方法，提出了学习两分支神经网络来匹配文本和图像数据。在音频-视觉领域，通过“音频-视觉对应”学习任务学习互相表示。</li>
+</ul>
+<h2 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h2><ul>
+<li>“无监督”通常指网络在没有人类监督的情况下训练，“弱监督”描述的是监督可能是嘈杂、有限或不精确的情况；“自监督”用于描述模型从输入的一部分中学习另一部分的情况。</li>
+<li>非监督学习设置的基本思想依赖于多模态配对数据之间固有的同步性质。</li>
+<li>研究团队可以将大规模预训练视为特定类型的多模态表示学习，因为预训练的主要目标是学习一个联合和统一的跨模态表示，可以灵活地转移到其他领域或下游任务。<ul>
+<li><a href="method-%E8%87%AA%E7%9B%91%E7%9D%A3-%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0.md">method-自监督-对比学习</a></li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h1 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h1><hr>
+<ul>
+<li><em>Vision + X: A Survey on Multimodal Learning in the Light of Data</em></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fAsbbd19qX-XrIsRUFVssQ">IEEE. Trans. Pattern. Anal. Mach. Intell. |从视觉到文本多模态数据融合综述 (qq.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ul_KiOUXo9Fy6AkNb_C_NQ">CVPR2024—重磅来袭！西工大团队提出通用多模态医学数据表示学习方法！持续自监督学习！ (qq.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkxNzY2NDA1OQ==&mid=2247484249&idx=1&sn=fbfcc7d000399079d4dfb85992b3aad2&chksm=c1bc7b0df6cbf21bc347f350eb29cfea40dca2892ab2488a42739b89d1ad19c866f9f03d0899&scene=21#wechat_redirect">ICML2023 清华大学、加州大学、麻省理工等高校联合提出——监督多模态学习中的单模态特征学习 (qq.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.03700">[2312.03700] OneLLM: One Framework to Align All Modalities with Language (arxiv.org)</a>多模态大语言模型（MLLM）因其强大的多模态理解能力而获得了显著的关注。然而，现有的作品严重依赖于模态特定的编码器，这些编码器通常在架构上有所不同，并且仅限于常见的模态。在本文中，我们提出了OneLLM，这是一种使用统一框架将八种模态与语言对齐的MLLM。我们通过统一的多模态编码器和渐进式多模态对齐管道来实现这一点。详细地说，我们首先训练一个图像投影模块，将视觉编码器与LLM连接起来。然后，我们通过混合多个图像投影模块和动态路由来构建通用投影模块（UPM）。最后，我们逐步将更多的模式与UPM对齐到LLM。为了充分利用OneLLM在以下指令中的潜力，我们还策划了一个全面的多模态指令数据集，包括来自图像、音频、视频、点云、深度&#x2F;法线图、IMU和功能磁共振成像大脑活动的2M项。OneLLM在25个不同的基准上进行评估，包括多模态字幕、问答和推理等任务，在这些任务中，它提供了出色的性能。代码、数据、模型和在线演示可在https URL获得</li>
+</ul>
+<h1 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h1><ol>
+<li>与任务无关的 image, video, point cloud, and audio. 多模态数据也能提升 Transformer 性能[[多模态-CVPR2024 -Multimodal PathwayMultimodal Pathway]] ——视频模态的大量数据提升 earset 时序数据（这篇没有时序）和实验室的时序数据。</li>
+<li>文生图生成数据集来训练。CapS-Adapter。与 Baseline 方法 SuS-X 相比。作者主要将这些显著的改进归因于数据集对支持集中图像特征质量的提高敏感度。_Caps_中图像特征的优越质量主要是因为这些数据集中的图像类别在像 Stable Diffusion 这样的文本到图像生成模型的预训练中没有被广泛表示，这些模型缺乏关于这些类别的足够先验知识。因此，支持集图像的生成在很大程度上依赖于输入提示。_Caps_利用基于标题的提示，与 SuS-X 使用的更简单的 GPT-3 生成或手动提示相比，这些提示提供了分布更均匀、更丰富和更多样化的实例级信息，从而更好地指导支持集图像的生成过程。 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zUwSFI_wbEgxIv22JdCtKw">清华大学提出CapS-Adapter | 利用CLIP的单模态和跨模态优势，通过使用多模态支持集提高了预测准确性！ (qq.com)</a>  github <a target="_blank" rel="noopener" href="https://github.com/WLuLi/CapS-Adapter">https://github.com/WLuLi/CapS-Adapter</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2428649">37项SOTA！全模态预训练范式MiCo：理解任何模态并学习通用表示｜港中文&amp;中科院-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>paper</th>
+<th align="left">content</th>
+<th>优点</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CapS-Adapter</td>
+<td align="left">1. 构建基于标题的支持集 （利用文生图模型）2.多模态- Adapter</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>Mico</td>
+<td align="left">1. 全模态编码器 (ViT) 提取多模态特征，然后使用文本编码器提取文本特征 2. 共享一套位置编码，以构建跨越不同模态的融合上下文关系</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">chierhy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E5%A4%9A%E6%A8%A1%E6%80%81/0/">https://chierhy.github.io/技术方法模型/method-多模态/0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/code/0/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">code</div></div></a></div><div class="next-post pull-right"><a href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/task-%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/0/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">task-具身智能</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">chierhy</div><div class="author-info__description">神经蛙</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">122</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好蛙！有趣的灵魂</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E6%80%81"><span class="toc-number">1.</span> <span class="toc-text">模态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#embedding"><span class="toc-number">1.1.</span> <span class="toc-text">embedding</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%BE%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">难点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83"><span class="toc-number">3.1.</span> <span class="toc-text">训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.2.</span> <span class="toc-text">监督学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.3.</span> <span class="toc-text">非监督学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#paper"><span class="toc-number">4.</span> <span class="toc-text">paper</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#idea"><span class="toc-number">5.</span> <span class="toc-text">idea</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/0/" title="数据、验证"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据、验证"/></a><div class="content"><a class="title" href="/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/0/" title="数据、验证">数据、验证</a><time datetime="2024-07-28T06:19:00.000Z" title="发表于 2024-07-28 14:19:00">2024-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/task-data%20explainablity/0/" title="task-data explainablity"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="task-data explainablity"/></a><div class="content"><a class="title" href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/task-data%20explainablity/0/" title="task-data explainablity">task-data explainablity</a><time datetime="2024-07-28T06:19:00.000Z" title="发表于 2024-07-28 14:19:00">2024-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/model-autoencoder/0/" title="model-autoencoder"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="model-autoencoder"/></a><div class="content"><a class="title" href="/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/model-autoencoder/0/" title="model-autoencoder">model-autoencoder</a><time datetime="2024-07-28T06:18:00.000Z" title="发表于 2024-07-28 14:18:00">2024-07-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By chierhy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you<br>如有版权问题，请联系我，谢谢！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'TS0ePFXQXdxSafnOrIbfLt4D-gzGzoHsz',
+      appKey: 'tsFFJSgqKx5c5iccEHLKcNka',
+      avatar: 'wavatar',
+      serverURLs: '',
+      emojiMaps: "",
+      master: '8d296000db39b8f418f8097085c4f069',//博主邮箱md5加密32位小写
+      tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+      friends: [],  //小伙伴邮箱Md5
+      path: window.location.pathname,
+      visitor: true
+    }, ))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/js/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="7753182187" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-order="random" data-listFolded="false" data-autoplay="false" data-preload="none"> </div><script defer src="https://cdn.jsdelivr.net/gh/CodeByZach/pace/pace.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 80px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax  src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><!-- hexo injector body_end end --></body></html>
