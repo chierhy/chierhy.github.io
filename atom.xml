@@ -229,28 +229,6 @@
   </entry>
   
   <entry>
-    <title>数据、验证</title>
-    <link href="https://chierhy.github.io/2024/07/28/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/"/>
-    <id>https://chierhy.github.io/2024/07/28/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/</id>
-    <published>2024-07-28T06:19:00.000Z</published>
-    <updated>2024-07-28T06:19:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://www.bilibili.com/read/cv12736369/">深入研究k折交叉验证（K fold Cross Validation） - 哔哩哔哩 (bilibili.com)</a></p><ol start="2"><li><p><a href="https://zhuanlan.zhihu.com/p/149928673">微表情识别（Micro expression recognition）简述 - 知乎 (zhihu.com)</a><br> 为了减少不同受试者之间面部的差异，可以基于面部特征点对所有片段进行<strong>面部配准（face register）</strong>，<br> 简单来说，face register 首先选择一张脸作为标准人脸图像，提取其特征点；对于每个视频片段，提取视频片段中第一帧的面部特征点，并计算一个映射函数（此处使用 LWM 算法），将这帧图像的特征点映射到标准图像的特征点上；最后，将此映射作用在视频中的所有帧上。这种方法可以使所有视频片段中的人脸特征点位置相同，从而减少不同人脸的差异。</p><p> 我在毕设中使用python的dlib库识别人脸特征点，进行face register，经过实验发现register可以提高模型在10-fold验证时的效果，但降低了模型在LOSO验证时的效果。由于dlib对于人脸特征点的识别并不是那么准，因此上述现象也可能是由dlib的误差导致。</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="学科" scheme="https://chierhy.github.io/categories/%E5%AD%A6%E7%A7%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>task-data explainablity</title>
     <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/task-data%20explainablity/"/>
     <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/task-data%20explainablity/</id>
@@ -268,6 +246,28 @@
     
     
     <category term="科研" scheme="https://chierhy.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据、验证</title>
+    <link href="https://chierhy.github.io/2024/07/28/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/"/>
+    <id>https://chierhy.github.io/2024/07/28/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E3%80%81%E9%AA%8C%E8%AF%81/</id>
+    <published>2024-07-28T06:19:00.000Z</published>
+    <updated>2024-07-28T06:19:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="https://www.bilibili.com/read/cv12736369/">深入研究k折交叉验证（K fold Cross Validation） - 哔哩哔哩 (bilibili.com)</a></p><ol start="2"><li><p><a href="https://zhuanlan.zhihu.com/p/149928673">微表情识别（Micro expression recognition）简述 - 知乎 (zhihu.com)</a><br> 为了减少不同受试者之间面部的差异，可以基于面部特征点对所有片段进行<strong>面部配准（face register）</strong>，<br> 简单来说，face register 首先选择一张脸作为标准人脸图像，提取其特征点；对于每个视频片段，提取视频片段中第一帧的面部特征点，并计算一个映射函数（此处使用 LWM 算法），将这帧图像的特征点映射到标准图像的特征点上；最后，将此映射作用在视频中的所有帧上。这种方法可以使所有视频片段中的人脸特征点位置相同，从而减少不同人脸的差异。</p><p> 我在毕设中使用python的dlib库识别人脸特征点，进行face register，经过实验发现register可以提高模型在10-fold验证时的效果，但降低了模型在LOSO验证时的效果。由于dlib对于人脸特征点的识别并不是那么准，因此上述现象也可能是由dlib的误差导致。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="学科" scheme="https://chierhy.github.io/categories/%E5%AD%A6%E7%A7%91/"/>
     
     
   </entry>
@@ -383,13 +383,13 @@
   </entry>
   
   <entry>
-    <title>method-few shot learning</title>
-    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/"/>
-    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/</id>
+    <title>method-agents</title>
+    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/"/>
+    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/</id>
     <published>2024-07-28T06:17:00.000Z</published>
-    <updated>2024-07-28T06:17:37.000Z</updated>
+    <updated>2024-07-28T06:17:31.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://link.zhihu.com/?target=https://github.com/sxontheway/Keep-Learning/blob/master/Research/Few_Sample_Learning.md">http://link.zhihu.com/?target=https%3A//github.com/sxontheway/Keep-Learning/blob/master/Research/Few_Sample_Learning.md</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://link.zhihu.com/?target=https://github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md">http://link.zhihu.com/?target=https%3A//github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md</a></p><h1 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h1><p><a href="https://arxiv.org/abs/2405.02957">[2405.02957] Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents (arxiv.org)</a></p><ul><li>质量和效率，隐私。医疗记录库、经验库。</li><li>agent hostpital. Pdf</li><li>在本文中，我们介绍了一个名为Agent医院的医院模拟，它模拟了治疗疾病的整个过程。所有患者、护士和医生都是由大型语言模型（LLM）驱动的自治代理。我们的中心目标是让医生代理学习如何在模拟中治疗疾病。为此，我们提出了一种名为MedAgent-Zero的方法。由于模拟可以基于知识库和LLM模拟疾病的发作和进展，医生代理可以不断从成功和不成功的案例中积累经验。模拟实验表明，医生代理在各种任务中的治疗性能不断提高。更有趣的是，医生代理在Agent医院获得的知识适用于现实世界的医疗保险基准。在治疗了大约一万名患者（现实世界的医生可能需要两年多的时间）后，进化的医生代理在涵盖主要呼吸系统疾病的MedQA数据集子集上实现了93.06%的最先进准确率。这项工作为推进LLM驱动的代理技术在医疗场景中的应用铺平了道路。</li><li>MedAgent-Zero”这一创新的训练策略。与以往基于反向传播的模型训练方法不同，MedAgent-Zero 通过动态更新医疗记录库和经验库，有效提升了医疗代理的决策能力。这种策略的显著优势在于，它允许模型在不直接修改权重参数的情况下进行优化。这意味着，我们可以利用第三方的大型语言模型 API，而无需动用昂贵的 GPU 资源来训练模型。通过知识库的持续积累和优化，模型不仅保持了其底层的语言处理能力，还增强了对特定医疗知识的掌握。这不仅提高了模型的决策质量，也为 AI 在医疗等高知识要求领域的应用提供了新的可能性。</li></ul>]]></content>
     
     
       
@@ -405,13 +405,13 @@
   </entry>
   
   <entry>
-    <title>method-agents</title>
-    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/"/>
-    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/</id>
+    <title>method-few shot learning</title>
+    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/"/>
+    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/</id>
     <published>2024-07-28T06:17:00.000Z</published>
-    <updated>2024-07-28T06:17:31.000Z</updated>
+    <updated>2024-07-28T06:17:37.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://link.zhihu.com/?target=https://github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md">http://link.zhihu.com/?target=https%3A//github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md</a></p><h1 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h1><p><a href="https://arxiv.org/abs/2405.02957">[2405.02957] Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents (arxiv.org)</a></p><ul><li>质量和效率，隐私。医疗记录库、经验库。</li><li>agent hostpital. Pdf</li><li>在本文中，我们介绍了一个名为Agent医院的医院模拟，它模拟了治疗疾病的整个过程。所有患者、护士和医生都是由大型语言模型（LLM）驱动的自治代理。我们的中心目标是让医生代理学习如何在模拟中治疗疾病。为此，我们提出了一种名为MedAgent-Zero的方法。由于模拟可以基于知识库和LLM模拟疾病的发作和进展，医生代理可以不断从成功和不成功的案例中积累经验。模拟实验表明，医生代理在各种任务中的治疗性能不断提高。更有趣的是，医生代理在Agent医院获得的知识适用于现实世界的医疗保险基准。在治疗了大约一万名患者（现实世界的医生可能需要两年多的时间）后，进化的医生代理在涵盖主要呼吸系统疾病的MedQA数据集子集上实现了93.06%的最先进准确率。这项工作为推进LLM驱动的代理技术在医疗场景中的应用铺平了道路。</li><li>MedAgent-Zero”这一创新的训练策略。与以往基于反向传播的模型训练方法不同，MedAgent-Zero 通过动态更新医疗记录库和经验库，有效提升了医疗代理的决策能力。这种策略的显著优势在于，它允许模型在不直接修改权重参数的情况下进行优化。这意味着，我们可以利用第三方的大型语言模型 API，而无需动用昂贵的 GPU 资源来训练模型。通过知识库的持续积累和优化，模型不仅保持了其底层的语言处理能力，还增强了对特定医疗知识的掌握。这不仅提高了模型的决策质量，也为 AI 在医疗等高知识要求领域的应用提供了新的可能性。</li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://link.zhihu.com/?target=https://github.com/sxontheway/Keep-Learning/blob/master/Research/Few_Sample_Learning.md">http://link.zhihu.com/?target=https%3A//github.com/sxontheway/Keep-Learning/blob/master/Research/Few_Sample_Learning.md</a></p>]]></content>
     
     
       
