@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>method-CNN | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="必会的六大卷积神经网络 (qq.com)  必会的六大卷积神经网络LeNet-5LeNet-5 由 Yann LeCun 设计，是最早的卷积神经网络 (CNN) 之一，主要用于手写数字识别。 它有 5 层，具有可学习的参数，并以灰度图像作为输入。 以下是其架构的详细分解：   输入层  输入：32x32 灰度图像。  3组卷积+平均池化层  卷积层通过应用滤波器从输入图像中提取特征，而平均池化层">
+<meta property="og:type" content="article">
+<meta property="og:title" content="method-CNN">
+<meta property="og:url" content="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-CNN/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="必会的六大卷积神经网络 (qq.com)  必会的六大卷积神经网络LeNet-5LeNet-5 由 Yann LeCun 设计，是最早的卷积神经网络 (CNN) 之一，主要用于手写数字识别。 它有 5 层，具有可学习的参数，并以灰度图像作为输入。 以下是其架构的详细分解：   输入层  输入：32x32 灰度图像。  3组卷积+平均池化层  卷积层通过应用滤波器从输入图像中提取特征，而平均池化层">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2024-07-28T06:34:00.000Z">
+<meta property="article:modified_time" content="2024-07-28T06:35:30.000Z">
+<meta property="article:author" content="神经蛙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-CNN/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'method-CNN',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-28 14:35:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">method-CNN</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-28T06:34:00.000Z" title="发表于 2024-07-28 14:34:00">2024-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-28T06:35:30.000Z" title="更新于 2024-07-28 14:35:30">2024-07-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="method-CNN"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/OSFbCdv_R54AeiS01t34DA">必会的六大卷积神经网络 (qq.com)</a></p>
+</blockquote>
+<h1 id="必会的六大卷积神经网络"><a href="#必会的六大卷积神经网络" class="headerlink" title="必会的六大卷积神经网络"></a>必会的六大卷积神经网络</h1><h3 id="LeNet-5"><a href="#LeNet-5" class="headerlink" title="LeNet-5"></a>LeNet-5</h3><p>LeNet-5 由 Yann LeCun 设计，是最早的卷积神经网络 (CNN) 之一，主要用于手写数字识别。</p>
+<p>它有 5 层，具有可学习的参数，并以灰度图像作为输入。</p>
+<p>以下是其架构的详细分解：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnmJp2CbP3ibN4Q4xZZxe6licURQoHNcyUAcK6WwPtRkrNLUGkiafnOCwYQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<ol>
+<li><p><strong>输入层</strong></p>
+<p> 输入：32x32 灰度图像。</p>
+</li>
+<li><p><strong>3组卷积+平均池化层</strong></p>
+<p> 卷积层通过应用滤波器从输入图像中提取特征，而平均池化层则减少空间维度，使得网络对输入图像的小平移保持不变。</p>
+</li>
+</ol>
+<ul>
+<li><p>第 1 层，6 个大小为 5x5 的滤波器，产生 28x28x6 的特征图。</p>
+</li>
+<li><p>第 2 层，使用平均池化（2x2 窗口），减少到 14x14x6。</p>
+</li>
+<li><p>第 3 层，16 个大小为 5x5 的滤波器，产生 10x10x16 的特征图。</p>
+</li>
+<li><p>第 4 层，使用平均池化（2x2 窗口），减少到 5x5x16。</p>
+</li>
+<li><p>第 5 层，120 个大小为 5x5 的滤波器，产生 1x1x120 的特征图。</p>
+</li>
+</ul>
+<ol start="4">
+<li><p><strong>2个完全连接层</strong></p>
+<p> 全连接层根据从卷积层提取的特征进行分类。</p>
+</li>
+</ol>
+<ul>
+<li><p>第 6 层，84 个神经元，与前一层完全连接。</p>
+</li>
+<li><p>输出层，10 个神经元，每个数字类别一个，使用 Softmax 进行分类。</p>
+</li>
+</ul>
+<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><p>AlexNet 由 Alex Krizhevsky 开发，在 2012 年 ImageNet 竞赛中获胜，彻底改变了计算机视觉。</p>
+<p>它有 8 层，有 6230 万个可学习参数。</p>
+<p>以下是逐层详细分解：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnOthdfvAoUO9ASI2HIyusCH58icwvAzib2NmQeNzlsEpiaicWGvYz10gaeQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<ol>
+<li><p><strong>输入层</strong></p>
+<p> 输入，224x224 RGB 图像。</p>
+</li>
+<li><p><strong>5 组卷积 + 最大池化层</strong></p>
+<p> 这些层执行特征提取，使用 ReLU 激活加速训练速度。最大池化层减少空间维度，同时保留重要特征。使用填充来防止特征图的大小急剧减小</p>
+</li>
+</ol>
+<ul>
+<li><p>第 1 层，96 个大小为 11x11、步幅为 4 的过滤器，产生 55x55x96 的特征图，然后进行 ReLU 激活和最大池化。</p>
+</li>
+<li><p>第 2 层，256 个大小为 5x5 的过滤器，产生 27x27x256 的特征图，然后进行 ReLU 激活和最大池化。</p>
+</li>
+<li><p>第 3 至第 5 层，384 个大小为 3x3 的过滤器，为第 3 层和第 4 层生成 13x13x384 的特征图，为第 5 层生成 13x13x256 的特征图，每个特征图后跟 ReLU 激活。第 5 层后跟最大池化。</p>
+</li>
+</ul>
+<ol start="4">
+<li><p><strong>完全连接层</strong></p>
+<p> 全连接层对卷积层提取的特征进行分类。</p>
+</li>
+</ol>
+<ul>
+<li><p>第 6-7 层，每层 4096 个神经元，随后是 ReLU 激活和 dropout。Dropout 通过在训练期间随机将一部分输入单元设置为零来帮助防止过度拟合。</p>
+</li>
+<li><p>输出层 8：最后一层使用 Softmax</p>
+</li>
+</ul>
+<h3 id="VGG16"><a href="#VGG16" class="headerlink" title="VGG16"></a>VGG16</h3><p>VGG16，由牛津大学的视觉几何小组提出。它于 2014 年提出。它有 16 层，有 1.38 亿个可学习参数，以其简单和统一的架构而闻名。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBEln0OWXyXX2iaNcjCqDIdgcAJ62U4kwtyhEfvicdl2Xia66TSfYg1fDYbXhg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<ol>
+<li><p><strong>输入层</strong></p>
+<p> 输入，224x224 RGB 的图像。</p>
+</li>
+<li><p><strong>卷积+最大池化层</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>块 1：2 个卷积层，带有 64 个大小为 3x3 的过滤器，然后是 ReLU 激活和最大池化。</p>
+</li>
+<li><p>块 2：2 个卷积层，带有 128 个大小为 3x3 的过滤器，然后是 ReLU 激活和最大池化。</p>
+</li>
+<li><p>块 3：3 个卷积层，带有 256 个大小为 3x3 的过滤器，然后是 ReLU 激活和最大池化。</p>
+</li>
+<li><p>块 4：3 个卷积层，带有 512 个大小为 3x3 的过滤器，然后是 ReLU 激活和最大池化。</p>
+</li>
+<li><p>块 5：3 个卷积层，带有 512 个大小为 3x3 的过滤器，然后是 ReLU 激活和最大池化。</p>
+</li>
+</ul>
+<p>过滤器的数量不断增加，直到块 4 和块 5 中达到 512。所有卷积层的过滤器大小固定为 3 X 3，步长 &#x3D;1，填充 &#x3D;1</p>
+<ol start="3">
+<li><strong>完全连接层</strong></li>
+</ol>
+<ul>
+<li><p>第 14-15 层，每层 4096 个神经元，随后是 ReLU 激活和 dropout。</p>
+</li>
+<li><p>输出层 16，1000 个神经元（每个 ImageNet 类一个），使用 Softmax 进行分类。</p>
+</li>
+</ul>
+<h3 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h3><p>谷歌于 2014 年推出的 Inception V1 旨在<strong>通过增加网络的深度和宽度来提高性能</strong>，同时缓解过度拟合和参数数量的增加。</p>
+<p>它有 22 层，有 680 万个可训练参数</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnoygcf7PzGzfB35bZYTfentpz8M1IbbETYjL9gkU8PVPgCLEsicyYYpA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<ol>
+<li><p><strong>输入层</strong></p>
+<p> 输入，224x224 RGB 图像。</p>
+</li>
+<li><p><strong>2 组初始卷****积+最大池化层</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>第 1 层，64 个大小为 7x7 的过滤器，产生 112x112x64 的特征图，然后进行最大池化。</p>
+</li>
+<li><p>第 2 层，192 个大小为 3x3 的过滤器，产生 56x56x192 的特征图，然后进行最大池化。</p>
+</li>
+</ul>
+<ol start="4">
+<li><p><strong>9个Inception模块</strong></p>
+<p> Inception 模块<strong>结合</strong>了多种尺寸（1x1、3x3、5x5）的过滤器，以捕获输入的不同方面。包括用于降维的 1x1 卷积。</p>
+<p> Inception 模块允许网络以多种尺度捕获特征，并通过降维提高计算效率。</p>
+<p> <strong>Inception 模块的优势</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>无需担心确定过滤器的大小，因为 Inception 模型包含各种尺寸</p>
+</li>
+<li><p>使用降维模块减少操作次数</p>
+</li>
+<li><p>可以构建更深的网络，最终可以提高我们模型的性能</p>
+</li>
+<li><p>降维模块</p>
+<p>  为了解决深度增加时过拟合概率的问题，在 Inception 模块中包含了使用 1x1 卷积的降维模块。</p>
+<p>  <strong>它通过减少通道数量来大幅减少操作次数。</strong></p>
+<p>  下图显示了使用&#x2F;不使用 1x1 卷积时操作次数的比较。</p>
+</li>
+</ul>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnqvfDjHc9ByzOKN4V6VEGFUG4S33g2UBW91Is2Tjzh4auelfR7JicQNg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<ul>
+<li>使用不同形状的过滤器来提取特征<br>  <img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnVaKthDlCG4caDrVYQ9gVW8icwRwozXND0styPjYG1yib6bjp6pHaaOTQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></li>
+</ul>
+<ol start="9">
+<li><p><strong>2个辅助分类器</strong></p>
+<p> 辅助分类器通过提供中间监督来帮助主网络更好地学习，从而降低梯度消失的风险。</p>
+<p> 辅助分类器由以下内容组成：</p>
+</li>
+</ol>
+<ul>
+<li><p>平均池化，过滤器大小 5 X 5，步幅为 3</p>
+</li>
+<li><p>具有 128 个滤波器的 1 X 1 卷积</p>
+</li>
+<li><p>具有 1024 个神经元 + ReLU 的全连接层</p>
+</li>
+<li><p>Dropout 层，dropout 率为70%</p>
+</li>
+<li><p>具有 1000 个神经元 + Softmax 的全连接层</p>
+</li>
+</ul>
+<ol start="11">
+<li><strong>2个完全连接层</strong></li>
+</ol>
+<ul>
+<li><p>全连接层</p>
+</li>
+<li><p>输出层，1000 个神经元（每个 ImageNet 类一个），使用 Softmax 进行分类。</p>
+</li>
+</ul>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p>ResNet 由微软研究院于 2015 年推出，解决了梯度消失&#x2F;爆炸问题和退化问题。</p>
+<p>在退化问题中，训练误差和测试误差都会随着层数的增加而增加。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnEsdfHMn61Dxzib4B75uuvxCERZJAib3sOOOpwxtH8TauAppHGxdsWZnA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>这些问题通过残差块得到解决。</p>
+<p>ResNet34 中有 16 个残差块。ResNet34 有 34 个可学习参数的层。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnDz86nDza9NjlYcLDP4cW8sU4Hq4Zo7H3wUP9gC5FXSwqp59p7ibkz2A/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>其架构包括：</p>
+<ol>
+<li><p><strong>输入层</strong></p>
+<p> 输入，224x224 RGB 图像。</p>
+</li>
+<li><p><strong>初始卷积+最大池化层</strong></p>
+<p> 第 1 层，64 个大小为 7x7 的过滤器，产生 112x112x64 的特征图，然后进行最大池化。</p>
+</li>
+<li><p><strong>残差块</strong></p>
+<p> 16 个残差块，其中大部分为 3x3 过滤器。</p>
+<p> 残差块允许网络学习残差函数，通过防止退化问题，使得训练非常深的网络变得更容易。</p>
+<p> 恒等映射使得网络可以跳过不添加新信息的层，从而确保高效的梯度流。</p>
+<p> <img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnk1Yym7kNEAg4EL8m1KRYGSKhPyIqKGianyqLlxeUXvvmOOEgTu1Vedw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+</li>
+</ol>
+<p>    <strong>残差块的优点</strong></p>
+<ul>
+<li><p>可以将初始信息传递到更深层</p>
+</li>
+<li><p>F(x) + x 是元素逐一相加，因此没有额外的参数，也没有额外的计算复杂度</p>
+</li>
+<li><p>更容易优化残差映射</p>
+</li>
+</ul>
+<p><strong>4. 批量标准化和ReLU</strong></p>
+<p>每次卷积后都会应用批量标准化来稳定和加速训练，然后进行 ReLU 激活。</p>
+<p><strong>5. 自适应平均池+全连接层</strong></p>
+<ul>
+<li><p>自适应平均池，将特征图减少为每个特征图一个值。</p>
+</li>
+<li><p>输出层，1000 个神经元（每个 ImageNet 类一个），使用 Softmax 进行分类。</p>
+</li>
+</ul>
+<h3 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h3><p>DenseNet 于 2018 年提出，以前馈方式将每一层连接到其他每一层。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnLVMPgMaGGwkIbVXZ2fw4wdt6J7JjVX3nDkbAT9OAP4tswn1zTiaibo5w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>密集块</p>
+<p>DenseNet 从 conv 层开始，然后是 Desne Block</p>
+<p>密集块内的每个单独块都是一个复合函数，由 3 个操作组成，即批量标准化、ReLU 和最后的转换操作。</p>
+<p>在 3x3 转换之前应用 1x1 转换，并且在每个转换之前使用批量标准化和 ReLU，如下所示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnayCIBMsrfXL0ogfzecwrIHjhicCXnfZibFPRGO9NibohDC8JdNZibDwjiag/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>每一层都接收来自所有前几层的输入，并连接它们的特征图。</p>
+<p>密集块的优点</p>
+<ul>
+<li><p>解决梯度消失的问题：因为梯度可以直接从第一个块流到最后一个块</p>
+</li>
+<li><p>鼓励特征重用：由于特征连接，他们发现较早层提取的特征可直接由同一密集块中的较深层使用</p>
+</li>
+</ul>
+<h4 id="过渡层"><a href="#过渡层" class="headerlink" title="过渡层"></a>过渡层</h4><p>使用 1x1 卷积和池化将特征图的大小减少一半，从而降低计算复杂度。</p>
+<p>Transition 层的架构如下所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ibPqnScajrbEALoyDn0BwQCooElibEBElnia1hmqK2r7EFdQnCn50Gnj6qxoZQXeiblAuDSoGibTeiagA9I80rlCADrQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>与往常一样，在 1x1 转换层之前应用批量标准化和 ReLU 激活，然后应用 Avage Pooling。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-CNN/">https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-CNN/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-2020-SIMCLR/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">对比学习-2020-SIMCLR</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/28/%E8%AE%BA%E6%96%87/%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E5%90%88%E9%9B%86/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">大模型-合集</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%85%E4%BC%9A%E7%9A%84%E5%85%AD%E5%A4%A7%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">必会的六大卷积神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LeNet-5"><span class="toc-number">1.0.1.</span> <span class="toc-text">LeNet-5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AlexNet"><span class="toc-number">1.0.2.</span> <span class="toc-text">AlexNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VGG16"><span class="toc-number">1.0.3.</span> <span class="toc-text">VGG16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GoogLeNet"><span class="toc-number">1.0.4.</span> <span class="toc-text">GoogLeNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ResNet"><span class="toc-number">1.0.5.</span> <span class="toc-text">ResNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DenseNet"><span class="toc-number">1.0.6.</span> <span class="toc-text">DenseNet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%B8%A1%E5%B1%82"><span class="toc-number">1.0.6.1.</span> <span class="toc-text">过渡层</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

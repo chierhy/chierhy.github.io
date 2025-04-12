@@ -383,28 +383,6 @@
   </entry>
   
   <entry>
-    <title>method-adversial learning</title>
-    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-adversial%20learning/"/>
-    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-adversial%20learning/</id>
-    <published>2024-07-28T06:17:00.000Z</published>
-    <updated>2024-07-28T06:17:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p><a href="https://spaces.ac.cn/archives/7234">对抗训练浅谈：意义、方法和思考（附Keras实现） - 科学空间|Scientific Spaces</a></p></blockquote><p>深度学习中的对抗，一般会有两个含义：一个是生成对抗网络（Generative Adversarial Networks，GAN），代表着一大类先进的生成模型；另一个则是跟对抗攻击、对抗样本相关的领域，它跟 GAN 相关，但又很不一样，它主要关心的是模型在小扰动下的稳健性。</p><h1 id="对抗训练"><a href="#对抗训练" class="headerlink" title="对抗训练"></a>对抗训练</h1><blockquote><p><a href="https://zhuanlan.zhihu.com/p/91269728">【炼丹技巧】功守道：NLP中的对抗训练 + PyTorch实现 - 知乎 (zhihu.com)</a><br><a href="https://spaces.ac.cn/archives/7234">对抗训练浅谈：意义、方法和思考（附Keras实现） - 科学空间|Scientific Spaces</a></p></blockquote><p>Goodfellow 认为，<strong>神经网络由于其线性的特点，很容易受到线性扰动的攻击。</strong>于是，他提出了 Fast Gradient Sign Method (FGSM) ，来计算输入样本的扰动。Goodfellow 还总结了对抗训练的两个作用：</p><ol><li>提高模型应对恶意对抗样本时的鲁棒性；</li><li>作为一种 regularization，减少 overfitting，提高泛化能力。<br><strong>在 NLP 任务中，对抗训练的角色不再是为了防御基于梯度的恶意攻击，反而更多的是作为一种 regularization，提高模型的泛化能力</strong>。</li></ol><h1 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h1><p><a href="https://www.sohu.com/a/636653930_121119001">ICLR 2023 | 环境标签平滑，一行代码提升对抗学习稳定性&#x2F;泛化性_训练_数据_Domain (sohu.com)</a><br>    <a href="https://github.com/yfzhang114/Environment-Label-Smoothing/tree/master">yfzhang114&#x2F;Environment-Label-Smoothing: This is an official PyTorch implementation of the ICLR 2023 paper 《Free Lunch for Domain Adversarial Training: Environment Label Smoothing》. (github.com)</a></p><h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul><li><a href="https://github.com/kdhht2334/Contrastive-Adversarial-Learning-FER/tree/main">kdhht2334&#x2F;Contrastive-Adversarial-Learning-FER: [AAAI2021] A repository of Contrastive Adversarial Learning for Person-independent FER (github.com)</a></li><li><a href="https://github.com/markub3327/HAR-Transformer/blob/main/Training.ipynb">HAR-Transformer&#x2F;Training.ipynb at main · markub3327&#x2F;HAR-Transformer (github.com)</a></li><li><a href="https://zhuanlan.zhihu.com/p/163740677">Transferable Adversarial Training学习+代码(pytorch) - 知乎 (zhihu.com)</a></li><li><a href="https://github.com/iantangc/ContrastiveLearningHAR?tab=readme-ov-file">iantangc&#x2F;ContrastiveLearningHAR: Contrastive Learning (SimCLR) for Human Activity Recognition (github.com)</a></li><li></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="科研" scheme="https://chierhy.github.io/categories/%E7%A7%91%E7%A0%94/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>method-few shot learning</title>
     <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/"/>
     <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-few%20shot%20learning/</id>
@@ -427,13 +405,35 @@
   </entry>
   
   <entry>
-    <title>method-meta learning</title>
-    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-meta%20learning/"/>
-    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-meta%20learning/</id>
+    <title>method-agents</title>
+    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/"/>
+    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-agents/</id>
     <published>2024-07-28T06:17:00.000Z</published>
-    <updated>2024-07-28T06:17:45.000Z</updated>
+    <updated>2024-07-28T06:17:31.000Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>challenge<br>Recent advances in mobile sensing field [7, 13] come up with meta-learning algorithms [17] as their FSL solutions. However, they cannot settle the above two kinds of overhead fundamentally: (1) Data collection overhead persists. The principle of meta-learning to recognize unseen classes is to bring adequate prior knowledge from an enlarged base dataset, which could be prohibitively huge to collect. Hence, instead of completely solving the data collection overhead, meta-learning shifts this overhead from unseen gesture collection to base dataset collection. (2) Training overhead remains. While meta-learning architecture mitigates the training overhead in unseen gestures recognition, it multiplies the complexity of the regular training process.</p><p><a href="https://blog.csdn.net/weixin_41667472/article/details/114930948">强化学习-把元学习（Meta Learning）一点一点讲给你听_元学习和强化学习-CSDN博客</a> </p><ul><li>machine learning 和 meta learning 都是要找一个 function，但是两者所要寻找的 function 是不相同的，前者寻找的是解决一个问题的 f，后者寻找的是生成 f 的 F。F 的输入是训练数据，输出是解决一个小问题的 f。得到一个最好的 learning algorithm 做为 F</li><li>很多人看到 meta learning 的更新参数方法以后心想：这不就是迁移学习吗？！！！！其实是有区别的。迁移学习中的 model pre-training（假设 task 2 的训练集太小不好训练，我们将和 task 2 相似的 task 1 作为先导数据集，进行训练，将训练的结果作为 task 2 的初始化）。Meta learning 中的参数θ是模型刚刚生成的 <img src="https://private.codecogs.com/gif.latex?%5Chat%7B%5Ctheta%20%7D%5E%7B%5E%7Bn%7D%7D" alt="\hat{\theta }^{^{n}}">，但是 model pre-training 的参数就是当前使用的模型的参数 <img src="https://private.codecogs.com/gif.latex?%5Cphi" alt="\phi">。Model Pre-training 方法想要得到的参数 fai 就是在任何 task 上都表现良好的参数。但是 MEML 想要得到的参数是在任务 task 中经过训练集训练所能得到的比较好的参数。Model pre-train 的方法比较看重的是当前的表现，而 MAML 则更看重未来的表现。</li><li>我们通常希望 MAML 可以做到的是：得到的参数 <img src="https://private.codecogs.com/gif.latex?%5Cphi" alt="\phi"> 在子任务 task 中只更新一次就得到最好的θ。那么为什么要这么做呢！1，我们的 meta learning 有很多的任务，假设每一个任务都要更新很多次参数的话，会很慢，所以我们为了追求速度，就让模型只更新一次就好。2，我们本来的想法就是希望参数 <img src="https://private.codecogs.com/gif.latex?%5Cphi" alt="\phi"> 仅仅更新一次就得到这个子任务 task 的参数 <img src="https://private.codecogs.com/gif.latex?%5Chat%7B%5Ctheta%20%7D%5E%7B%5E%7Bn%7D%7D" alt="\hat{\theta }^{^{n}}">。3，当我们训练的时候，我们仅仅是让其更新一次，但是当我们真实测试的时候，我们往往可以更新无数次 4，我们本身就是没有多少训练集，所以我们往往希望可以一次更新就得到参数。</li><li>sin 函数的例子清晰的说明元学习的方法</li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="http://link.zhihu.com/?target=https://github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md">http://link.zhihu.com/?target=https%3A//github.com/sxontheway/Keep-Learning/blob/master/Research/Federated_Learning.md</a></p><h1 id="paper"><a href="#paper" class="headerlink" title="paper"></a>paper</h1><p><a href="https://arxiv.org/abs/2405.02957">[2405.02957] Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents (arxiv.org)</a></p><ul><li>质量和效率，隐私。医疗记录库、经验库。</li><li>agent hostpital. Pdf</li><li>在本文中，我们介绍了一个名为Agent医院的医院模拟，它模拟了治疗疾病的整个过程。所有患者、护士和医生都是由大型语言模型（LLM）驱动的自治代理。我们的中心目标是让医生代理学习如何在模拟中治疗疾病。为此，我们提出了一种名为MedAgent-Zero的方法。由于模拟可以基于知识库和LLM模拟疾病的发作和进展，医生代理可以不断从成功和不成功的案例中积累经验。模拟实验表明，医生代理在各种任务中的治疗性能不断提高。更有趣的是，医生代理在Agent医院获得的知识适用于现实世界的医疗保险基准。在治疗了大约一万名患者（现实世界的医生可能需要两年多的时间）后，进化的医生代理在涵盖主要呼吸系统疾病的MedQA数据集子集上实现了93.06%的最先进准确率。这项工作为推进LLM驱动的代理技术在医疗场景中的应用铺平了道路。</li><li>MedAgent-Zero”这一创新的训练策略。与以往基于反向传播的模型训练方法不同，MedAgent-Zero 通过动态更新医疗记录库和经验库，有效提升了医疗代理的决策能力。这种策略的显著优势在于，它允许模型在不直接修改权重参数的情况下进行优化。这意味着，我们可以利用第三方的大型语言模型 API，而无需动用昂贵的 GPU 资源来训练模型。通过知识库的持续积累和优化，模型不仅保持了其底层的语言处理能力，还增强了对特定医疗知识的掌握。这不仅提高了模型的决策质量，也为 AI 在医疗等高知识要求领域的应用提供了新的可能性。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="科研" scheme="https://chierhy.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>method-adversial learning</title>
+    <link href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-adversial%20learning/"/>
+    <id>https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-adversial%20learning/</id>
+    <published>2024-07-28T06:17:00.000Z</published>
+    <updated>2024-07-28T06:17:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p><a href="https://spaces.ac.cn/archives/7234">对抗训练浅谈：意义、方法和思考（附Keras实现） - 科学空间|Scientific Spaces</a></p></blockquote><p>深度学习中的对抗，一般会有两个含义：一个是生成对抗网络（Generative Adversarial Networks，GAN），代表着一大类先进的生成模型；另一个则是跟对抗攻击、对抗样本相关的领域，它跟 GAN 相关，但又很不一样，它主要关心的是模型在小扰动下的稳健性。</p><h1 id="对抗训练"><a href="#对抗训练" class="headerlink" title="对抗训练"></a>对抗训练</h1><blockquote><p><a href="https://zhuanlan.zhihu.com/p/91269728">【炼丹技巧】功守道：NLP中的对抗训练 + PyTorch实现 - 知乎 (zhihu.com)</a><br><a href="https://spaces.ac.cn/archives/7234">对抗训练浅谈：意义、方法和思考（附Keras实现） - 科学空间|Scientific Spaces</a></p></blockquote><p>Goodfellow 认为，<strong>神经网络由于其线性的特点，很容易受到线性扰动的攻击。</strong>于是，他提出了 Fast Gradient Sign Method (FGSM) ，来计算输入样本的扰动。Goodfellow 还总结了对抗训练的两个作用：</p><ol><li>提高模型应对恶意对抗样本时的鲁棒性；</li><li>作为一种 regularization，减少 overfitting，提高泛化能力。<br><strong>在 NLP 任务中，对抗训练的角色不再是为了防御基于梯度的恶意攻击，反而更多的是作为一种 regularization，提高模型的泛化能力</strong>。</li></ol><h1 id="Paper"><a href="#Paper" class="headerlink" title="Paper"></a>Paper</h1><p><a href="https://www.sohu.com/a/636653930_121119001">ICLR 2023 | 环境标签平滑，一行代码提升对抗学习稳定性&#x2F;泛化性_训练_数据_Domain (sohu.com)</a><br>    <a href="https://github.com/yfzhang114/Environment-Label-Smoothing/tree/master">yfzhang114&#x2F;Environment-Label-Smoothing: This is an official PyTorch implementation of the ICLR 2023 paper 《Free Lunch for Domain Adversarial Training: Environment Label Smoothing》. (github.com)</a></p><h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul><li><a href="https://github.com/kdhht2334/Contrastive-Adversarial-Learning-FER/tree/main">kdhht2334&#x2F;Contrastive-Adversarial-Learning-FER: [AAAI2021] A repository of Contrastive Adversarial Learning for Person-independent FER (github.com)</a></li><li><a href="https://github.com/markub3327/HAR-Transformer/blob/main/Training.ipynb">HAR-Transformer&#x2F;Training.ipynb at main · markub3327&#x2F;HAR-Transformer (github.com)</a></li><li><a href="https://zhuanlan.zhihu.com/p/163740677">Transferable Adversarial Training学习+代码(pytorch) - 知乎 (zhihu.com)</a></li><li><a href="https://github.com/iantangc/ContrastiveLearningHAR?tab=readme-ov-file">iantangc&#x2F;ContrastiveLearningHAR: Contrastive Learning (SimCLR) for Human Activity Recognition (github.com)</a></li><li></li></ul>]]></content>
     
     
       

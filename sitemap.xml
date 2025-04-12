@@ -1109,7 +1109,7 @@
   </url>
   
   <url>
-    <loc>https://chierhy.github.io/tags/index.html</loc>
+    <loc>https://chierhy.github.io/categories/index.html</loc>
     
     <lastmod>2022-11-15</lastmod>
     
@@ -1118,7 +1118,7 @@
   </url>
   
   <url>
-    <loc>https://chierhy.github.io/categories/index.html</loc>
+    <loc>https://chierhy.github.io/tags/index.html</loc>
     
     <lastmod>2022-11-15</lastmod>
     
@@ -1231,13 +1231,6 @@
 
   
   <url>
-    <loc>https://chierhy.github.io/categories/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-04-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chierhy.github.io/categories/%E5%AD%A6%E7%A7%91/</loc>
     <lastmod>2025-04-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1245,7 +1238,7 @@
   </url>
   
   <url>
-    <loc>https://chierhy.github.io/categories/%E7%A7%91%E7%A0%94/</loc>
+    <loc>https://chierhy.github.io/categories/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1253,6 +1246,13 @@
   
   <url>
     <loc>https://chierhy.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2025-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chierhy.github.io/categories/%E7%A7%91%E7%A0%94/</loc>
     <lastmod>2025-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

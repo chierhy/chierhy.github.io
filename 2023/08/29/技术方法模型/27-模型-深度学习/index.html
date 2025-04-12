@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>模型-深度学习 | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="DNN、CNN、RNN、LSTM的区别，最全最详细解答_cnn dnn_Jfightingk的博客-CSDN博客深度学习知识梳理（干货满满详解DNN&#x2F;CNN&#x2F;RNN）之深度学习网络模型（三）_熊猫小伙的博客-CSDN博客  总神经网络的变种目前有，如误差反向传播（Back Propagation，BP）神经网路、概率神经网络、RNN-循环神经网络DNN-深度神经网络CNN-卷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模型-深度学习">
+<meta property="og:url" content="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/27-%E6%A8%A1%E5%9E%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="DNN、CNN、RNN、LSTM的区别，最全最详细解答_cnn dnn_Jfightingk的博客-CSDN博客深度学习知识梳理（干货满满详解DNN&#x2F;CNN&#x2F;RNN）之深度学习网络模型（三）_熊猫小伙的博客-CSDN博客  总神经网络的变种目前有，如误差反向传播（Back Propagation，BP）神经网路、概率神经网络、RNN-循环神经网络DNN-深度神经网络CNN-卷">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2023-08-29T09:33:00.000Z">
+<meta property="article:modified_time" content="2025-04-12T08:53:03.093Z">
+<meta property="article:author" content="神经蛙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/27-%E6%A8%A1%E5%9E%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模型-深度学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-12 16:53:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">模型-深度学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-29T09:33:00.000Z" title="发表于 2023-08-29 17:33:00">2023-08-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-12T08:53:03.093Z" title="更新于 2025-04-12 16:53:03">2025-04-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">15.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>47分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="模型-深度学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jfightingk/article/details/119003071">DNN、CNN、RNN、LSTM的区别，最全最详细解答_cnn dnn_Jfightingk的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42237113/article/details/105359916?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-105359916-blog-119003071.235%5Ev32%5Epc_relevant_default_base&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-105359916-blog-119003071.235%5Ev32%5Epc_relevant_default_base&utm_relevant_index=5">深度学习知识梳理（干货满满详解DNN&#x2F;CNN&#x2F;RNN）之深度学习网络模型（三）_熊猫小伙的博客-CSDN博客</a></p>
+</blockquote>
+<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p>神经网络的变种目前有，<br>如误差反向传播（Back Propagation，BP）神经网路、<br>概率神经网络、<br>RNN-循环神经网络<br>DNN-深度神经网络<br>CNN-卷积神经网络（－适用于图像识别）、<br>LSTM-时间递归神经网络（－适用于语音识别）等。<br>但最简单且原汁原味的神经网络则是<br>多层感知器（Muti－Layer Perception ，MLP）。</p>
+<p>常见的基于深度学习的分类模型包括CNN、RNN、LSTM、GRU、BERT等。其中，CNN是卷积神经网络，主要用于图像识别；RNN是循环神经网络，主要用于序列数据的处理；LSTM和GRU是RNN的变种，可以解决长期依赖问题；BERT是自然语言处理领域的预训练模型，可以用于文本分类等任务。</p>
+<p>对于时间序列分类，常用的深度学习算法有LSTM、GRU、TCN等。其中，LSTM和GRU是基于循环神经网络的模型，可以处理任意长度的时间序列，但是需要大量的数据来训练，否则会出现过拟合问题。TCN是一种基于卷积神经网络的模型，可以处理任意长度的时间序列，不需要预先定义滑动窗口大小。它的优点是可以处理任意长度的时间序列，不需要预先定义滑动窗口大小。缺点是需要大量的数据来训练，否则会出现过拟合问题。这些算法都可以用于各种时间序列分类任务，如股票价格预测、交通流量预测等。</p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>1，神经网络向来是处理数字容易大于处理字符&#x2F;字符串<br>2，神经网络对0-1之间的小数特别好用，所以需要normalization</p>
+<h2 id="梯度不稳定"><a href="#梯度不稳定" class="headerlink" title="梯度不稳定"></a>梯度不稳定</h2><p>深度神经网络中的梯度不稳定性，前面层中的梯度或会消失，或会爆炸。前面层上的梯度是来自于后面层上梯度的乘乘积。当存在过多的层次时，就出现了内在本质上的不稳定场景，如梯度消失和梯度爆炸。</p>
+<p>_梯度爆炸（exploding gradient）_：梯度爆炸就是由于初始化权值过大，前面层会比后面层变化的更快，就会导致权值越来越大，梯度爆炸的现象就发生了。</p>
+<p>在深层网络或循环神经网络中，误差梯度可在更新中累积，变成非常大的梯度，然后导致网络权重的大幅更新，并因此使网络变得不稳定。在极端情况下，权重的值变得非常大，以至于溢出，导致 NaN 值。</p>
+<p>网络层之间的梯度（值大于 1.0）重复相乘导致的指数级增长会产生梯度爆炸。</p>
+<p><em>解决梯度爆炸的方法参考：</em><br>详解梯度爆炸和梯度消失 - hank的DL之路 - 博客园 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/DLlearning/p/8177273.html">https://www.cnblogs.com/DLlearning/p/8177273.html</a></p>
+<p>_梯度消失（vanishing gradient）_：前面的层比后面的层梯度变化更小，故变化更慢，从而引起了梯度消失问题。</p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/143990814">神经网络激活函数的作用是什么？ - 知乎 (zhihu.com)</a><br>因为通常神经网络所用的激活函数是sigmoid函数，这个函数有个特点，就是能将负无穷到正无穷的数映射到0和1之间，并且对这个函数求导的结果是f′(x)&#x3D;f(x)(1−f(x))。因此两个0到1之间的数相乘，得到的结果就会变得很小了。神经网络的反向传播是逐层对函数偏导相乘，因此当神经网络层数非常深的时候，最后一层产生的偏差就因为乘了很多的小于1的数而越来越小，最终就会变为0，从而导致层数比较浅的权重没有更新，这就是梯度消失。</p>
+<p>因为sigmoid导数最大为1&#x2F;4，故只有当abs(w)&gt;4时梯度爆炸才可能出现。深度学习中最普遍发生的是梯度消失问题。</p>
+<p>_解决方法_：使用ReLU,maxout等替代sigmoid。</p>
+<p>ReLU与sigmoid的区别：（1）sigmoid函数值在[0,1],ReLU函数值在[0,+无穷]，所以sigmoid函数可以描述概率，ReLU适合用来描述实数；（2）sigmoid函数的梯度随着x的增大或减小和消失，而ReLU不会。</p>
+<h2 id="分类损失"><a href="#分类损失" class="headerlink" title="分类损失"></a>分类损失</h2><p>分类任务采用交叉熵来判定预测结果与期望输出的接近程度<br><img src="https://img-blog.csdnimg.cn/20200407111453343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjIzNzExMw==,size_16,color_FFFFFF,t_70" alt="20200407111453343.png (554×237) (csdnimg.cn)"></p>
+<p>![<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200407111526881.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjIzNzExMw==,size_16,color_FFFFFF,t_70">20200407111526881.png (554×265) (csdnimg.cn)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35599937/article/details/105608354">Keras中损失函数binary_crossentropy和categorical_crossentropy产生不同结果的分析_k.binary_crossentropy_炮打小糍粑的博客-CSDN博客</a><br>多分类问题是要softmax激活函数配合分类交叉熵函数使用，而二分类问题要使用sigmoid激活函数配合二进制交叉熵函数适用</p>
+<ul>
+<li>softmax可以看作是Sigmoid的一般情况，用于多分类问题。Softmax函数将K维的实数向量压缩（映射）成另一个K维的实数向量，其中向量中的每个元素取值都介于 (0，1) 之间。常用于多分类问题。</li>
+<li>Sigmoid 将一个实数映射到 (0,1) 的区间，可以用来做<strong>二分类</strong>。Sigmoid 在特征相差比较复杂或是相差不是特别大时效果比较好。Sigmoid不适合用在神经网络的中间层，因为对于深层网络，sigmoid 函数反向传播时，很容易就会出现梯度消失的情况（在 sigmoid 接近饱和区时，变换太缓慢，导数趋于 0，这种情况会造成信息丢失），从而无法完成深层网络的训练。所以_Sigmoid主要用于对神经网络输出层的激活_。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48078990">keras中两种交叉熵损失函数的探讨 - 知乎 (zhihu.com)</a></p>
+<ul>
+<li>两者的shape并不相同，对于单个样本而言，CE是一个数值，而BCE是一个向量，其维度与输出类别的个数相同，即为C。但在Keras中，最终使用的是均值</li>
+<li>BCE（sigmoid_cross_entropy_with_logits）和CE（softmax_cross_entropy_with_logits_v2）</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/372402161">多标签和多分类，别再分不清了 - 知乎 (zhihu.com)</a><br>多标签多分类</p>
+<ul>
+<li>多分类：很多类别，但是对一个实例而言，有且只有一个类别是属于它的。<ul>
+<li>多分类任务只有一个类别是1，其他都是0。如果用以往的机器学习方法，只需要按照二分类的方式进行学习即可。如果采用深度学习方法，即可采用softmax激活函数。</li>
+</ul>
+</li>
+<li>多标签：一个实例，在某个时刻，可能有多个标签来描述它<ul>
+<li>传统的多标签任务，已经有很多博客介绍了。比如说，将各个标签单独进行训练，例如训练科幻这个标签时，忽略其他标签。</li>
+<li>如果采用深度学习方法，不需要把各标签分开。假设输出有4个标签，那么最后的全连接层只需要4个输出节点，激活函数用sigmoid，那么输出的就是4个标签的值，然后每个标签设置一个阈值，作为判断是否属于的依据。</li>
+</ul>
+</li>
+</ul>
+<p>交叉熵是对给定随机变量或事件集的两个概率分布之间差异的度量。在信息论中，事件发生的可能性越小越令人惊讶，这意味着它包含更多的信息。<br>对于分类问题，每个示例都有一个已知的类别标签，概率为1.0，所有其他标签的概率为0.0。 模型可以估计示例属于每个类别标签的概率。 然后可以使用交叉熵来计算两个概率分布之间的差异。</p>
+<p>accuracy针对的是y_true和y_pred都为具体标签的情况，而<strong>categorical_accuracy</strong>针对的是y_true为onehot标签，y_pred为向量的情况。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/377799012">一文看尽深度学习中的15种损失函数 - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qiu931110/article/details/106108936">(2条消息) CenterLoss | 减小类间距离_center loss_yuanCruise的博客-CSDN博客</a></p>
+<h2 id="迭代更新的优化算法"><a href="#迭代更新的优化算法" class="headerlink" title="迭代更新的优化算法"></a>迭代更新的优化算法</h2><p><strong>momentum、Nesterov Momentum、AdaGrad、Adadelta、RMSprop、Adam等算法</strong><br><img src="https://img-blog.csdnimg.cn/20200407112459145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjIzNzExMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>具体参见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/u012328159/article/details/80311892">深度学习中优化方法——momentum、Nesterov Momentum、AdaGrad、Adadelta、RMSprop、Adam_天泽28的博客-CSDN博客</a></p>
+<ul>
+<li><p><strong>指数加权平均</strong>的优缺点： 当 β &#x3D; 0.9 \beta &#x3D; 0.9β&#x3D;0.9 时，我们可以近似的认为当前的数值是过去10天的平均值，但是显然如果我们直接计算过去10天的平均值，要比用指数加权平均来的更加准确。但是如果直接计算过去10天的平均值，我们要存储过去10天的数值，而加权平均只要存储V t − 1 V_{t-1}Vt−1一个数值即可，而且只需要一行代码即可，所以在机器学习中用的很多。</p>
+</li>
+<li><p>在机器学习中，多数的指数加权平均运算并不会使用偏差修正。因为大多数人更愿意在初始阶段，用一个捎带偏差的值进行运算。不过，如果在初试阶段就开始考虑偏差，指数加权移动均值仍处于预热阶段，偏差修正可以做出更好的估计。</p>
+</li>
+<li><p><strong>动量</strong>的引入就是为了加快学习过程，特别是对于高曲率、小但一致的梯度，或者噪声比较大的梯度能够很好的加快学习过程。动量的主要思想是积累了之前梯度指数级衰减的移动平均（前面的指数加权平均）。区别： SGD每次都会在当前位置上沿着负梯度方向更新（下降，沿着正梯度则为上升），并不考虑之前的方向梯度大小等等。而动量（moment）通过引入一个新的变量 v vv 去积累之前的梯度（通过指数衰减平均得到），得到加速学习过程的目的。最直观的理解就是，若当前的梯度方向与累积的历史梯度方向一致，则当前的梯度会被加强，从而这一步下降的幅度更大。若当前的梯度方向与累积的梯度方向不一致，则会减弱当前下降的梯度幅度。</p>
+</li>
+<li><p><strong>AdaGrad（Adaptive Gradient）</strong> 通常，我们在每一次更新参数时，对于所有的参数使用相同的学习率。而AdaGrad算法的思想是：每一次更新参数时（一次迭代），不同的参数使用不同的学习率。</p>
+</li>
+<li><p><strong>RMSprop</strong>（root mean square prop）RMSprop也是对Adagrad的扩展，以在非凸的情况下效果更好。和Adadelta一样，RMSprop使用指数加权平均（指数衰减平均）只保留过去给定窗口大小的梯度，使其能够在找到凸碗状结构后快速收敛</p>
+</li>
+<li><p><strong>Adam</strong>实际上是把momentum和RMSprop结合起来的一种算法</p>
+</li>
+<li><p><strong>该如何选择优化算法</strong><br>  介绍了这么多算法，那么我们到底该选择哪种算法呢？目前还没有一个共识，schaul et al 在大量学习任务上比较了许多优化算法，结果表明，RMSprop，Adadelta和Adam表现的相当鲁棒，不分伯仲。Kingma et al表明带偏差修正的Adam算法稍微好于RMSprop。总之，Adam算法是一个相当好的选择，通常会得到比较好的效果。</p>
+<p>  下面是论文《An overview of gradient descent optimization algorithms》对各种优化算法的总结：</p>
+</li>
+</ul>
+<blockquote>
+<p>In summary, RMSprop is an extension of Adagrad that deals with its radically diminishing learning rates. It is identical to Adadelta, except that Adadelta uses the RMS of parameter updates in the numerator update rule. Adam, finally, adds bias-correction and momentum to RMSprop. Insofar, RMSprop, Adadelta, and Adam are very similar algorithms that do well in similar circumstances. Kingma et al. [10] show that its bias-correction helps Adam slightly outperform RMSprop towards the end of optimization as gradients become sparser. Insofar, Adam might be the best overall choice</p>
+</blockquote>
+<p>显著性<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/140909755">科研常用显著性分析方法汇总及选择（T检验，Mann-Whitney U test检验，方差分析等） - 知乎 (zhihu.com)</a></p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><p><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV">sklearn.model_selection.GridSearchCV — scikit-learn 1.2.2 documentation</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3337095fc355">python机器学习14：模型评估与优化 - 简书 (jianshu.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_20259459/article/details/70316511">深度学习 14. 深度学习调参，CNN参数调参，各个参数理解和说明以及调整的要领。underfitting和overfitting的理解，过拟合的解释。_深度学习underfitting_JINWEI93的博客-CSDN博客</a></p>
+<p>验证<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/90451347">cross_val_score,cross_val_predict,cross_validate理解 - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010986753/article/details/98069124">数据集划分train_test_split\交叉验证Cross-validation_简单交叉验证 train_test_split_小麦粒的博客-CSDN博客</a></p>
+<p>参数<br><strong>cnn</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012348774/article/details/104695411">PyTorch：学习conv1D,conv2D和conv3D_yanqs_whu的博客-CSDN博客</a></p>
+<p><strong>gru</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29831163/article/details/89929573">(2条消息) Keras实现GRU 与LSTM_keras使用gru_wamg潇潇的博客-CSDN博客</a></p>
+<ul>
+<li><code>units</code>：正整数，输出空间的维度。</li>
+<li><code>activation</code>：激活函数。默认为双曲正切函数（tanh）。</li>
+<li><code>recurrent_activation</code>：循环层的激活函数。默认为硬核（hard_sigmoid）。</li>
+<li><code>use_bias</code>：布尔值，是否使用偏置向量。</li>
+<li><code>kernel_initializer</code>：权重矩阵的初始化器。</li>
+<li><code>recurrent_initializer</code>：循环权重矩阵的初始化器。</li>
+<li><code>bias_initializer</code>：偏置向量的初始化器。</li>
+<li><code>kernel_regularizer</code>：权重矩阵的正则化方法。</li>
+<li><code>recurrent_regularizer</code>：循环权重矩阵的正则化方法。</li>
+<li><code>bias_regularizer</code>：偏置向量的正则化方法。</li>
+<li><code>activity_regularizer</code>：输出的正则化方法。</li>
+<li><code>dropout</code>：0到1之间的浮点数，表示在输入上施加的Dropout比率。</li>
+<li><code>recurrent_dropout</code>：0到1之间的浮点数，表示在循环状态上施加的Dropout比率。</li>
+</ul>
+<p><strong>tcn</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7023729469676322824">https://juejin.cn/post/7023729469676322824</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/350306026">TCN调参 - 知乎 (zhihu.com)</a></p>
+<ul>
+<li>nb_filters: 整数。在卷积层中使用的filter的数量。将类似于LSTM层中的units。</li>
+<li>kernel_size: 整数。在每个卷积层中使用的kernel的大小。</li>
+<li>dilation: 列表。表示每层中使用的空洞因子的大小的列表。例如:[1, 2, 4, 8, 16, 32, 64]。</li>
+<li>nb_stacks: 整数。要使用残差块的堆栈数量。</li>
+<li>padding: 字符串。在卷积中使用的填充。在因果网络中使用“causal”，而在非因果网络中使用“same”。</li>
+<li>use_skip_connections: 布尔。如果我们想要添加从输入到每个残差块的skip connection。</li>
+<li>return_sequences: 布尔。是返回输出序列中的最后一个输出，还是返回完整序列。</li>
+<li>dropout_rate: 浮动在0和1之间。要dropout的比重。</li>
+<li>activation: 使用的激活函数。</li>
+<li>kernel_initializer: kernel权值矩阵(Conv1D)的初始化器。</li>
+<li>use_batch_norm: 是否在使用批处理规范化。</li>
+<li>kwargs: 用于配置父类层的任何其他参数。</li>
+</ul>
+<p><strong>迁移学习</strong><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1cd6333128a1">Pytorch模型保存与加载，并在加载的模型基础上继续训练 - 简书 (jianshu.com)</a></p>
+<h2 id="结果解释"><a href="#结果解释" class="headerlink" title="结果解释"></a>结果解释</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/duxinshuxiaobian/article/details/104688135">(4条消息) 随机森林优于神经网络的三个理由——对比机器学习和深度学习_深度网络 随机森林_「已注销」的博客-CSDN博客</a></p>
+<ul>
+<li>使用随机森林而非决策树的根本，是将多个决策树的预测组合成一个模型。逻辑就是一个由许多平庸的模型组成的模型，仍然优于一个单一的好模型。看看随机森林的主流表现，就知道这是有道理的。因此，随机森林不易产生过拟合。</li>
+<li>在决策树这样的柔性模型中，可能会出现过拟合，模型会记住训练数据，并学习数据中的任何干扰。这将使它无法预测测试数据。</li>
+<li>随机森林可以将多棵树组合成一个集合模型，这能降低决策树等柔性模型的高方差。</li>
+<li>随机森林计算成本较低，不需要依靠GPU完成培训。随机森林可以提供决策树的不同解释，并且具有更好的性能。神经网络需要普通人手头更多的数据才能真正有效。神经网络只会简单地破坏特征的可解释性，以至于为了性能而变得毫无意义。虽然听起来有些道理，但还是要看每个项目具体分析。</li>
+<li>如果目标是创建预测模型，不考虑变量的影响，强烈推荐神经网络，但是需要资源来实现这一点。如果需要了解变量，那么不管个人喜好，在这种情况下通常会发生的情况是：性能受到轻微的影响，以确保仍然可以了解每个变量是如何为预测模型作贡献。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/165417543">为什么你的模型效果这么差，深度学习调参有哪些技巧？ - 知乎 (zhihu.com)</a><br>为什么别人的模型都能快速达到较低的错误率，而你的模型错误率却居高不下。</p>
+<ol>
+<li>模型实现中的bug：比如标签错误的问题。</li>
+<li>超参数选择不合适：模型对超参数很敏感，学习率太高或太低都不行。</li>
+<li>数据模型不适配：比如你要训练一个自动驾驶图像识别的模型，用ImageNet数据集来训练就不合适。</li>
+<li>数据集的构造问题：没有足够数据、分类不均衡、有噪声的标签、训练集合测试集分布不同。</li>
+</ol>
+<ul>
+<li>5种最常见的bug：错误的张量形状；预处理输入错误；损失函数错误输入；忘记设置正确的训练模型；错误的数据类型</li>
+<li>欠拟合的问题：<strong>让模型更大</strong>（比如加入更多的层，每层中使用更多的单元）；<strong>减少正规化</strong>；<strong>错误分析</strong>；<strong>选择另一种性能更好的模型架构</strong>；<strong>调节超参数</strong>；<strong>加入更多特征</strong>。</li>
+</ul>
+<h1 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/kevinjin2011/article/details/124944728">【CNN】深入浅出讲解卷积神经网络（介绍、结构、原理）_cnn结构图_程序遇上智能星空的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38737428/article/details/121319899">(1条消息) Pytorch —– 卷积神经网络 CNN –基础部分(卷积层，池化层 下采样) 附代码解读+实现~~学习笔记_pytorch下采样代码_深度不学习！！的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1742581711335716994">AI课堂26: CNN三大核心思想——局部连接、权值共享与下采样 (baidu.com)</a></p>
+</blockquote>
+<p>CNN （Convolutional Neural Networks）是一种神经网络模型，它是在计算机视觉领域中最受欢迎的技术之一。CNN的原理是通过将图像分成不同的区域，然后在每个区域内使用不同类型的网络进行特征提取和分类。 CNN的核心思想是通过在图像上施加局部感受野（Local Resolution Field）来模拟人类视觉系统，并使用非线性变换将这些局部感受野转换为整个图像域。CNN通过在多个尺度上进行特征提取，从而提高了识别性能。 CNN的优点包括：</p>
+<ol>
+<li><strong>处理大规模数据</strong>： CNN可以处理大规模数据，尤其是在图像和视频领域，这使得它非常适合用于识别和分类任务。</li>
+<li><strong>特征提取</strong>： CNN可以从图像中提取有用的特征，例如边缘、轮廓、颜色等信息。</li>
+<li><strong>高效的非线性变换</strong>： CNN使用非线性变换来降低数据的维数，从而提高计算效率。</li>
+<li><strong>并行计算</strong>：由于 CNN是多层神经网络，因此可以并行计算图像，大大提高了处理速度。</li>
+</ol>
+<ul>
+<li>在处理图像、视觉任务方面表现出色；</li>
+<li>通过卷积操作提取局部特征，具有平移不变性；</li>
+<li>可以使用池化操作减少特征维度，防止过拟合；</li>
+<li>可以利用预训练的权重进行迁移学习。</li>
+</ul>
+<p>但是， CNN也有一些缺点：</p>
+<ol>
+<li><strong>参数过多</strong>：由于 CNN需要使用大量的参数来模拟人类视觉系统，因此在训练过程中需要大量的计算资源。</li>
+<li><strong>可解释性差</strong>：由于 CNN是一种多层神经网络，因此在解释时可能会遇到一些困难。</li>
+<li><strong>训练过程复杂</strong>： CNN的训练过程需要大量的计算资源和时间，这可能会使模型变得过于复杂。</li>
+</ol>
+<ul>
+<li>不太适合处理序列数据，因为缺乏记忆机制；</li>
+<li>对于大规模图像数据，需要大量的计算资源和时间。</li>
+<li>总的来说， CNN在处理大规模数据和高效计算方面具有较强的优势，但也存在一些缺点。因此，在实际应用中需要根据具体情况进行选择和优化。</li>
+</ul>
+<p><strong>CNN的三大核心思想：</strong><br><strong>局部连接</strong>：基于图像局部相关的原理，保留了图像局部结构，同时减少了网络的权值个数；<br><strong>权值共享</strong>：也是基于图像局部相关的原理，同时减少网络的权值参数；<br><strong>下采样</strong>：对平移和形变更加鲁棒，实现特征的不变性，同时起到了一定的降维的作用。</p>
+<p><strong>局部连接</strong>、<strong>权值共享</strong><br>图像分类、目标检测、图像分割等各种视觉任务中都有显著的提升效果<br>卷积神经网络具有表征学习（representation learning）能力，能够按其阶层结构对输入信息进行平移不变分类（shift-invariant classification），可以进行监督学习和非监督学习，其隐含层内的卷积核参数共享和层间连接的稀疏性使得卷积神经网络能够以较小的计算量对格点化（grid-like topology）特征，例如像素和音频进行学习、有稳定的效果且对数据没有额外的特征工程（feature engineering）要求，并被大量应用于计算机视觉、自然语言处理等领域。</p>
+<p>卷积神经网络的基本结构大致包括：<strong>卷积层、激活函数、池化层、全连接层、输出层</strong>等。<br>在这个卷积层，有两个关键操作：</p>
+<ul>
+<li>局部关联。每个神经元看做一个滤波器(filter)。</li>
+<li>窗口(receptive field)滑动， filter对局部数据计算。</li>
+<li>卷积层中还有两个重要的参数，分别是<strong>偏置</strong>和<strong>激活</strong>（独立层，但一般将激活层和卷积层放在一块）。偏置向量的作用是对卷积后的数据进行简单线性的加法，就是卷积后的数据加上偏置向量中的数据，然后为了增加网络的一个非线性能力，需要对数据进行激活操作，在神经元中，就是将没有的数据率除掉，而有用的数据则可以输入神经元，让人做出反应。</li>
+</ul>
+<p><strong>（2）激活函数</strong>，最常用的激活函数目前有Relu、tanh、sigmoid，着重介绍一下Relu函数（即线性整流层（Rectified Linear Units layer, 简称ReLU layer）），Relu函数是一个线性函数，它对负数取0，正数则为y&#x3D;x（即输入等于输出），即f(x)&#x3D;max(0,x)，它的特点是收敛快，求梯度简单，但较脆弱。   <img src="https://img-blog.csdnimg.cn/b7e7c3d7c6ff4c299c5356ca4a035e5f.png" alt="b7e7c3d7c6ff4c299c5356ca4a035e5f.png (434×213) (csdnimg.cn)">     由于经过Relu函数激活后的数据0值一下都变成0，而这部分数据难免有一些我们需要的数据被强制取消，所以为了尽可能的降低损失，我们就在激活层的前面，卷积层的后面加上一个偏置向量，对数据进行一次简单的线性加法，使得数据的值产生一个横向的偏移，避免被激活函数过滤掉更多的信息。<br>卷积神经网络（Convolutional Neural Network，CNN）是一种前馈神经网络，常用于处理具有类似网格结构的数据，如图像。CNN由一个或多个卷积层和顶端的全连通层（对应经典的神经网络）组成，同时也包括关联权重和池化层（Pooling Layer）。这一结构使得CNN能够利用输入数据的二维结构。与其他深度学习结构相比，CNN在图像和语音识别方面表现优异。<br>卷积神经网络出了它本身<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%9D%83%E5%80%BC%E5%85%B1%E4%BA%AB&spm=1001.2101.3001.7020">权值共享</a>和局部连接方式可以有效的降低网络压力外，池化层也作为一个减低网络压力的重要组成部分.<br>    局部感知（Local Connectivity）<br>        卷积层解决这类问题的一种简单方法是对隐含单元和输入单元间的连接加以限制：每个隐含单元仅仅只能连接输入单元的一部分。例如，每个隐含单元仅仅连接输入图像的一小片相邻区域。<br>    参数共享(Parameter Sharing)<br>        在卷积层中每个神经元连接数据窗的权重是固定的，每个神经元只关注一个特性。神经元就是图像处理中的滤波器，比如边缘检测专用的Sobel滤波器，即卷积层的每个滤波器都会有自己所关注一个图像特征，比如垂直边缘，水平边缘，颜色，纹理等等，这些所有神经元加起来就好比就是整张图像的特征提取器集合。<br>        权值共享使得我们能更有效的进行特征抽取，因为它极大的减少了需要学习的自由变量的个数。通过控制模型的规模，卷积网络对视觉问题可以具有很好的泛化能力。</p>
+<p>池化层的具体作用：</p>
+<ul>
+<li>特征不变性，也就是我们在图像处理中经常提到的特征的尺度不变性，池化操作就是图像的resize，平时一张狗的图像被缩小了一倍我们还能认出这是一张狗的照片，这说明这张图像中仍保留着狗最重要的特征，我们一看就能判断图像中画的是一只狗，图像压缩时去掉的信息只是一些无关紧要的信息，而留下的信息则是具有尺度不变性的特征，是最能表达图像的特征。</li>
+<li>特征降维，我们知道一幅图像含有的信息是很大的，特征也很多，但是有些信息对于我们做图像任务时没有太多用途或者有重复，我们可以把这类冗余信息去除，把最重要的特征抽取出来，这也是池化操作的一大作用。</li>
+<li>在一定程度上防止过拟合，更方便优化。</li>
+</ul>
+<p>前向传播阶段：<br>        选取训练样本（x,y），将x输入网络中。随机初始化权值（一般情况下选取小数），信息从输入层经过一层一层的特征提取和转换，最后到达输出层，得到输出结果。</p>
+<p>反向传播阶段：<br>        输出结果与理想结果对比，计算全局性误差（即Loss）。得到的误差反向传递给不同层的神经元，按照“迭代法”调整权值和偏重，寻找全局性最优的结果。<br><a target="_blank" rel="noopener" href="https://www.csdn.net/tags/NtTaIg0sMzc2NC1ibG9n.html">CNN的优点是共享卷积核，处理高维数据无压力；可以自动进行特征提取；深度网络抽取图像信息丰富，表达效果好；保持了层级网络结构；不同层次有不同形式与功能。缺点是当网络层次太深时，采用BP传播修改参数会使靠近输入层的参数改动较慢；采用梯度下降算法很容易使训练结果收敛于局部最优解</a><a target="_blank" rel="noopener" href="https://www.csdn.net/tags/NtTaIg0sMzc2NC1ibG9n.html">1</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/394420666">2</a>。</p>
+<p><a target="_blank" rel="noopener" href="https://www.csdn.net/tags/NtTaIg0sMzc2NC1ibG9n.html">CNN适用于处理具有类似网格结构的数据，如图像、视频等</a><a target="_blank" rel="noopener" href="https://www.csdn.net/tags/NtTaIg0sMzc2NC1ibG9n.html">1</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163065584">3</a>。</p>
+<p>主要针对DNN存在的参数数量膨胀问题，对于CNN，并不是所有的上下层神经元都能直接相连，而是通过“<strong>卷积核”作为中介</strong>（<strong>部分连接</strong>）。同一个卷积核在多有图像内是共享的，图像通过卷积操作仍能保留原先的位置关系。</p>
+<p>CNN之所以适合图像识别，正式因为CNN模型<strong>限制参数个数并挖掘局部结构</strong>的这个特点。</p>
+<p>CNN<strong>结构</strong>：一般由卷积层、汇聚层（池化层）和全连接层构成</p>
+<ul>
+<li>在神经网络中使用卷积是为了进行特征抽取，卷积核是否进行翻转和其特征抽取的能力无关. 特别是当卷积核是可学习的参数时，卷积和互相关在能力上是等价的. 因此，为了实现上（或描述上）的方便起见，我们用互相关来代替卷积.事实上，很多深度学习工具中卷积操作其实都是互相关操作.</li>
+<li>随着模型网络不断加深，卷积核越来越多，要训练的参数还是很多，而且直接拿卷积核提取的特征直接训练也容易出现过拟合的现象。CNN使用的另一个有效的工具被称为“池化(Pooling)”出现并解决了上面这些问题，为了有效地减少计算量，池化就是将输入图像进行缩小，减少像素信息，只保留重要信息；为了有效地解决过拟合问题，池化可以减少数据，但特征的统计属性仍能够描述图像，而由于降低了数据维度，可以有效地避免过拟合<ul>
+<li>对不同位置区域提取出有代表性的特征（进行聚合统计，例如最大值、平均值等），这种聚合的操作就叫做 池化，池化的过程通常也被称为 特征映射 的过程（特征降维）。听起来很高深，其实简单地说就是下采样</li>
+<li>最大池化，平均池化，随机池化</li>
+<li>最大池化可以获取局部信息，可以更好保留纹理上的特征。如果不用观察物体在图片中的具体位置，只关心其是否出现，则使用最大池化效果比较好。<strong>（最常使用方法）</strong>  </li>
+<li>平均池化往往能保留整体数据的特征，能凸出背景的信息。  </li>
+<li>随机池化中元素值大的被选中的概率也大，但不是像最大池化总是取最大值。随机池化一方面最大化地保证了Max值的取值，一方面又确保了不会完全是max值起作用，造成过度失真。除此之外，其可以在一定程度上避免过拟合。</li>
+</ul>
+</li>
+</ul>
+<p>CNN （Convolutional Neural Networks）是一种由输入层、卷积层、激活函数、池化层、全连接层和输出层等组成的神经网络模型。以下是 CNN的具体组成部分：</p>
+<ol>
+<li>输入层：输入层是 CNN的第一个层级，它接收来自网络中其他节点的输入。输入层通常由文本字符串或数字组成。</li>
+<li>卷积层：卷积层是 CNN的第二个层级，它使用卷积核（kernel）对输入的图像进行特征提取。卷积核通常由两个或多个卷积核组成，每个卷积核都有自己的参数，例如卷积核的尺寸、步长、偏置等。</li>
+<li>激活函数是 CNN中最重要的部分之一，它用于将输入的特征转换为输出。常见的激活函数包括 ReLU （Local ReLU）和 Sigmoid （Yolov）等。</li>
+<li>池化层：池化层是 CNN中第三个层级，它通过对池化后的图像进行特征提取来降低模型的复杂度。</li>
+<li>全连接层是 CNN中最后一个层级，它连接所有神经元，通过对神经元的激活程度来预测输出结果。在 CNN中，全连接层通常由三个或多个神经元组成，每个神经元都与输入节点相连。</li>
+<li>输出层：输出层是 CNN中最后一个层级，它将计算结果输出给下游任务，例如图像分类或语音识别。在 CNN中，输出节点通常由多个神经元组成，它们接收来自所有节点的输出结果。</li>
+</ol>
+<p>Conv1D是一种一维卷积神经网络，常用于处理具有类似网格结构的数据，如时间序列。Conv1D由一个或多个卷积层和顶端的全连通层（对应经典的神经网络）组成，同时也包括关联权重和池化层（Pooling Layer）。这一结构使得Conv1D能够利用输入数据的一维结构。与其他深度学习结构相比，Conv1D在时间序列分析方面表现优异。</p>
+<p>Conv2D是一种二维卷积神经网络，常用于处理具有类似网格结构的数据，如图像。Conv2D由一个或多个卷积层和顶端的全连通层（对应经典的神经网络）组成，同时也包括关联权重和池化层（Pooling Layer）。这一结构使得Conv2D能够利用输入数据的二维结构。与其他深度学习结构相比，Conv2D在图像分析方面表现优异。</p>
+<p>Conv1D和Conv2D都是卷积神经网络中的卷积层，用于处理序列数据和图像数据。它们的区别在于输入张量的维度不同。Conv1D用于处理一维序列数据，例如文本数据，输入张量的形状为(batch_size, steps, input_dim)，其中steps表示序列长度，input_dim表示每个时间步的特征数。Conv2D用于处理二维图像数据，输入张量的形状为(batch_size, rows, cols, channels)，其中rows和cols表示图像的高度和宽度，channels表示图像的通道数。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/156825903">Conv1D和Conv2D的区别 - 知乎 (zhihu.com)</a><br>一言概括，2d先横着扫再竖着扫，1d只能竖着扫</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44722189/article/details/135035351">Pytorch nn.Linear()的基本用法与原理详解及全连接层简介_nn.linear()作用-CSDN博客</a><ul>
+<li>全连接层 Fully Connected Layer 一般位于整个<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&spm=1001.2101.3001.7020">卷积神经网络</a>的最后，负责将卷积输出的二维特征图转化成一维的一个向量，由此实现了端到端的学习过程（即：<strong>输入一张图像或一段语音，输出一个向量或信息</strong>）。</li>
+<li>全连接层的主要作用就是将前层（卷积、池化等层）计算得到的特征空间映射样本标记空间。简单的说就是将特征表示整合成一个值，其优点在于减少特征位置对于分类结果的影响，提高了整个网络的鲁棒性。</li>
+</ul>
+</li>
+</ul>
+<h1 id="DNN"><a href="#DNN" class="headerlink" title="DNN"></a>DNN</h1><p>神经网络是基于感知机的扩展，而DNN可以理解为<strong>有很多隐藏层</strong>的神经网络。多层神经网络和深度神经网络DNN其实也是指的一个东西，<strong>DNN</strong>有时<strong>也叫</strong>做多层感知机（Multi-Layer perceptron,<strong>MLP</strong>）。</p>
+<p><strong>DNN存在的局限：</strong><br>参数数量膨胀。由于<strong>DNN</strong>采用的是<strong>全连接</strong>的形式，结构中的连接带来了数量级的权值参数，这不仅容易<strong>导致过拟合</strong>，也容易造成<strong>陷入局部最优</strong>。</p>
+<p>_<strong>局部最优</strong>_。随着神经网络的加深，优化函数更容易陷入局部最优，且偏离真正的全局最优，对于有限的训练数据，性能甚至不如浅层网络。</p>
+<p>_<strong>梯度消失</strong>_。使用sigmoid激活函数（传递函数），在BP反向传播梯度时，梯度会衰减，随着神经网络层数的增加，衰减累积下，到底层时梯度基本为0。</p>
+<p>_<strong>无法对时间序列上的变化进行建模</strong>_。对于样本的时间顺序对于自然语言处理、语音识别、手写体识别等应用非常重要。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22888385">深层学习为何要“Deep” - 知乎 (zhihu.com)</a></p>
+<p><strong>DNN比NN多了一些隐层，但这些隐层的作用是巨大的</strong>，带来的效果是非常显著和神奇的<br>DNN最大的问题是只能看到预先设定的长度的数据，对于语音和语言等前后相关的时序信号的表达能力还是有限的，基于此提出了RNN模型，即递归神经网络。</p>
+<h1 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h1><p>循环神经网络（Recurrent Neural Network，RNN）是一种前馈神经网络，常用于处理序列数据，如时间序列、自然语言等。RNN的特点是在处理序列数据时，能够利用之前的信息来帮助后续的预测。RNN的每个神经元都有一个状态，这个状态会随着输入数据的不断输入而不断更新。<br>RNN的优点是能够处理变长序列数据，</p>
+<ol>
+<li>序列问题，输入数据的判别和预测与相邻数据有关。</li>
+<li>短期记忆型的任务，对比较久以前的数据不敏感。</li>
+</ol>
+<ul>
+<li>能够处理变长序列数据，具有记忆功能；</li>
+<li>能够处理具有时间顺序性的序列数据，如语音识别、自然语言处理等；</li>
+<li>可以利用LSTM和GRU等改进模型解决梯度消失和梯度爆炸问题。</li>
+</ul>
+<p>缺点是容易出现梯度消失或梯度爆炸问题。梯度爆炸和梯度消失的问题：BPTT算法和BP算法一样都有这两个问题，梯度爆炸可以用cliping解决，而消失的话则是在lstm由控制门解决。</p>
+<ul>
+<li>由于序列数据的处理方式是逐步进行的，无法并行化处理，训练速度较慢；</li>
+<li>难以处理长序列，因为其在反向传播过程中，梯度很容易消失或爆炸；</li>
+<li>由于需要在每一步保留历史信息，内存消耗较大。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/124061989">如何理解RNN神经网络？RNN入门：背景&amp;介绍&amp;优劣势&amp;适用场景（附pytorch代码） - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/618669382">CNN、RNN和Transformer各自的优点和缺点： - 知乎 (zhihu.com)</a></p>
+<p>RNN适用于处理序列数据，如时间序列、自然语言等。在自然语言处理领域中，RNN被广泛应用于语言模型、机器翻译、情感分析等任务中。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41476257/article/details/126046940?spm=1001.2101.3001.6650.9&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-126046940-blog-106802562.235%5Ev27%5Epc_relevant_recovery_v2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-9-126046940-blog-106802562.235%5Ev27%5Epc_relevant_recovery_v2&utm_relevant_index=13">Python吴恩达深度学习作业18 – 手把手实现循环神经网络（RNN）_python实现循环神经网络_Puzzle harvester的博客-CSDN博客</a><br>循环神经网络（<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=RNN&spm=1001.2101.3001.7020">RNN</a>）在解决自然语言处理和其他序列任务上非常有效，因为它们具有“记忆”，可以一次读取一个输入例如单词），并通过从一个时间步传递到下一个时间步的隐藏层激活来记住一些信息&#x2F;上下文。这使得单向RNN可以提取过去的信息以处理之后的输入。双向RNN则可以借鉴过去和未来的上下文信息。</p>
+<p>针对CNN中无法对时间序列上的变化进行建模的局限，为了<strong>适应对时序数据</strong>的处理，出现了RNN。</p>
+<p>在普通的全连接网络或者CNN中，每层神经元的信号只能向上一层传播，样本的处理在各个时刻独立（这种就是前馈神经网络）。而在<strong>RNN中，神经元的输出可以在下一个时间戳直接作用到自身</strong>。</p>
+<p>（t+1）时刻网络的最终结果O(t+1)是该时刻输入和所有历史共同作用的结果，这就达到了对时间序列建模的目的。</p>
+<p>存在的问题：RNN可以看成一个在时间上传递的神经网络，它的深度是时间的长度，而梯度消失的现象出现时间轴上。<br>循环神经网络的参数学习可以通过随时间反向传播算法来学习. 随时间反向传播算法即按照时间的逆序将错误信息一步步地往前传递. 当输入序列比较长时，会存在梯度爆炸和消失问题，也称为长程依赖问题.<br>为了解决这个问题，人们对循环神经网络进行了很多的改进，其中最有效的改进方式引入门控机制（Gating Mechanism）。这一类网络可以称为基于门控的循环神经网络（Gated RNN）. 本节中，主要介绍两种基于门控的循环神经网络：长短期记忆网络（Long Short-Term Memory Network，LSTM）和门控循环单元网络（Gated Recurrent Unit，GRU）。<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/123211148">史上最详细循环神经网络讲解（RNN&#x2F;LSTM&#x2F;GRU） - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://zybuluo.com/hanbingtao/note/541458">零基础入门深度学习(5) - 循环神经网络 - 作业部落 Cmd Markdown 编辑阅读器 (zybuluo.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55386469">RNN vs LSTM vs GRU – 该选哪个？ - 知乎 (zhihu.com)</a></p>
+<h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><ul>
+<li><strong>长短时记忆网络</strong>。它内部有一些特殊的结构，可以很好的处理长距离的依赖，</li>
+<li>为了<strong>解决RNN中时间上的梯度消失</strong>，机器学习领域发展出了长短时记忆单元LSTM，通过<strong>门的开关实现时间上记忆功能</strong>，并<strong>防止梯度消失</strong>。</li>
+<li>首先，针对梯度消失问题，采用门机制来解决 [1]，效果非常好。 而对于短期记忆覆盖长期记忆的问题， LSTM 采用一个 cell state 来保存长期记忆， 再配合门机制对信息进行过滤，从而达到对长期记忆的控制。</li>
+<li>RNN什么信息它都存下来，因为它没有挑选的能力，而LSTM不一样，它会选择性的存储信息，因为它能力强，它有门控装置，它可以尽情的选择。</li>
+<li>LSTM（Long Short-Term Memory）和GRU（Gated Recurrent Unit）是基于循环神经网络的模型，可以处理任意长度的时间序列。LSTM和GRU的主要区别在于它们的门控机制不同。LSTM有三个门控单元，分别是输入门、遗忘门和输出门，可以有效地解决梯度消失和梯度爆炸问题。GRU只有两个门控单元，分别是重置门和更新门，相对于LSTM来说计算量更小，但是效果稍逊。这些模型都需要大量的数据来训练，否则会出现过拟合问题。<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141853644">LSTM结构解析 - 知乎 (zhihu.com)</a><br>网络参数多，计算消耗内存大，不能进行并行计算</li>
+</ul>
+<h2 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h2><p>GRU（Gated Recurrent Unit）是LSTM最流行的一个变体，比LSTM模型要简单。没有了存储单元</p>
+<ul>
+<li>首先， LSTM 选择暴露部分信息（ h_t 才是真正的输出， c_t 只是作为信息载体，并不输出)， 而GRU 选择暴露全部信息。</li>
+<li>另一个区别在于输出变化所带来的结构调整。为了与LSTM的信息流保持一致，重置门本质上是输出门的一种变化，由于输出变了，因此其调整到了计算 h’_t 的过程中。</li>
+<li>LSTM 与 GRU 而言， 由于 GRU 参数更少，收敛速度更快，因此其实际花费时间要少很多，这可以大大加速了我们的迭代过程</li>
+</ul>
+<h1 id="BiLSTM"><a href="#BiLSTM" class="headerlink" title="BiLSTM"></a>BiLSTM</h1><p>BiLSTM是一种双向长短时记忆网络，由前向LSTM和后向LSTM组合而成。BiLSTM的优点是可以利用上下文信息，从而更好地理解序列数据。BiLSTM的缺点是计算量较大，训练时间较长。BiLSTM适用于自然语言处理、语音识别等领域。</p>
+<h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/101332297">残差神经网络（ResNet） - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31852747">你必须要知道CNN模型：ResNet - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.03385">[1512.03385] Deep Residual Learning for Image Recognition (arxiv.org)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/463935188">深度学习之残差神经网络（ResNet） - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>由于参数过多、模型复杂度更高，深层神经网络会出现十分严重的过拟合问题，即训练集与测试集准确度之间的gap过大，由此引发了一系列的正则化方法，</p>
+<p>ResNet是一种深度残差网络，可以训练非常深的神经网络，避免了梯度消失问题，提高了模型的表达能力和性能。使用残差连接可以保留原始特征，使得网络的学习更加顺畅和稳定，进一步提高了模型的精度和泛化能力。训练时可以避免梯度消失和梯度爆炸问题，加速网络收敛。ResNet适用于深度较深的网络，可以有效地解决梯度消失和梯度爆炸的问题，同时可以提高网络的精度和稳定性。</p>
+<p>残差神经网络的主要贡献是发现了“退化现象（Degradation）”，并针对退化现象发明了 “快捷连接（Shortcut connection）”，极大的消除了深度过大的神经网络训练困难问题。神经网络的“深度”首次突破了100层、最大的神经网络甚至超过了1000层。</p>
+<p>与传统的机器学习相比，深度学习的关键特征在于网络层数更深、非线性转换（激活）、自动的特征提取和特征转换，其中，非线性转换是关键目标，它将数据映射到高纬空间以便于更好的完成“数据分类”。随着网络深度的不断增大，所引入的激活函数也越来越多，数据被映射到更加离散的空间，此时已经难以让数据回到原点（恒等变换）。或者说，神经网络将这些数据映射回原点所需要的计算量，已经远远超过我们所能承受的。<br>退化现象让我们对非线性转换进行反思，非线性转换极大的提高了数据分类能力，但是，随着网络的深度不断的加大，我们在非线性转换方面已经走的太远，竟然无法实现线性转换。显然，在神经网络中增加线性转换分支成为很好的选择，于是，ResNet团队在ResNet模块中增加了<strong>快捷连接</strong>分支，在线性转换和非线性转换之间寻求一个平衡。</p>
+<p>他提出了残差学习来解决退化问题。对于一个堆积层结构（几层堆积而成）当输入为 x 时其学习到的特征记为 H(x) ，现在我们希望其可以学习到残差 F(x)&#x3D;H(x) −x ，这样其实原始的学习特征是  F(x)+x  。之所以这样是因为残差学习相比原始特征直接学习更容易。当残差为0时，此时堆积层仅仅做了恒等映射，至少网络性能不会下降，实际上残差不会为0，这也会使得堆积层在输入特征基础上学习到新的特征，从而拥有更好的性能。残差学习的结构如图4所示。这有点类似与电路中的“短路”，所以是一种短路连接（shortcut connection）。</p>
+<p>残差网络被证明可以稳定深度网络的优化过程。此外，残差网络的性能优于传统CNN，显示了快捷连接的威力</p>
+<p>这样做的目的是可以使卷积层可以充分利用批量归一化处理后的数据，并且可以使最后一层的非线性激活函数直接接收处理批量归一化的结果，提高卷积效果，从而使得残差网络的整体性能得到提升</p>
+<p>Resnet 认为深度神经网络具有优越的非线性函数拟合能力，但是随着网络深度的变大导致数据处在更加离散的特征空间之中，反而在实现简单的线性恒等变换时需要付出巨大的代价，引起了退化问题。在 Resnet 网络中退化现象是通过带有 shortcut 连接的残差学习模块来处理的。不同于之前的网络直接学习输入和输出之间的映射函数，假定当输入为𝒙𝒙时，经过一个堆叠结构得到的特征为H(𝒙)，H(𝒙)与x之间的残差映射函数为F（x），则resnet需要求解的映射变为F（x）+x。<br>残差学习降低了特征学习的难度，当残差不存在时，能够通过恒等映射操作稳定网络性能；当残差存在时，加强模型获取分类特征的能力，使学习到的特征能够更加充分代表训练数据，在模型上表现出更优的分类性能。</p>
+<p>传统的网络只是卷积等隐藏层简单的堆叠，当最优特征在浅层网络时，训练目标是希望深层网络的训练目标是恒等映射，但大量试验结果表明，传统网络的训练方法在深层网络实现恒等映射并不容易，也就是深层网络不可避免会训练出无效甚至反作用的权重.残差网络的思路则是通过引入捷径连接实现恒等映射，巧妙跳过了深层网络权重的影响.实现方法是使每个残差块的输入和输出叠加一次，训练网络的目标就从F(x,{Ci})→y变成F(x,{Ci})+x→y.当网络需要向恒等映射方向优化时，只需要对应网络层的权重都趋于0，即训练目标为F(x,{Ci})→0.残差网络通过主动引入捷径连接实现恒等映射，使浅层网络的输入信号可以直接传播到深层，让网络的收敛方向始终向恒等映射方向发展.与传统网络相比较，这种结构不仅加快了训练速度，还确保最终训练精度不会因为深度增加而降低，即缓解了网络退化问题.</p>
+<p>这种结构只是隐藏层简单的堆叠，层与层之间只有相邻的层存在联系.但这种结构随着网络深度的增加，实际训练的精度却越来越越低，这称之为网络的退化</p>
+<p><strong>优缺点：</strong></p>
+<p>1、既利用了深层次的神经网络又避免了梯度消散和退化的问题。</p>
+<p>2、resnet看起来很深但实际起作用的网络层数不是很深，大部分网络层都在防止模型退化，误差过大。而且残差不能完全解决梯度消失或者爆炸、网络退化的问题，只能是缓解！</p>
+<h1 id="autoencoder"><a href="#autoencoder" class="headerlink" title="autoencoder"></a>autoencoder</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58111908">自编码器（AutoEncoder）是一种无监督学习算法，可以用于数据降维、特征提取、数据去噪等。它的优点是泛化性强，无监督不需要数据标注。缺点是针对异常识别场景，训练数据需要为正常数据。AutoEncoder类的模型通常使用MSE作为自己的损失函数，但MSE有以下几个缺点：</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58111908">1</a></p>
+<h1 id="TCN"><a href="#TCN" class="headerlink" title="TCN"></a>TCN</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39910711/article/details/124678538">TCN（Temporal Convolutional Network，时间卷积网络）_tcn网络_意念回复的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012856866/article/details/121905830">时间卷积网络TCN：CNN也可以处理时序数据并且比LSTM更好_tcn网络_酒酿小圆子～的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/beta/article/1737308">时域卷积网络TCN详解：使用卷积进行序列建模和预测-腾讯云开发者社区-腾讯云 (tencent.com)</a><br><a target="_blank" rel="noopener" href="http://www.gzywkj.com/post/15485.html">LSTM的备胎，用卷积处理时间序列——TCN与因果卷积（理论+Python实践）|文章|阳光温暖 (gzywkj.com)</a><br><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1803.01271.pdf">https://arxiv.org/pdf/1803.01271.pdf</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Leon_winter/article/details/100124146?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167904276616800182788520%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=167904276616800182788520&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-100124146-null-null.142%5Ev74%5Econtrol,201%5Ev4%5Eadd_ask,239%5Ev2%5Einsert_chatgpt&utm_term=TCN&spm=1018.2226.3001.4187">时间卷积网络(TCN)：结构+pytorch代码_tcn pytorch_Leon_winter的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://aistudio.csdn.net/62e38a39cd38997446774b5a.html?spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~activity-5-90751794-blog-100124146.235%5Ev32%5Epc_relevant_default_base&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~activity-5-90751794-blog-100124146.235%5Ev32%5Epc_relevant_default_base&utm_relevant_index=10#devmenu6">TCN-时间卷积网络_满腹的小不甘_静静-DevPress官方社区 (csdn.net)</a></p>
+</blockquote>
+<p>TCN（Temporal Convolutional Network）是一种基于卷积神经网络的模型，用于时间序列数据建模。它的优点是可以处理任意长度的时间序列，不需要预先定义滑动窗口大小。缺点是需要大量的数据来训练，否则会出现过拟合问题。TCN可以用于各种时间序列预测任务，如语音识别、自然语言处理、视频分析等。</p>
+<ol>
+<li>适用序列模型：因果卷积（Causal Convolution）</li>
+<li>记忆历史：空洞卷积&#x2F;膨胀卷积（Dilated Convolution），残差模块（Residual block）<br><strong>TCN的特点</strong>:</li>
+<li>因果卷积网络</li>
+<li>膨胀卷积方式（扩张卷积、空洞卷积）Dilated Causal Convolution</li>
+<li>残差块 </li>
+<li>激活函数</li>
+<li>规范化</li>
+<li>正则化</li>
+<li>Dropout</li>
+</ol>
+<p>  TCN可以采用一系列任意长度并将其输出为相同长度。在使用一维完全卷积网络体系结构的情况下，使用因果卷积。一个关键特征是，时间t的输出仅与t之前发生的元素卷积。<br>   残差链接被证明是训练深层网络的有效方法，它使得网络可以以跨层的方式传递信息。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li><em><strong>并行性（Parallelism）</strong></em>*。与在 RNN 中对后续时间步的预测必须等待其前任完成的情况不同，卷积可以并行完成，因为每一层都使用相同的滤波器。因此，在训练和评估中，长输入序列可以在 TCN 中作为一个整体进行处理，而不是像在 RNN 中那样按顺序处理。</li>
+<li><em><strong>灵活的感受野大小（Flexible receptive field size）</strong></em>*。TCN 可以通过多种方式改变其感受野大小。例如，堆叠更多扩张（因果）卷积层、使用更大的膨胀因子或增加滤波器大小都是可行的选择（可能有不同的解释）。因此，TCN 可以更好地控制模型的内存大小，并且易于适应不同的领域。</li>
+<li><em><strong>稳定的梯度（Stable gradients）</strong></em><em>。与循环架构不同，TCN 的反向传播路径与序列的时间方向不同。因此，</em><em><strong>TCN 避免了梯度爆炸&#x2F;消失的问题</strong></em>*，这是 RNN 的一个主要问题，并导致了 LSTM、GRU、HF-RNN（Martens &amp; Sutskever，2011）等的发展。</li>
+<li><em><strong>训练时内存要求低</strong></em>*。特别是在输入序列较长的情况下，LSTM 和 GRU 很容易占用大量内存来存储它们的多个单元门的部分结果。而在 TCN 中，滤波器跨层共享，反向传播路径仅取决于网络深度。因此，在实践中，我们发现门控 RNN 可能比 TCN 使用更多的内存。</li>
+<li><em><strong>可变长度输入</strong></em>*。就像 RNN 以循环方式对可变长度的输入进行建模一样，TCN 也可以通过滑动 1D 卷积核来接收任意长度的输入。这意味着 TCN 可以作为 RNN 的替代品，用于任意长度的序列数据。</li>
+</ol>
+<p><strong>使用 TCN 也有两个明显的缺点：</strong></p>
+<ol>
+<li><em><strong>评估期间的数据存储</strong></em>*。在评估&#x2F;测试中，RNN 只需保持隐藏状态并获取当前输入 xt 即可生成预测。换句话说，整个历史的“摘要”由一组固定长度的向量 ht 提供，而实际观察到的序列可以被丢弃。相比之下，TCN 需要接收到有效历史长度的原始序列，因此在评估期间可能需要更多内存。</li>
+<li><em><strong>域迁移的潜在参数变化（Potential parameter change for a transfer of domain）</strong></em>*。不同领域对模型预测所需的历史数量可能有不同的要求。因此，当将模型从只需要很少内存的域（即小 k 和 d）转移到需要更长内存的域（即大得多的 k 和 d）时，TCN 可能会因为没有足够大的感受野。</li>
+</ol>
+<p>该算法于2016年由Lea等人首先提出，当时他们在做视频动作分割的研究，一般而言此常规过程包括两个步骤：首先，使用（通常）对时空信息进行编码的CNN来计算低级特征，其次，将这些低级特征输入到使用（通常是）捕获高级时域信息的分类器中）RNN。这种方法的主要缺点是需要两个单独的模型。<br>TCN提供了一种统一的方法来分层捕获所有两个级别的信息。自从TCN提出后引起了巨大反响，有人认为：时间卷积网络（TCN）将取代RNN成为NLP或者时序预测领域的王者。给出的原因如下：<br>RNN耗时太长，由于网络一次只读取、解析输入文本中的一个单词（或字符），深度神经网络必须等前一个单词处理完，才能进行下一个单词的处理。这意味着 RNN 不能像 CNN 那样进行大规模并行处理；并且TCN的实际结果也要优于RNN算法。<br>编码器-解码器框架如下图所示，TCN可以采用一系列任意长度并将其输出为相同长度。在使用一维完全卷积网络体系结构的情况下，使用因果卷积。一个关键特征是，时间t的输出仅与t之前发生的元素卷积。</p>
+<p>(RNN 在内部设计上存在一个严重的问题：<strong>由于网络一次只能处理一个时间步长，后一步必须等前一步处理完才能进行运算</strong>。这意味着 RNN 不能像 CNN 那样进行大规模并行处理，特别是在 RNN&#x2F;LSTM 对文本进行双向处理时。这也意味着 RNN 极度地计算密集，因为在整个任务运行完成之前，必须保存所有的中间结果。 CNN 在处理图像时，将图像看作一个二维的“块”（m<em>n 的矩阵）。迁移到时间序列上，就可以将序列看作一个一维对象（1</em>n 的向量）。通过多层网络结构，可以获得足够大的感受野。这种做法会让 CNN 非常深，但是得益于大规模并行处理的优势，无论网络多深，都可以进行并行处理，节省大量时间。这就是 TCN 的基本思想。)</p>
+<p>TCN是一种用于处理序列数据的神经网络，它可以看作是一种特殊的CNN。CNN是一种用于处理图像数据的神经网络，它可以看作是一种特殊的卷积运算。卷积运算就是将一个小的滑动窗口（称为卷积核或过滤器）在一个大的数据（称为输入或特征图）上滑动，并对每个窗口内的数据进行加权求和，得到一个新的数据（称为输出或激活图）。这样就可以提取出输入中的局部特征，并减少参数数量。<br>TCN与CNN不同之处在于，它只在序列数据的时间维度上进行卷积运算，而不是在空间维度上。这样就可以保持序列数据的时序信息，并且使得输出只依赖于当前及之前的输入，而不会受到未来输入的影响。这种卷积运算称为因果卷积。<br>TCN还使用了空洞卷积，这是一种在卷积核中插入空白位置（称为膨胀因子）的技术，使得卷积核可以覆盖更长范围的输入，而不增加参数数量。这样就可以增加感受野，即输出能够感知到输入中多远距离的信息。<br>TCN还使用了残差连接，这是一种将每层输入直接与输出相加（称为跳跃连接）的技术，使得网络可以更容易地学习恒等映射，并防止梯度消失或爆炸。这样就可以构建更深层次的网络，并提高性能。<br>TCN通常由多个重复模块组成，每个模块包含两个因果空洞卷积层和一个残差连接。每个模块都有自己独立的膨胀因子和过滤器数量。最后一个模块后面还有一个全连接层或者softmax层来输出预测结果。<br>TCN接收一个多维数组作为输入，其中第一维表示序列长度（即时间步数），第二维表示特征数量（即信号通道数）。例如，在生物信号处理中，如果我们有1000个时间步长和8个信号通道，则我们可以将其表示为一个1000×8 的数组作为TCN 的输入。<br>TCN输出一个多维数组作为预测结果，其中第一维表示序列长度（即时间步数），第二维表示类别数量（即预测目标数）。例如，在生物信号分类中，如果我们有1000个时间步长和4个类别，则我们可以将其表示为一个1000×4 的数组作为TCN 的输出。</p>
+<p>TCN与LSTM的区别：LSTM是通过引入卷积操作使其能够处理图像信息，卷积只对一个时刻的输入图像进行操作；而TCN是利用卷积进行跨时间步提取特征。</p>
+<h1 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h1><p><a target="_blank" rel="noopener" href="https://github.com/bojone/bert4keras/tree/master">bojone&#x2F;bert4keras: keras implement of transformers for humans (github.com)</a></p>
+<p>优点：</p>
+<ul>
+<li>能够并行化处理序列数据，训练速度较快；</li>
+<li>可以处理长序列数据，具有更好的记忆功能；</li>
+<li>通过自注意力机制学习序列中不同位置之间的依赖关系，能够更好地捕获上下文信息；</li>
+<li>在机器翻译、文本生成、问答系统等自然语言处理任务中表现出色。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>在处理视觉任务方面表现不如CNN；</li>
+<li>对于较小的数据集可能过拟合，需要采取措施防止过拟合；</li>
+<li>需要更大的计算资源和时间，训练成本较高。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/27-%E6%A8%A1%E5%9E%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/27-%E6%A8%A1%E5%9E%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/26-%E6%A8%A1%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">模型-机器学习</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/28/%E7%94%9F%E6%B4%BB/%E6%97%85%E8%A1%8C%E7%BA%BF/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">旅行线</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">总</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8D%E7%A8%B3%E5%AE%9A"><span class="toc-number">1.2.</span> <span class="toc-text">梯度不稳定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E6%8D%9F%E5%A4%B1"><span class="toc-number">1.4.</span> <span class="toc-text">分类损失</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%9B%B4%E6%96%B0%E7%9A%84%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">迭代更新的优化算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#code"><span class="toc-number">2.</span> <span class="toc-text">code</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E8%A7%A3%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text">结果解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CNN"><span class="toc-number">3.</span> <span class="toc-text">CNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DNN"><span class="toc-number">4.</span> <span class="toc-text">DNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RNN"><span class="toc-number">5.</span> <span class="toc-text">RNN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LSTM"><span class="toc-number">5.1.</span> <span class="toc-text">LSTM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GRU"><span class="toc-number">5.2.</span> <span class="toc-text">GRU</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BiLSTM"><span class="toc-number">6.</span> <span class="toc-text">BiLSTM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ResNet"><span class="toc-number">7.</span> <span class="toc-text">ResNet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#autoencoder"><span class="toc-number">8.</span> <span class="toc-text">autoencoder</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCN"><span class="toc-number">9.</span> <span class="toc-text">TCN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transformer"><span class="toc-number">10.</span> <span class="toc-text">Transformer</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

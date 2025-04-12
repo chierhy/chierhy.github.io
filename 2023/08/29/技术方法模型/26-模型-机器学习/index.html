@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>模型-机器学习 | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="【Python机器学习】——决策树DecisionTreeClassifier详解_小猪课堂的博客-CSDN博客机器学习路线图_天泽28的博客-CSDN博客机器学习——Sklearn学习笔记（2）模型选择和评估_sklearn模型选择与算法评估实验总结_Robin_Pi的博客-CSDN博客  总【绝对干货】机器学习模型训练全流程！ - 知乎 (zhihu.com)  处理分类问题的常用算法包括：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模型-机器学习">
+<meta property="og:url" content="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/26-%E6%A8%A1%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="【Python机器学习】——决策树DecisionTreeClassifier详解_小猪课堂的博客-CSDN博客机器学习路线图_天泽28的博客-CSDN博客机器学习——Sklearn学习笔记（2）模型选择和评估_sklearn模型选择与算法评估实验总结_Robin_Pi的博客-CSDN博客  总【绝对干货】机器学习模型训练全流程！ - 知乎 (zhihu.com)  处理分类问题的常用算法包括：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2023-08-29T09:33:00.000Z">
+<meta property="article:modified_time" content="2023-08-29T13:34:41.000Z">
+<meta property="article:author" content="神经蛙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/26-%E6%A8%A1%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '模型-机器学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-29 21:34:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">模型-机器学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-29T09:33:00.000Z" title="发表于 2023-08-29 17:33:00">2023-08-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-29T13:34:41.000Z" title="更新于 2023-08-29 21:34:41">2023-08-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">17.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>55分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="模型-机器学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39885465/article/details/104523125">【Python机器学习】——决策树DecisionTreeClassifier详解_小猪课堂的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012328159/article/details/50780952">机器学习路线图_天泽28的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Robin_Pi/article/details/103971343">机器学习——Sklearn学习笔记（2）模型选择和评估_sklearn模型选择与算法评估实验总结_Robin_Pi的博客-CSDN博客</a></p>
+</blockquote>
+<h1 id="总"><a href="#总" class="headerlink" title="总"></a>总</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/184673895">【绝对干货】机器学习模型训练全流程！ - 知乎 (zhihu.com)</a></p>
+<ol>
+<li>处理分类问题的常用算法包括：逻辑回归(工业界最常用)，支持向量机，随机森林，朴素贝叶斯(NLP中常用)，深度神经网络(视频、图片、语音等多媒体数据中使用)。</li>
+<li>处理回归问题的常用算法包括：线性回归，普通最小二乘回归（Ordinary Least Squares Regression），逐步回归（Stepwise Regression），多元自适应回归样条（Multivariate Adaptive Regression Splines）</li>
+<li>处理聚类问题的常用算法包括：K均值（K-means），基于密度聚类，LDA等等。</li>
+<li>降维的常用算法包括：主成分分析（PCA）,奇异值分解（SVD） 等。</li>
+<li>推荐系统的常用算法：协同过滤算法</li>
+<li>模型融合(model ensemble)和提升(boosting)的算法包括：bagging，adaboost，GBDT，GBRT</li>
+<li>其他很重要的算法包括：EM算法等等。</li>
+</ol>
+<p>特征预处理 </p>
+<ul>
+<li>特征预处理、数据清洗是很关键的步骤，往往能够使得算法的效果和性能得到显著提高。归一化、离散化、因子化、缺失值处理、去除共线性等，数据挖掘过程中很多时间就花在它们上面。这些工作简单可复制，收益稳定可预期，是机器学习的基础必备步骤。</li>
+<li>筛选出显著特征、摒弃非显著特征，需要机器学习工程师反复理解业务。这对很多结果有决定性的影响。特征选择好了，非常简单的算法也能得出良好、稳定的结果。这需要运用特征有效性分析的相关技术，如相关系数、卡方检验、平均互信息、条件熵、后验概率、逻辑回归权重等方法。</li>
+</ul>
+<p>模型融合</p>
+<ul>
+<li>一般来说，模型融合后都能使得效果有一定提升。而且效果很好。</li>
+<li>工程上，主要提升算法准确度的方法是分别在模型的前端（特征清洗和预处理，不同的采样模式）与后端（模型融合）上下功夫。因为他们比较标准可复制，效果比较稳定。而直接调参的工作不会很多，毕竟大量数据训练起来太慢了，而且效果难以保证。</li>
+</ul>
+<p>上线运行</p>
+<ul>
+<li>这一部分内容主要跟工程实现的相关性比较大。工程上是结果导向，模型在线上运行的效果直接决定模型的成败。 不单纯包括其准确程度、误差等情况，还包括其运行的速度(时间复杂度)、资源消耗程度（空间复杂度）、稳定性是否可接受。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012328159/article/details/50780952#:~:text=4.-,%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90,-%E6%96%87%E7%AB%A0%E7%9A%84%E6%9C%80%E5%90%8E">资源</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012328159/article/details/79255433">sklearn模型调优（判断是否过过拟合及选择参数）_天泽28的博客-CSDN博客</a><br>1. learning_curve()：这个函数主要是用来判断（可视化）模型是否过拟合的，关于过拟合，就不多说了，具体可以看以前的博客：<a target="_blank" rel="noopener" href="http://blog.csdn.net/u012328159/article/details/51203541%20%E2%80%9C%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9%E5%92%8C%E6%94%B9%E8%BF%9B%E2%80%9D">模型选择和改进</a>2. validation_curve():这个函数主要是用来查看在参数不同的取值下模型的性能</p>
+</blockquote>
+<p>cross_val_predict函数的结果可能会与cross_val_score函数的结果不一样，因为在这两种方法中元素的分组方式不一样。函数cross_val_score在所有交叉验证的折子上取平均。但是，函数cross_val_predict只是简单的返回由若干不同模型预测出的标签或概率。因此,cross_val_predict不是一种适当的泛化错误的度量。</p>
+<p>cross_val_predict() 比较适合做的:</p>
+<ul>
+<li>从不同模型获得的预测结果的可视化。</li>
+<li>模型混合: 在集成方法中，当一个有监督估计量的预测被用来训练另一个估计量时</li>
+<li><img src="https://img-blog.csdnimg.cn/20200115174102132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JvYmluX1Bp,size_16,color_FFFFFF,t_70" alt="20200115174102132.png (1000×1500) (csdnimg.cn)"></li>
+</ul>
+<h1 id="信号处理"><a href="#信号处理" class="headerlink" title="信号处理"></a>信号处理</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/91427246">常用信号特征提取方法总结(完善中…) - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24021704">时间序列数据上可以抽取哪些频域特征？ - 知乎 (zhihu.com)</a></p>
+<p>小波分解<br><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%B0%8F%E6%B3%A2%E5%8C%85%E5%88%86%E8%A7%A3&spm=1001.2101.3001.7020">小波包分解</a>是一种能够对各类非平稳随机信号进行有效处理的现代时频分析和处理方法，通过小波包变换可将采集的信号分解为多个二维参量（时间、位置）和频率，实现信号在不同频带、不同时刻的特征分解。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45317919/article/details/116949099">小波包及其应用_Zhi Zhao的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/cqfdcw/article/details/84995904">小波与小波包、小波包分解与信号重构、小波包能量特征提取 暨 小波包分解后实现按频率大小分布重新排列(Matlab 程序详解）_cqfdcw的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111476277">基于奇异值熵和分形维数的雷达信号识别 - 知乎 (zhihu.com)</a><br>分形理论中有很多基本的分形维数，其中盒维数和信息维数因计算简单而广泛被应用。盒维数能够刻画几何形状的不规则性和复杂度，信息维数能描述几何形态的疏密程度。不同调制方式信号的波形和频谱是不同的，由于信号波形受噪声影响较大，频谱受噪声影响较小，所以，把信号频谱的盒维数和信息维数作为信号调制方式的识别特征是可行的。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b1a70f0fe94">特征提取 - 简书 (jianshu.com)</a><br><a target="_blank" rel="noopener" href="http://c-s-a.org.cn/csa/article/pdf/20121053">Microsoft Word - 系统建设1.doc (c-s-a.org.cn)</a><br>分形维数只得到一个数值作为特征矢量, 利用 此特征矢量, 用贪婪算法, 或设定阀值即可进行分类,</p>
+<h1 id="coding"><a href="#coding" class="headerlink" title="coding"></a>coding</h1><p>如果一个模型在训练集上表现良好，但交叉验证分数很低，那么这个模型就是<strong>过拟合</strong>。<br><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/mvbrlarcfqxwfzuj6upa">为什么我的模型表现这么差？_AI_Martin Šiklar_InfoQ精选文章</a><br>过拟合</p>
+<ul>
+<li><p><strong>使用更多的数据</strong>！正如我们在上一个学习曲线的例子中所看到的那样，如果你不断向训练数据集添加新的特征，验证误差最终会下降，模型也会停止过拟合。然而，通常情况下，训练数据集是有限的，因此需要一个不同的策略。</p>
+</li>
+<li><p><strong>正则化</strong>：换句话说，对模型施加一些约束，降低自由度，对模型施加的约束越多（模型的自由度越少），数据就越难被过拟合。在我们的例子中，这意味着例如降低多项式的次数。在回归方面，你也应该研究一下 Ridge、Lasso 或 Elastic Net Regression，它们对模型权重有不同的约束。</p>
+</li>
+</ul>
+<p>欠拟合</p>
+<ul>
+<li><strong>增加复杂度</strong>：在欠拟合的情况下，对模型施加较少的约束并增加其复杂度，将很有可能得到更好的模型。复杂性的增加可能意味着超越简单的线性模型，利用多项式模型，或者甚至基于树的模型。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43870329/article/details/106464781">机器学习——分类器算法对比（KNN、SVM、朴素贝叶斯、随机森林、Adaboost）（学习笔记）_分类算法对比图_XuZhiyu_的博客-CSDN博客</a></p>
+<ul>
+<li>过拟合：训练集精度较高，测试集精度较低<ul>
+<li>训练集loss小，测试集loss大</li>
+</ul>
+</li>
+<li>欠拟合：训练集精度较低，测试集精度较低<ul>
+<li>训练集loss大，测试集loss大</li>
+</ul>
+</li>
+<li>拟合较好：二者均较小  </li>
+<li>数据泄露：训练集精度低，测试集精度高<ul>
+<li>非常罕见</li>
+</ul>
+</li>
+<li>容易过拟合分类器：高方差，低偏差<ul>
+<li>SVM-rbf-gamma大-ploy-degree大</li>
+<li>KNN-k比较小</li>
+<li>决策树-不剪枝-不限制深度</li>
+<li>多层神经网络-层数多-隐藏层神经元数量多</li>
+<li>特征工程比较复杂</li>
+</ul>
+</li>
+<li>容易欠拟合分类器：低方差，高偏差</li>
+<li>解决过拟合问题基本方式：<ul>
+<li>增加训练数据</li>
+<li>模型集成：Bagging</li>
+</ul>
+</li>
+<li>解决欠拟合问题<ul>
+<li>模型集成：Boosting</li>
+<li><a target="_blank" rel="noopener" href="https://www.codenong.com/cs106869539/">训练集准确率97%（很高），测试集准确率50%~60%（很低），解决方案探索 | 码农家园 (codenong.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39777550/article/details/108965486">训练集准确率很高，验证集准确率低问题_训练集准确率高,测试集准确率低_LS_learner的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013249853/article/details/89393982">十个原因可能导致 训练集明明很高，验证集，测试集 validation accuracy stuck 准确率 很低 损失不减小_训练集准确率高,测试集准确率低_TinaO-O的博客-CSDN博客</a><br>训练集在训练过程中，loss稳步下降，准确率上升，最后能达到97%<br>验证集准确率没有升高，一直维持在50%左右（二分类问题，随机概率）<br>测试集准确率57%<br>在网上搜索可能打的原因：<br>1.learning rate太小，陷入局部最优<br>2.训练集和测试集数据没有规律<br>3.数据噪声太大<br>4.数据量太小（总共1440个样本，80%为训练集）<br>5.训练集和测试集数据分布不同：如训练集正样本太少（训练集和测试集每次运行随机选择，故排除）<br>6.数据集存在问题，如标注有问题（采用公开数据集，排除）<br>7.学习率过大？？？<br>8.模型参数量过多而数据量过少<br>9.过拟合（验证集准确率没有升高过，排除）<br>10.输入到网络中的特征有问题，特征与label之间没有很明确的关联，或特征太少<br>自己猜测可能的问题：<br>1.正好选择了效果差的被试（脑电数据不同被试之间识别准确率有一定差距）<br>2.输入样本的特征向量维度太大，而数据量不够大<br>尝试1：增大学习率<br>原有学习率0.001调整为0.01<br>没有效果<br>尝试2：将特征向量进行更换</li>
+</ul>
+</li>
+</ul>
+<p>gridsearch</p>
+<ul>
+<li><strong>n_jobs：并行数，int：个数,-1：跟CPU核数一致, 1:默认值。</strong></li>
+<li><strong>pre_dispatch：指定总共分发的并行任务数。当n_jobs大于1时，数据将在每个运行点进行复制，这可能导致OOM，而设置pre_dispatch参数，则可以预先划分总共的job数量，使数据最多被复制pre_dispatch次</strong></li>
+<li><strong>iid：默认True,为True时，默认为各个样本fold概率分布一致，误差估计为所有样本之和，而非各个fold的平均。</strong></li>
+<li><strong>cv：交叉验证参数，默认None，使用三折交叉验证。指定fold数量，默认为3，也可以是yield训练&#x2F;测试数据的生成器。</strong></li>
+<li><strong>refit：默认为True,程序将会以交叉验证训练集得到的最佳参数，重新对所有可用的训练集与开发集进行，作为最终用于性能评估的最佳模型参数。即在搜索参数结束后，用最佳参数结果再次fit一遍全部数据集。</strong></li>
+<li><strong>verbose：日志冗长度，int：冗长度，0：不输出训练过程，1：偶尔输出，&gt;1：对每个子模型都输出。</strong></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43297167/article/details/105269963">ML模型训练过程时切割数据集和GridSearchCV中best_score的比较_ＪＩＮＣＨＥＮＧ０４０８的博客-CSDN博客</a></p>
+<p>评估指标</p>
+<ol>
+<li>accuracy：分类问题中最常用的指标，计算分类正确的比例。</li>
+<li>precision：用于评估分类器对正类的分类准确性。</li>
+<li>recall：用于评估分类器找到所有正类的能力，也称为灵敏度。</li>
+<li>f1-score：precision和recall的调和平均数，可以同时反映分类器对正例和负例的分类准确性。</li>
+<li>roc_auc：基于True Positive Rate和False Positive Rate的指标，ROC曲线下的面积。</li>
+<li>mean_squared_error：回归问题中最常用的指标，计算预测值与真实值之间的平均平方误差。</li>
+<li>r2_score：回归问题中用于度量预测值与真实值之间相关性的指标，值越接近1表示相关性越好。</li>
+<li>F1-macro是指在跨多个类别统计时，将每个类别的F1-score求平均。 在网格搜索（Grid Search）中，对于每种参数组合，都会进行交叉验证，计算每个类别的F1-score。然后，对所有类别的F1-score取平均数得到F1-macro，以便比较不同参数组合的性能。</li>
+<li>与F1-macro相对应的是F1-micro。在F1-micro中，计算精确率和召回率的总和，然后计算F1 score，而不是在不同类别之间单独计算F1-score。<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/332571344">macro-F1和micro-F1得分分别适用于什么场景？ - 知乎 (zhihu.com)</a></li>
+</ol>
+<p>F1-macro通常可用于类别数量较少的分类任务，而F1-micro则可能在多类别分类任务中更为适用。</p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuzhongqiang/article/details/103764412">重温归一化(MinMaxScaler)和标准化(StandardScaler)_standardscaler函数_翻滚的小@强的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41185868/article/details/104645819">(1条消息) sklearn：sklearn.preprocessing.StandardScaler函数的fit_transform、transform、inverse_transform简介、使用方法之详细攻略_一个处女座的程序猿的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wzyaiwl/article/details/90549391">(2条消息) Sklearn之数据预处理——StandardScaler_龙王.*?的博客-CSDN博客</a></p>
+<ul>
+<li>归一化后加快了梯度下降求最优解的速度；<br>如果机器学习模型使用<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D&spm=1001.2101.3001.7020">梯度下降</a>法求最优解时，归一化往往非常有必要，否则很难收敛甚至不能收敛。</li>
+<li>归一化有可能提高精度；<br>一些分类器需要计算样本之间的距离（如<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB&spm=1001.2101.3001.7020">欧氏距离</a>），例如KNN。如果一个特征值域范围非常大，那么距离计算就主要取决于这个特征，从而与实际情况相悖（比如这时实际情况是值域范围小的特征更重要）。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuzhongqiang/article/details/103764412">重温归一化(MinMaxScaler)和标准化(StandardScaler)_standardscaler函数_翻滚的小@强的博客-CSDN博客</a><br>数据的归一化是无量纲化，也就是忽略掉特征之间值大小对最后结果带来的影响，而标准化是统一特征的数据分布，忽略掉不同分布的特征对最后结果带来的影响<br>最大的注意事项就是先拆分出test集，<strong>只在训练集上标准化，即均值和标准差是从训练集中计算出来的</strong>，不要在整个数据集上做标准化，因为那样<strong>会将test集的信息引入到训练集中，造成了数据信息泄露，这是一个非常容易犯的错误</strong>。</p>
+<p>概率模型（树形模型）不需要归一化，因为它们不关心变量的值，而是关心变量的分布和变量之间的条件概率，如决策树、RF。而像Adaboost、SVM、LR、Knn、KMeans之类的最优化问题就需要归一化。<br>StandardScaler原理<br>作用：去均值和方差归一化。且是针对每一个特征维度来做的，而不是针对样本<br>线性归一化。这种归一化方法比较适用在数值比较集中的情况。这种方法有个缺陷，如果max和min不稳定，很容易使得归一化结果不稳定，使得后续使用效果也不稳定。实际使用中可以用经验常量值来替代max和min。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42422540/article/details/127572085?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-4-127572085-blog-109569373.235%5Ev32%5Epc_relevant_default_base&spm=1001.2101.3001.4242.3&utm_relevant_index=7">数据预处理——fit()函数，transform()函数，fit_transform()函数_fit_transform函数_SixdayNots的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/134495345">独热编码（One-Hot Encoding） - 知乎 (zhihu.com)</a><br>训练集使用fit_transform(),而测试集使用tranform(),不再使用fit_transform();</p>
+<p>离散特征的编码分为两种情况：<br>1、离散特征的取值之间没有大小的意义，比如color：[red,blue],那么就使用one-hot编码<br>2、离散特征的取值有大小的意义，比如size:[X,XL,XXL],那么就使用数值的映射{X:1,XL:2,XXL:3}<br>分类器往往默认数据数据是连续的（可以计算距离？），并且是有序的（而上面这个0并不是说比1要高级）。但是，按照我们上述的表示，数字并不是有序的，而是随机分配的。</p>
+<p>独热编码：解决了分类器不好处理属性数据的问题。在一定程度上也起到了扩充特征的作用。缺点：当类别的数量很多时，特征空间会变得非常大。在这种情况下，一般可以用PCA来减少维度。而且one hot encoding+PCA这种组合在实际中也非常有用。<br>什么情况下(不)用独热编码？</p>
+<ul>
+<li>用：独热编码用来解决类别型数据的离散值问题</li>
+<li>不用：将离散型特征进行one-hot编码的作用，是为了让距离计算更合理，但如果特征是离散的，并且不用one-hot编码就可以很合理的计算出距离，那么就没必要进行one-hot编码。有些基于树的算法在处理变量时，并不是基于向量空间度量，数值只是个类别符号，即没有偏序关系，所以不用进行独热编码。 Tree Model不太需要one-hot编码： 对于决策树来说，one-hot的本质是增加树的深度。<br>什么情况下(不)需要归一化？（归一化——不同的特征可能有不同的度量单位）</li>
+<li>需要： 基于参数的模型或基于距离的模型，都是要进行特征的归一化。</li>
+<li>不需要：基于树的方法是不需要进行特征的归一化，例如随机森林，bagging 和 boosting等。</li>
+<li></li>
+</ul>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>![<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/http-save/yehe-5020298/wbhiib71z5.png?imageView2/2/w/2560/h/7000">wbhiib71z5.png (1080×646) (qcloudimg.com)</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/34470160">机器学习各种算法怎么调参? - 知乎 (zhihu.com)</a></p>
+<p>param_grid: 调整的参数，可以有两种方式:<br>a. 字典，键为参数名，值为可选的参数区间，调优过程会依次迭代所有的参数名下的值，得到每一个参数名下最优的值<br><code>param_grid= &#123;&#39;criterion&#39;:[&#39;gini&#39;],&#39;max_depth&#39;:[30,50,60,100],&#39;min_samples_leaf&#39;:[2,3,5,10],&#39;min_impurity_decrease&#39;:[0.1,0.2,0.5]&#125;</code><br>b. 列表，每个元素都是字典，字典和上面一样（键为参数名，值为可选的参数区间），调优过程会依次迭代所有元素，找到每个元素下最佳的参数组合后，再对每个元素进行对比，得到最优的元素及元素内部的参数组合<br><code>param = [&#123;&#39;criterion&#39;:[&#39;gini&#39;],&#39;max_depth&#39;:[30,50,60,100],&#39;min_samples_leaf&#39;:[2,3,5,10],&#39;min_impurity_decrease&#39;:[0.1,0.2,0.5]&#125;,&#123;&#39;criterion&#39;:[&#39;gini&#39;,&#39;entropy&#39;]&#125;,&#123;&#39;max_depth&#39;: [30,60,100], &#39;min_impurity_decrease&#39;:[0.1,0.2,0.5]&#125;]</code></p>
+<p><strong>SVC</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/linjingyg/p/15708635.html">支持向量机算法如何调参（有哪些参数可调，调参总结） - linjingyg - 博客园 (cnblogs.com)</a></p>
+<ul>
+<li>常用的只有两个一个是线性核函数，还是有一个是高斯核函数，原因是它们的效果往往最好，调参数量也比较少，不是很麻烦。当我们使用线性核函数的时候我们的主要的调参的目标就是C，当我们使用高斯核函数的时候我们的主要的调参的目标就是C和gamma。</li>
+<li>C过大或过小，泛化能力变差  </li>
+<li>gamma不能过大，否则会导致过拟合。过小会导致欠拟合</li>
+<li>gamma是选择RBF函数作为kernel后，该函数自带的一个参数。隐含地决定了数据映射到新的特征空间后的分布，gamma越大，支持向量越少，gamma值越小，支持向量越多。支持向量的个数影响训练与预测的速度。<br>SVC（Support Vector Classifier）的效果不如其他分类器，可能的原因有很多，比如：<br>  数据量太大或太小<br>  特征维度太高<br>  核函数选择不当<br>  模型参数调整不当<br>  需要根据具体情况进行分析和调整。你可以尝试调整SVC的参数，或者使用其他分类器进行比较</li>
+</ul>
+<p><strong>dt</strong><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013344884/article/details/79276825">(1条消息) DecisionTreeClassifier和DecisionTreeRegressor 重要参数调参注意点_可爱的红薯的博客-CSDN博客</a></p>
+<p><strong>knn</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6969112765151576094">【机器学习】K近邻（KNN）算法详解 - 掘金 (juejin.cn)</a></p>
+<ol>
+<li>n_neighbors：取邻近点的个数k。k取1-9测试</li>
+<li>weight：距离的权重；uniform：一致的权重；distance：距离的倒数作为权重</li>
+<li>p:闵可斯基距离的p值; p&#x3D;1:即欧式距离；p&#x3D;2:即曼哈顿距离；p取1-6测试</li>
+<li><strong>algorithm</strong>（算法）: {‘auto’, ‘ball_tree’, ‘kd_tree’, ‘brute’}, 可选参数（默认为 ‘auto’）‘ball_tree’ 是为了克服kd树高纬失效而发明的，其构造过程是以质心C和半径r分割样本空间，每个节点是一个超球体。  ‘kd_tree’ 构造kd树存储数据以便对其进行快速检索的树形数据结构，kd树也就是数据结构中的二叉树。以中值切分构造的树，每个结点是一个超矩形，在维数小于20时效率高。  ‘brute’ 使用暴力搜索.也就是线性扫描，当训练集很大时，计算非常耗时。‘auto’ 会基于传入fit方法的内容，选择最合适的算法。</li>
+</ol>
+<p><strong>随机森林</strong><br>对Random Forest来说，增加“子模型数”（n_estimators）可以明显降低整体模型的方差，且不会对子模型的偏差和方差有任何影响。模型的准确度会随着“子模型数”的增加而提高。由于减少的是整体模型方差公式的第二项，故准确度的提高有一个上限。调整“最大叶节点数”（max_leaf_nodes）以及“最大树深度”（max_depth）之一，可以粗粒度地调整树的结构：叶节点越多或者树越深，意味着子模型的偏差越低，方差越高；同时，调整“分裂所需最小样本数”（min_samples_split）、“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%8F%B6%E8%8A%82%E7%82%B9&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:114305935%7D">叶节点</a>最小样本数”（min_samples_leaf）及“<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%8F%B6%E8%8A%82%E7%82%B9%E6%9C%80%E5%B0%8F%E6%9D%83%E9%87%8D%E6%80%BB%E5%80%BC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:114305935%7D">叶节点最小权重总值</a>”（min_weight_fraction_leaf），可以更细粒度地调整树的结构：分裂所需样本数越少或者叶节点所需样本越少，也意味着子模型越复杂。一般来说，我们总采用<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=bootstrap&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:114305935%7D">bootstrap</a>对样本进行子采样来降低子模型之间的关联度，从而降低整体模型的方差。适当地减少“分裂时考虑的最大特征数”（max_features），给子模型注入了另外的随机性，同样也达到了降低子模型之间关联度的效果。但是一味地降低该参数也是不行的，因为分裂时可选特征变少，模型的偏差会越来越大。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35040963/article/details/88832030">随机森林（RandomForest，RF）网格搜索法调参_随机森林网格调参_绿逗先生的博客-CSDN博客</a></p>
+<p><strong>Gradient Tree Boosting</strong><br>对Gradient Tree Boosting来说，“子模型数”（n_estimators）和“学习率”（learning_rate）需要联合调整才能尽可能地提高模型的准确度：想象一下，A方案是走4步，每步走3米，B方案是走5步，每步走2米，哪个方案可以更接近10米远的终点？同理，子模型越复杂，对应整体模型偏差低，方差高，故“最大叶节点数”（max_leaf_nodes）、“最大树深度”（max_depth）等控制子模型结构的参数是与Random Forest一致的。类似“分裂时考虑的最大特征数”（max_features），降低“子采样率”（subsample），也会造成子模型间的关联度降低，整体模型的方差减小，但是当子采样率低到一定程度时，子模型的偏差增大，将引起整体模型的准确度降低。还记得“初始模型”（init）是什么吗？不同的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:114305935%7D">损失函数</a>有不一样的初始模型定义，通常，初始模型是一个更加弱的模型（以“平均”情况来预测），虽说支持自定义，大多数情况下保持默认即可。</p>
+<p><strong>xgboost</strong><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1656126">机器学习算法之XGBoost及其自动调参（算法+数据+代码） - 腾讯云开发者社区-腾讯云 (tencent.com)</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhangbojiangfeng/p/6428988.html">XGBoost参数调优 - 江枫1 - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41907245/article/details/120063960">机器学习-sklearn模型选择和最优参数选择_from sklearn import model_selection_yuxj记录学习的博客-CSDN博客</a></p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p><a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/397627">机器学习–模型评估、过拟合和欠拟合、模型验证-云社区-华为云 (huaweicloud.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/hohaizx/article/details/81013985">机器学习系列（五）——训练集、测试集、验证集与模型选择_机器学习模型重要还是训练集重要_zxhohai的博客-CSDN博客</a><br>同一模型在不同训练集上学得的函数往往不同，那我们怎样保证选出的模型和函数就是最好的呢？而不是刚好符合当前数据划分的一个特例呢？可以采用交叉验证（Cross Validation）法，其基本思路如下：将训练集划分为K份，每次采用其中K-1份作为训练集，另外一份作为验证集，验证集上K次误差的平均作为该模型的误差。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/anliu1/article/details/112794538">搞懂敏感性、特异性以及精确率和召回率的关系_召回率和特异性_永远的艾斯的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147663370">多分类模型Accuracy, Precision, Recall和F1-score的超级无敌深入探讨 - 知乎 (zhihu.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/93107394">一文看懂机器学习指标：准确率、精准率、召回率、F1、ROC曲线、AUC曲线 - 知乎 (zhihu.com)</a>（有ROC动画）<br>对于不平衡数据集而言，Accuracy并不是一个好指标（如果采用Accuracy来评估分类器的好坏，那么即便模型性能很差 (如无论输入什么图片，都预测为「狗」)，也可以得到较高的Accuracy Score）</p>
+<ul>
+<li><p>True Positive (TP): 把正样本成功预测为正。</p>
+</li>
+<li><p>True Negative (TN)：把负样本成功预测为负。</p>
+</li>
+<li><p>False Positive (FP)：把负样本错误地预测为正。</p>
+</li>
+<li><p>False Negative (FN)：把正样本错误的预测为负。<br>二分类<br><img src="http://attachbak.dataguru.cn/attachments/portal/202006/22/152825j5gwjttryyu53rd3.png" alt="152825j5gwjttryyu53rd3.png (664×294) (dataguru.cn)"><br>灵敏度（Sensitivity） &#x3D; <strong>TP&#x2F;(TP+FN)</strong><br>特异度（Specificity） &#x3D; <strong>TN&#x2F;(FP+TN)</strong><br>真正率（TPR） &#x3D; 灵敏度 &#x3D; <strong>TP&#x2F;(TP+FN)</strong><br>假正率（FPR） &#x3D; 1- 特异度 &#x3D; <strong>FP&#x2F;(FP+TN)</strong></p>
+</li>
+<li><p>精准率代表对正样本结果中的预测准确程度，而准确率则代表整体的预测准确程度，既包括正样本，也包括负样本。召回率越高，代表实际坏用户被预测出来的概率越高，它的含义类似：宁可错杀一千，绝不放过一个。</p>
+</li>
+<li><p>灵敏度和召回率一样的。TPR 和 FPR 分别是基于实际表现 1 和 0 出发的，也就是说它们分别在实际的正样本和负样本中来观察相关概率问题。FPR 表示模型虚报的响应程度，而 TPR 表示模型预测响应的覆盖程度。我们所希望的当然是：虚报的越少越好，覆盖的越多越好。所以总结一下就是<strong>TPR 越高，同时 FPR 越低（即 ROC 曲线越陡），那么模型的性能就越好。</strong></p>
+</li>
+<li><p>Precision着重评估在预测为Positive的所有数据中，真实Positve的数据到底占多少？Recall着重评估：在所有的Positive数据中，到底有多少数据被成功预测为Positive?</p>
+</li>
+<li><p>当False Negative (FN)的成本代价很高 (后果很严重)，希望尽量避免产生FN时，应该着重考虑提高Recall指标。（我们宁可把健康人误诊为癌症 (FP)，也不能让真正患病的人检测不出癌症 (FN) 而耽误治疗离世。癌症诊断系统的目标是：尽可能提高Recall值，哪怕牺牲一部分Precision。）</p>
+</li>
+<li><p>当False Positive (FP)的成本代价很高 (后果很严重)时，即期望尽量避免产生FP时，应该着重考虑提高Precision指标。（False Positive是把正常邮件识别为垃圾邮件，。垃圾邮件屏蔽系统的目标是：尽可能提高Precision值，哪怕牺牲一部分recall。）</p>
+</li>
+<li><p>F1-score是Precision和Recall两者的综合。</p>
+</li>
+</ul>
+<p>多分类<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Hello_Chan/article/details/108672379">多分类中TP&#x2F;TN&#x2F;FP&#x2F;FN的计算_多分类fp_Hello_Chan的博客-CSDN博客</a><br>Accuracy的定义为分类正确（对角线上）的样本数与总样本数的比值。<strong>Accuracy度量的是全局样本预测情况。而对于Precision和Recall而言，每个类都需要单独计算其Precision和Recall</strong>。<br><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html">sklearn.metrics.precision_score — scikit-learn 1.2.2 documentation</a></p>
+<ol>
+<li><strong>Macro-average方法</strong><br>该方法最简单，直接将不同类别的评估指标（Precision&#x2F; Recall&#x2F; F1-score）加起来求平均，给所有类别相同的权重。<strong>该方法能够平等看待每个类别，但是它的值会受稀有类别影响。</strong></li>
+<li><strong>Weighted-average方法</strong><br>该方法给不同类别不同权重（权重根据该类别的真实分布比例确定），每个类别乘权重后再进行相加。<strong>该方法考虑了类别不平衡情况，它的值更容易受到常见类（majority class）的影响</strong>。<br><strong>3. Micro-average方法</strong><br>该方法把每个类别的TP, FP, FN先相加之后，在根据二分类的公式进行计算。<br>Micro-precision&#x3D;Micro-recall&#x3D;Micro-F1score&#x3D;Accuracy。这是为啥呢？<br>这是因为在某一类中的False Positive样本，一定是其他某类别的False Negative样本。Micro-precision和Micro-recall的数值都等于Accuracy，因为它们计算了对角线样本数和总样本数的比值。</li>
+</ol>
+<h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/215053.htm#_label1">详解Bagging算法的原理及Python实现_python_脚本之家 (jb51.net)</a></p>
+<p>Modeling engagement in long-term, in-home socially<br>assistive robot interventions for children with autism<br>spectrum disorders<br>![[Pasted image 20230502132204.png]]</p>
+<h1 id="集成学习"><a href="#集成学习" class="headerlink" title="集成学习"></a>集成学习</h1><p>要想获得较好的集成性能，基分类器需要满足两个基本条件：</p>
+<ul>
+<li>基分类器要有一定的性能，至少不差于随机猜测的性能，即基分类器准确率不低于50%。</li>
+<li>基学习器要具有多样性，即基学习器间要有差异性，不能像上图(b)中那样，三个基分类器都一样。提升集成学习性能主要通过这一条“多样性”来做，因为第一条很容易满足。<br>分为三类（依据见wiki：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Ensemble_learning#Common_types_of_ensembles">Ensemble learning</a>），  即Boosting、Bagging和Stacking</li>
+<li>Bagging在做预测时，对于分类任务，使用简单的投票法。对于回归任务使用简单平均法。若分类预测时出现两个类票数一样时，则随机选择一个。Bagging中采样自助采样法（bootstrap sampling）。 这个其实就是有放回的采样，每个采样出来的样本集都和原始数据集一样大。假如给定包含m个样本的数据集，我们先随机取出一个样本放入采样集中，然后再把该样本放回去，使得下次这个样本还有可能被选中。从偏差-方差分解的角度看，Bagging主要关注降低方差。</li>
+<li>与Bagging能够并行处理不同，Boosting由于各基学习器之间存在强依赖关系，因此只能串行处理，也就是说Boosting实际上是个迭代学习的过程。Boosting的工作机制为：先从初始训练集中训练出一个基学习器，再根据基学习器的表现对训练样本分布进行调整（比如增大被误分样本的权重，减小被正确分类样本的权重），使得先前基学习器做错的样本在后续的训练过程中受到更多关注，然后基于调整后的样本分布来训练下一个基学习器，如此重复，直到基学习器数目达到事先自定的值T TT，然后将这T TT个基学习器进行加权结合（比如错误率小的基学习器权重大，错误率大的基学习器权重小，这样做决策时，错误率小的基本学习器影响更大）。Boosting算法的典型代表有AdaBoost和XGBoost。 从偏差-方差分解的角度看，Boosting主要关注降低偏差。</li>
+<li>粗略的理解，偏差对应模型拟合能力，方差对应泛化能力</li>
+<li>Stacking方法是先从初始数据集训练出初级学习器，然后“生成”一个新的数据集用于训练次级学习器。在这个新的数据集中，初级学习器的输出被当做样例输入特征，而初始样本的标记仍然被当做样例标记。stacking这个基本上在kaggle比赛里是神器<img src="https://img-blog.csdnimg.cn/20190502224406278.png" alt="20190502224406278.png (1010×938) (csdnimg.cn)"></li>
+</ul>
+<p>Bagging（bootstrap aggregating）和Boosting是两种常见的集成学习方法，而Stacking（stacked generalization）是基于多个模型结果的叠加式集成学习方法。它们的主要区别如下：</p>
+<ol>
+<li>采样方式不同：Bagging采用自助采样法（bootstrap sampling），即从原始数据集中有放回地抽取若干个新数据集，每个新数据集的大小与原数据集相等；而Boosting则采取加权策略，关注的是分类错误的样本，通过构造不同的分类器，让分类器整体上权重更多来使分类器整体的准确率提高。而Stacking是在训练多个不同的基础分类器后，将这些基础分类器的结果作为输入，再训练一个最终的分类器。</li>
+<li>基本分类器不同：Bagging中，基本分类器是相互独立的，且可以使用不同的分类器；Boosting则是通过加权的方式集成多个弱分类器，使得整体分类器更强大；而Stacking将多个基本分类器的结果集成后，训练一个更加稳健的分类器。</li>
+<li>集成方式不同：Bagging通过向每一个基本分类器所产生的分类结果进行投票来决定最终的分类结果；而Boosting则根据不同分类器的权重在各个分类器之间进行重新赋值，使得准确率更高。Stacking在基本分类器中，训练的第一层会产生若干分类结果，最终在第二层中使用这些结果来进行进一步的训练。</li>
+</ol>
+<p>想要提高集成算法的性能，基学习器多样性是个很重要的。那么到底该如何增强多样性呢？<strong>一般的做法主要是对数据样本，输入属性，输出表示，算法参数进行扰动。</strong></p>
+<ul>
+<li><p><strong>数据样本扰动</strong><br>这个其实主要就是采样，比如在bagging中的自助采样法，数据样本扰动对决策树，神经网络这样对数据样本变化非常敏感的学习算法非常有效，但是对支持向量机，朴素贝叶斯，k近邻这些对样本扰动不敏感的算法没用。对此类算法作为基学习器进行集成时往往需要使用输入属性扰动等机制。</p>
+</li>
+<li><p><strong>输入属性扰动</strong><br>这个就是从样本的特征空间中产生不同的特征子集。这样训练出来的基学习器必然是不同的。在包含大量冗余属性的数据，在特征子集中训练基学习器不仅能产生多样性大的个体，还会因属性数的减少而大幅节省时间开销，同时，由于冗余属性多，减少一些冗余属性后训练出来的基学习器性能也不会差。若数据只包含少量属性，或者冗余属性少，则不适宜使用输入属性扰动法。</p>
+</li>
+<li><p><strong>输出表示扰动</strong><br>这类做法的基本思路是对输出表示进行操纵以增强多样性。比如可对训练样本的label稍作变动，比如“翻转法”随机改变一些训练样本的标记；也可以对输出表示进行转化，如“输出调制法”将分类输出转化为回归输出后构建基学习器。这一类貌似用的不多。</p>
+</li>
+<li><p><strong>算法参数扰动</strong><br>这个在现在深度学习比赛中很常见，主要是神经网络有很多参数可以设置，不同的参数往往可以产生差别比较大的基学习器。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1604304">集成学习、Bagging、随机森林、Boosting和Stacking方法的对比详述 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+<h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><p>(工业界最常用)</p>
+<h1 id="Decion-Tree"><a href="#Decion-Tree" class="headerlink" title="Decion Tree"></a>Decion Tree</h1><p>决策树的生成是一个递归的过程。有三种情形不会再分类。<br>⑴当前节点包含的样本全属于同一类别。⑵当前属性集为空。⑶当前节点的样本集合为空。<br>对于第二种情形，其类别设定为结点所含样本最多的类别。对于第三种情形，将其类别设定为其父节点所含样本最多的类别。</p>
+<p>决策树是一种基于实例的归纳学习方法，它能从给定的无序的训练样本中，提炼出树形的分类模型。树中的每个非叶子节点记录了使用哪个特征来进行类别的判断，每个叶子节点则代表了最后判断的类别。根节点到每个叶子节点均形成一条分类的路径规则。<br>每次判断都是对某个属性的测试，每次判断都会缩小考虑的范围。</p>
+<p>简而言之，决策树是一个利用树的模型进行决策的预测模型，表现出的是对象属性与对象值之间的一种映射关系，简单明了，非常容易理解。<br>我们决策树学习的目的是为了产生一棵泛化能力强，也就是能够高效、有效处理未见示例的决策树。<br>一般来说，使用决策树进行分类可以分为两个阶段。在第一阶段，应通过递归生成决策树形成序列来构建决策树。在第二阶段，应使用决策树模型对输入数据进行分类。建立决策树的过程非常重要。本质上，决策树的生成是一种贪婪算法。对每个未分类节点进行测试，以找到从顶部节点开始的一组示例属性（测试属性）。根据测试结果，将训练实例划分为几个子集，每个子集形成一个新节点，并重复训练，直到达到新节点的闭合条件。建立决策树的一个重要部分是测试特征的选择和样本集的分布。为此，不同的决策树算法使用不同的方法。一些决策树算法已经逐渐发展起来，如CLSJID3、CHAID、CART、FACT、C4.5、GINI、SEE、SLIQ、SPRINT等。最著名的算法是昆兰提出的ID3和C4.5算法。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133838427">决策树是一种基于树结构进行决策判断的模型，它通过多个条件判别过程将数据集分类，最终获取需要的结果。</a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133838427">1</a> <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%86%B3%E7%AD%96%E6%A0%91/10377049">2</a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/GreenYang5277/article/details/104500739">3</a> 决策树的生成算法有 ID3、C4.5 和 C5.0 等。 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30059442">4</a> 决策树是一种普遍应用的模型，常用于运筹学、战略计划和机器学习。上方的每个正方形称为一个节点，你拥有的节点越多，决策树（通常）将越准确。做出决策的决策树的最后节点称为树的叶子。决策树直观且易于构建，但在准确性方面稍有不足。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Horizonhui/article/details/119139102">【机器学习笔记】 决策树的生成与剪枝_简述决策树的生成过程_HuyCui的博客-CSDN博客</a> 这个例子描述的很清晰<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42587163/article/details/105279186">(21条消息) 决策树（CLS, ID3, CART, 随机森林, 参数详解），一篇就够了_cls决策树_Machine Liang的博客-CSDN博客</a></p>
+<p><strong>常见决策树分类算法</strong>：<br>(1)、CLS算法：是最原始的决策树分类算法，基本流程是，从一棵空数出发，不断的从决策表选取属性加入数的生长过程中，直到决策树可以满足分类要求为止。CLS算法存在的主要问题是在新增属性选取时有很大的<strong>随机性</strong>。<br>(2)、ID3算法：对CLS算法的最大改进是摒弃了属性选择的随机性，利用信息熵的下降速度作为属性选择的度量。ID3是一种基于信息熵的决策树分类学习算法，以<strong>信息增益和信息熵</strong>，作为对象分类的衡量标准。ID3算法是一种基于熵减法理论的描述性属性优化选择方法。<br>ID3算法结构简单、学习能力强、分类速度快适合大规模数据分类。但同时由于信息增益的不稳定性，容易倾向于众数属性导致过度拟合，算法抗干扰能力差。<br>ID3算法缺点：倾向于选择那些属性取值比较多的属性，在实际的应用中往往取值比较多的属性对分类没有太大价值、不能对连续属性进行处理、对噪声数据比较敏感、需计算每一个属性的信息增益值、计算代价较高。<br>ID3算法根据信息论理论，采用划分后样本集的不确定性作为衡量划分样本子集的好坏程度，用“信息增益值”度量不确定性———信息增益值越大，不确定性就更小，这就促使我们找到一个好的非叶子节点来进行划分。通过ID3算法，计算各个影响因子的信息增益值，逐步建立各个影响因子的一棵决策树。<br>(3)、C4.5算法：基于ID3算法的改进，主要包括：使用<strong>信息增益率</strong>替换了信息增益下降度作为属性选择的标准；在决策树构造的同时进行剪枝操作；避免了树的过度拟合情况；可以对不完整属性和连续型数据进行处理，提升了算法的普适性。<br>（4）CART (Classification and Regression Tree)<br> 这种算法即可以用于分类， 也可以用于回归问题。CART 算法使用了基尼系数取代了信息熵模型。<br>CART 算 法 输入 是 训 练集 D， 基 尼 系 数 的 阈 值 ， 样本个数阈值， 输出是决策树 T。<br>1） 对训练样本集 D， 计算所有的基尼杂质分数。<br>2） 比较 基 尼 杂 质 分 数 ， 选 择杂 质 分 数 最低 的 特 征对当前样本集进行分离。<br>3） 重复 上 面 步 骤 ， 直 至 决 策 树 到 叶 子 节点 ， 或 者达到剪枝的阈值， 或者当前样本集已经不需再分 （无杂质）。</p>
+<p>根据目标变量的不同， 决策树分为两种类型：<br>(1） 分类变量决策树： 根据输入特征对目标变量进行分类。 例如， 假设被要求将计算机的相对价格预测为以下 3 个类别之一： 低、 中、 高。 特征可能包括 CPU、内存大小、 硬盘大小、 显卡、 声卡等。 决策树将从这些特征中学习， 并且在将每个数据点传递给每个节点之后， 它将最终到达 3 个分类目标： 低、 中、 高。<br>(2） 连续变量决策树： 在这种情况下， 输入到决策树的特征 （例如房子的质量） 将用于预测连续输出 （例如房子的价格）。</p>
+<ul>
+<li>信息熵： 介绍信息增益前， 需要先介绍下信息熵。信息熵是由香农提出， 表示对随机变量 X 不确定性的度量。 熵越高， 信息越多； 熵越低， 信息越少。 </li>
+<li>当使用决策树中的节点将训练实例划分为更小的子集时， 熵会发生变化。 某个特征的信息增益是熵变化程度的量度。</li>
+<li>如果所有元素都被正确地划分为不同的类 （理想情况）， 则该划分被认为是纯的。 Gini 指数用于衡量随机选择的样本被某个节点错误分类的可能性。</li>
+<li>Gini 指数 的 程 度 始 终 介 于 0 和 1 之 间 ， 其 中 0 表示所有元素都属于某个类别 （或划分为纯的）， 1 表示元素随机分布在各个类中。 Gini 杂质为 0.5 表示元素均匀分布到某些类别中。</li>
+</ul>
+<p><strong>优缺点</strong><br>适用于分类和回归问题。优点是易于理解和解释，可处理非线性关系，缺点是容易过拟合。<br>优点<br>(1） 决策树相比其他算法有很强的可解释性， 因为决策树的生成过程是可视透明的。</p>
+<p>(2） 决策树无需太多预处理如不需要对数据进行标准化和缩放等预处理， 从而减少了构建模型的工作量。</p>
+<p>(3） 决策树能够处理离散和连续变量， 也能处理 分类和回归问题。</p>
+<p>(4） 数据中存在的任何缺失值都不会影响决策树。<br>速度真的很快 亲测</p>
+<p>缺点<br>(1） 决策树在回归方面表现不佳， 因为如果数据 有太多变化。</p>
+<p>(2） 决策树在类多、 训练样例相对较少的分类问题中容易出错。</p>
+<p>(3） 如 果 数据没 有 正 确 离 散 化 ， 那么 决 策 树 算 法可能会给出不准确的结果， 并且与其他算法相比会表现不佳。</p>
+<p>(4） 训练决策树对小样本集有较大优势， 当涉及 海量样本时， 由于涉及的树从计算到存储， 开销都非常高， 导致效果不佳。 因此在大样本集时， 通常会用神经网络来代替决策树。</p>
+<p>(5） 一棵决策树的结果比较容易出现过拟合， 通 常需要进行集成学习来规避这个问题。</p>
+<h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mantch/p/10165425.html">通俗易懂–SVM算法讲解(算法+案例) - mantch - 博客园 (cnblogs.com)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/v_JULY_v/article/details/7624837#commentBox">支持向量机通俗导论（理解SVM的三层境界）_v_JULY_v的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://huaweicloud.csdn.net/63a56663b878a5454594640f.html?spm=1001.2101.3001.6650.7&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~activity-7-121164645-blog-7624837.235%5Ev28%5Epc_relevant_t0_download&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~activity-7-121164645-blog-7624837.235%5Ev28%5Epc_relevant_t0_download&utm_relevant_index=12">机器学习：支持向量机（SVM）_机器学习_燕双嘤-DevPress官方社区 (csdn.net)</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012328159/article/details/51339801">支持向量机(support vector machine)_天泽28的博客-CSDN博客</a></p>
+</blockquote>
+<p>SVM的目标是找到一个超平面，这个超平面能够很好的解决二分类问题，所以先找到各个分类的样本点离这个超平面最近的点，使得这个点到超平面的距离最大化，最近的点就是虚线所画的。由以上超平面公式计算得出大于1的就属于打叉分类，如果小于0的属于圆圈分类。<br>这些点能够很好地确定一个超平面，而且在几何空间中表示的也是一个向量，<strong>那么就把这些能够用来确定超平面的向量称为支持向量（直接支持超平面的生成），于是该算法就叫做支持向量机(SVM)了</strong></p>
+<p>对一个数据点进行分类，当超平面离数据点的“间隔”越大，分类的确信度（confidence）也越大。所以，为了使得分类的确信度尽量高，需要让所选择的超平面能够最大化这个“间隔”值。这个间隔就是下图中的Gap的一半。</p>
+<p>正则化是一个与SVC算法相关的概念，用参数C来设置：C值较小，表示计算间隔时，将分界线两侧的大量甚至全部数据点都考虑在内（泛化能力强）；C值较大，表示只考虑分界线附近的数据点（泛化能力弱） 所使用的数据点的数量增加了不少，分界线（决策边界）的位置随之改变。但是现在有两个数据点处于错误决策区域. 随着C值变小，计算间隔所考虑的数据点的数量逐渐增加</p>
+<p><strong>SVM使用准则：n为特征数，m为训练样本数。</strong></p>
+<ul>
+<li><strong>如果相较于m而言,n 要大许多，即训练集数据量不够支持我们训练一个复杂的非线性模型，我们选用逻辑回归模型或者不带核函数的支持向量机。</strong></li>
+<li><strong>如果n较小，而且m大小中等，例如n在 1-1000 之间，而m在10-10000之间，使用高斯核函数的支持向量机。</strong></li>
+<li><strong>如果n较小，而m较大，例如n在1-1000之间，而𝑚大于50000，则使用支持向量机会非常慢，解决方案是创造、增加更多的特征，然后使用逻辑回归或不带核函数的支持向量机。</strong></li>
+</ul>
+<p><strong>优点：</strong></p>
+<ul>
+<li><strong>支持向量机算法可以解决小样本情况下的机器学习问题，简化了通常的分类和回归等问题。</strong></li>
+<li><strong>由于采用核函数方法克服了维数灾难和非线性可分的问题，所以向高维空间映射时没有增加计算的复杂性。换句话说，由于支持向量计算法的最终决策函数只由少数的支持向量所确定，所以计算的复杂性取决于支持向量的数目，而不是样本空间的维数。</strong></li>
+<li><strong>支持向量机算法利用松弛变量可以允许一些点到分类平面的距离不满足原先要求，从而避免这些点对模型学习的影响。</strong></li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li><strong>支持向量机算法对大规模训练样本难以实施。这是因为支持向量机算法借助二次规划求解支持向量，这其中会涉及m阶矩阵的计算，所以矩阵阶数很大时将耗费大量的机器内存和运算时间。</strong></li>
+<li><strong>经典的支持向量机算法只给出了二分类的算法，而在数据挖掘的实际应用中，一般要解决多分类问题，但支持向量机对于多分类问题解决效果并不理想。</strong></li>
+<li><strong>SVM算法效果与核函数的选择关系很大，往往需要尝试多种核函数，即使选择了效果比较好的高斯核函数，也要调参选择恰当的<img src="https://latex.codecogs.com/gif.latex?%5Cgamma" alt="\gamma">参数。另一方面就是现在常用的SVM理论都是使用固定惩罚系数C，但正负样本的两种错误造成的损失是不一样的。</strong></li>
+</ul>
+<p><strong>支持向量机算法分类和回归方法的中都支持线性性和非线性类型的数据类型。非线性类型通常是二维平面不可分，为了使数据可分，需要通过一个函数将原始数据映射到高维空间，从而使得数据在高维空间很容易可分，需要通过一个函数将原始数据映射到高维空间，从而使得数据在高维空间很容易区分，这样就达到数据分类或回归的目的，而实现这一目标的函数称为核函数。</strong></p>
+<h1 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h1><p>K Nearest Neighbors<br>KNN是一种基于实例的学习方法，它通过计算不同特征之间的距离来确定新数据点的类别。KNN的优点包括：1）简单易懂，不需要假设数据分布；2）可以用于分类和回归问题；3）对于多分类问题，KNN可以使用投票法来确定类别；4）对于非线性数据，KNN可以表现得很好。KNN的缺点包括：1）计算量大，需要存储所有训练数据；2）对于高维数据，KNN的表现会变差；3）对于不平衡的数据集来说，它可能会出现偏差 。</p>
+<p>KNN 的原理就是当预测一个新的值 x 的时候，根据它距离最近的 K 个点是什么类别来判断 x 属于哪个类别<br>要度量空间中点距离的话，有好几种度量方式，比如常见的曼哈顿距离计算、欧式距离计算等等。不过通常 KNN 算法中使用的是欧式距离。<br>KNN 算法最简单粗暴的就是将预测点与所有点距离进行计算，然后保存并排序，选出前面 K 个值看看哪些类别比较多。但其实也可以通过一些数据结构来辅助，比如最大堆，这里就不多做介绍，有兴趣可以百度最大堆相关数据结构的知识。<br>如何确定 K 取多少值好呢？答案是通过交叉验证（将样本数据按照一定比例，拆分出训练用的数据和验证用的数据，比如6：4拆分出部分训练数据和验证数据），从选取一个较小的 K 值开始，不断增加 K 的值，然后计算验证集合的方差，最终找到一个比较合适的 K 值。选择 K 点的时候可以选择一个较大的临界 K 点，当它继续增大或减小的时候，错误率都会上升，<br>KNN是一种非参的、惰性的算法模型。什么是非参，什么是惰性呢？非参的意思并不是说这个算法不需要参数，而是意味着这个模型不会对数据做出任何的假设，与之相对的是线性回归（我们总会假设线性回归是一条直线）。也就是说 KNN 建立的模型结构是根据数据来决定的，这也比较符合现实的情况，毕竟在现实中的情况往往与理论上的假设是不相符的。惰性又是什么意思呢？想想看，同样是分类算法，逻辑回归需要先对数据进行大量训练（tranning），最后才会得到一个算法模型。而 KNN 算法却不需要，它没有明确的训练数据的过程，或者说这个过程很快。</p>
+<p>优点</p>
+<ol>
+<li>简单易用。相比其他算法，KNN 算是比较简洁明了的算法，即使没有很高的数学基础也能搞清楚它的原理。</li>
+<li>模型训练时间快，上面说到 KNN 算法是惰性的，这里也就不再过多讲述。</li>
+<li>预测效果好。</li>
+<li>对异常值不敏感。</li>
+</ol>
+<ul>
+<li>流程简单明了，易于实现</li>
+<li>方便进行<strong>多分类任务</strong>，效果优于SVM</li>
+<li>适合对<strong>稀有事件</strong>进行分类<br>缺点</li>
+</ul>
+<ol>
+<li>对内存要求较高，因为该算法存储了所有训练数据。</li>
+<li>预测阶段可能很慢。</li>
+<li>对不相关的功能和数据规模敏感。</li>
+</ol>
+<ul>
+<li>计算量大，T&#x3D;O(n)，需要计算到每个点的距离</li>
+<li>样本不平衡时（一些分类数量少，一些多），前K个样本中大容量类别占据多数，这种情况会影响到分类结果</li>
+<li>K太小过拟合，K太大欠拟合，K较难决定得完美，通过交叉验证确定K<br>适用场景</li>
+<li>多分类问题</li>
+<li>稀有事件分类问题</li>
+<li>文本分类问题</li>
+<li>模式识别</li>
+<li>聚类分析</li>
+<li>样本数量较少的分类问题<br>![[Pasted image 20230428170145.png]]</li>
+</ul>
+<p>k近邻法不具有显式的学习过程。它是懒惰学习（lazy learning）的著名代表，此类学习技术在训练阶段仅仅是把样本保存起来，训练时间开销为零，待收到测试样本后再进行处理。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/chenhepg/article/details/105409153">K-近邻算法： k-nearest neighbor classification (kNN) 详细介绍_knn算法k的取值范围_条件漫步的博客-CSDN博客</a></p>
+<h1 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h1><p><a target="_blank" rel="noopener" href="https://www.math.pku.edu.cn/teachers/ganr/course/pr/ch02-p1.pdf">Microsoft PowerPoint - 02贝叶斯.ppt (pku.edu.cn)</a><br>朴素贝叶斯（Naive Bayes）是一种基于贝叶斯定理和特征条件独立假设的分类方法。它的基本思想是对于给定的数据集，首先基于特征条件独立假设学习输入输出的联合概率分布；然后基于此模型，对于给定的输入x，利用贝叶斯定理求出后验概率最大的输出y。朴素贝叶斯分类器是一种简单快速的分类算法，适用于维度非常高的数据集。</p>
+<p>对于前面介绍的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1640472478%7D">逻辑回归</a>，支持向量机和<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1640472478%7D">决策树算法</a>都是基于样本数据直接得到 p(yc|xi)p(y_{c}|x_{i}) ，即通过属性 xx 预测类别 yy ，此类模型称为<strong>判别模型</strong>；与它们不同的是，贝叶斯分类器是基于<strong>样本数据估计</strong> p(xi|yc)p(yc)p(x_{i}|y_{c})p(y_{c}) ，因此称其为<strong>生成模型</strong>。</p>
+<p>需要计算先验概率。第二就是分类决策存在错误率。第三就是对输入数据的表达形式很敏感。第四就是对由于使用了样本属性独立性的假设，所以如果样本属性有关联时其效果不好。</p>
+<p>一种有效计算条件概率的方法称为<strong>贝叶斯定理</strong>。贝叶斯定理告诉我们如何<strong>交换条件概率中的条件与结果</strong>，即如果已知 <code>P(X|Y)</code>，要求 <code>P(Y|X)</code>:</p>
+<p>朴素贝叶斯法是典型的生成学习方法。生成方法由训练数据学习联合概率分布P（X,Y），然后求得后验概率分布P（Y|X）。具体来说，利用训练数据学习P（X|Y）和P(Y)的估计，得到联合概率分布</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ws19920726/article/details/105726570">三种常用的朴素贝叶斯实现算法——高斯朴素贝叶斯、伯努利朴素贝叶斯、多项式朴素贝叶斯_bernoullinb能用于连续变量吗_乐无异kop的博客-CSDN博客</a></p>
+<p>在朴素贝叶斯分类器中，我们需要计算每个类别的先验概率。先验概率指的是在不考虑任何特征的情况下，一个样本属于某个类别的概率。条件概率指的是在已知一个样本属于某个类别的情况下，该样本的某个特征取某个值的概率。</p>
+<ul>
+<li><strong>先验概率是不依靠观测数据的概率分布</strong>，也就是与其他因素独立的分布。在朴素贝叶斯中，类别 c 的概率就是先验概率，表示为p(c) 。</li>
+<li>条件概率指的是在已知一个样本属于某个类别的情况下，该样本的某个特征取某个值的概率。</li>
+<li>在朴素贝叶斯中，后验概率指给定数据 x 后，类别 c∈C的概率 p(c|x)</li>
+<li>似然概率其实很好理解，就是说我们现在有一堆数据，现在需要构建一组参数对这些数据建模，以使得模型能够尽可能地拟合这些数据。所以我们要做的就是从很多组参数中选出一组使得模型对数据的拟合程度最高，所以也常常说最大似然概率。</li>
+</ul>
+<p>注意“似然”与“概率”意思相近，都是指某种事件发生的可能性，但是在统计学中，“似然”和“概率”又有明确的区分：</p>
+<ul>
+<li><strong>“概率”描述了给定模型参数后，描述结果的合理性，而不涉及任何观察到的数据</strong></li>
+<li><strong>“似然”描述了给定了特定观测值后，描述模型参数是否合理</strong></li>
+</ul>
+<p>举个栗子，抛一枚均匀的硬币，拋20次，问15次拋得正面的可能性有多大？这里的可能性就是“概率”；而拋一枚硬币，拋20次，结果15次正面向上，问其为均匀的可能性？这里的可能性就是“似然”。</p>
+<p>朴素贝叶斯是一种基于概率的分类方法，它假设特征之间是独立的，并使用贝叶斯定理来计算后验概率。朴素贝叶斯的优点包括：1）可以处理大量特征，因此可以用于高维数据的分类问题；2）对于小样本数据，朴素贝叶斯表现得很好；3）训练速度比较快，容易做成并行方法；4）对于不平衡的数据集来说，它可以平衡误差。朴素贝叶斯的缺点包括：1）由于假设特征之间是独立的，因此可能会出现欠拟合；2）对于非线性数据，朴素贝叶斯表现得不太好。<br><a target="_blank" rel="noopener" href="https://www.cda.cn/bigdata/28006.html">朴素贝叶斯算法的优缺点是什么？如何实现？-CDA数据分析师官网</a></p>
+<h1 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h1><p><img src="https://pic4.zhimg.com/v2-75470296168d945e856047e7e8103ba3_r.jpg"><br> RF(随机森林)与GBDT之间的区别与联系<br><strong>相同点</strong>：<br>都是由多棵树组成，最终的结果都是由多棵树一起决定。<br><strong>不同点</strong>：</p>
+<ul>
+<li>组成随机森林的树可以分类树也可以是回归树，而GBDT只由回归树组成</li>
+<li>组成随机森林的树可以并行生成，而GBDT是串行生成</li>
+<li>随机森林的结果是多数表决表决的，而GBDT则是多棵树累加之和</li>
+<li>随机森林对异常值不敏感，而GBDT对异常值比较敏感</li>
+<li>随机森林是减少模型的方差，而GBDT是减少模型的偏差</li>
+<li>随机森林不需要进行特征归一化。而GBDT则需要进行特征归一化</li>
+</ul>
+<p>Random Forest, 其中的Random 指：<br>（1）训练样本选择方面的Random: Bootstrap 方法随机选择样本；<br>（2）特征选择方面的Random: 属性中随机选择k个属性，每个树节点分裂时，从这随机的k个属性里，选择最优的。</p>
+<p>引入Bootstrap概念：<br>本意指高靴子口后面的悬挂物，穿靴子时用手向上拉的工具，Bootstraping 指’Pull up by your own bootstraps’ 即 ‘通过拉靴子让自己上升’， 意思指‘不可能发生的事’，后来意思发生转变，隐喻“不需要外界帮助，仅靠自身理论让自己变得更好”。</p>
+<p>引入Bagging 策略， Bootstrap aggregation:<br>从样本中重采样（有重复的）选出n个样本，在<strong>所有属性</strong>上，对此n个样本建立分类器（ID3，C4.5, CART, SVM， Logistic回归等），重复以上两步m次，获得m个分类器，将数据放在这m个分类器上，最后根据这m个分类器的投票结果，决定数据属于哪一类。</p>
+<p>随机森林在Bagging基础上做了修改（主要是在属性选择上，不是所有属性，而是随机数量的属性feature）：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/606839135">随机森林是一种基于决策树的集成学习方法，它通过构建多个决策树来提高预测准确性和稳定性。随机森林的优点包括：1）可以处理大量的输入特征，因此可以用于高维数据的分类和回归问题；2）具有很好的鲁棒性，由于随机森林的构建过程具有随机性，因此它可以很好地处理噪声数据和缺失数据；3）可以判断特征的重要程度；4）不容易过拟合；5）训练速度比较快，容易做成并行方法；6）实现起来比较简单；7）对于不平衡的数据集来说，它可以平衡误差；8）如果有很大一部分的特征遗失，仍可以维持准确度</a><a target="_blank" rel="noopener" href="https://bing.com/search?q=%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9">1</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/606839135">2</a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265703650">3</a><a target="_blank" rel="noopener" href="https://easyai.tech/ai-definition/random-forest/">4</a>。当然，随机森林也有一些缺点，比如模型解释性不强等。</p>
+<h1 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mantch/p/11160496.html">GBDT–原来是这么回事(附代码) - mantch - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<p>GBDT(Gradient Boosting Decision Tree)，全名叫梯度提升决策树，使用的是<strong>Boosting</strong>的思想。Boosting方法训练基分类器时采用串行的方式，各个基分类器之间有依赖。它的基本思路是将基分类器层层叠加，每一层在训练的时候，对前一层基分类器分错的样本，给予更高的权重。测试时，根据各层分类器的结果的加权得到最终结果。Bagging与Boosting的串行训练方式不同，Bagging方法在训练过程中，各基分类器之间无强依赖，可以进行并行训练。<br>GBDT的原理很简单，就是所有弱分类器的结果相加等于预测值，然后下一个弱分类器去拟合误差函数对预测值的残差(这个残差就是预测值与真实值之间的误差)。当然了，它里面的弱分类器的表现形式就是各棵树。</p>
+<p>GBDT的优点和局限性有哪些？<br> 优点</p>
+<ol>
+<li>预测阶段的计算速度快，树与树之间可并行化计算。</li>
+<li>在分布稠密的数据集上，泛化能力和表达能力都很好，这使得GBDT在Kaggle的众多竞赛中，经常名列榜首。</li>
+<li>采用决策树作为弱分类器使得GBDT模型具有较好的解释性和鲁棒性，能够自动发现特征间的高阶关系，并且也不需要对数据进行特殊的预处理如归一化等。</li>
+</ol>
+<p> 局限性</p>
+<ol>
+<li>GBDT在高维稀疏的数据集上，表现不如支持向量机或者神经网络。</li>
+<li>GBDT在处理文本分类特征问题上，相对其他模型的优势不如它在处理数值特征时明显。</li>
+<li>训练过程需要串行训练，只能在决策树内部采用一些局部并行的手段提高训练速度。</li>
+</ol>
+<h1 id="xgboost"><a href="#xgboost" class="headerlink" title="xgboost"></a>xgboost</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31984691">Bagging与Adaboos算法原理及推导（详细版） - 知乎 (zhihu.com)</a><br>![<a target="_blank" rel="noopener" href="https://pic3.zhimg.com/v2-df3797900d19d7935aae530f29747386_r.jpg">v2-df3797900d19d7935aae530f29747386_r.jpg (1198×502) (zhimg.com)</a></p>
+<p>Input: training data $D&#x3D;{(x_i,y_i)}_{i&#x3D;1}^n$, number of iterations $T$<br>Output: a boosting model $f(x)$</p>
+<ol>
+<li>Initialize the model with a constant value:<br>$$f_0(x)&#x3D;\arg\min_{\gamma}\sum_{i&#x3D;1}^n L(y_i,\gamma)$$</li>
+<li>For $t&#x3D;1$ to $T$:<ol>
+<li>Compute the pseudo-residuals:<br> $$r_{it}&#x3D;-[\frac{\partial L(y_i,f(x_i))}{\partial f(x_i)}]<em>{f(x)&#x3D;f</em>{t-1}(x)}$$</li>
+<li>Fit a regression tree to the pseudo-residuals, giving terminal regions $R_{j,t}$ for $j&#x3D;1,…,J_t$</li>
+<li>Compute the output value for each region:<br> $$\gamma_{j,t}&#x3D;\arg\min_{\gamma}\sum_{x_i\in R_{j,t}}L(y_i,f_{t-1}(x_i)+\gamma)$$</li>
+<li>Update the model:<br> $$f_t(x)&#x3D;f_{t-1}(x)+\sum_{j&#x3D;1}^{J_t}\gamma_{j,t}\cdot I(x\in R_{j,t})$$</li>
+</ol>
+</li>
+<li>Output the final model:<br>$$f(x)&#x3D;f_T(x)$$</li>
+</ol>
+<p>其中，$L(y,f(x))$是损失函数，$I(x\in R)$是指示函数，表示$x$是否属于区域$R$。<br>希望这些信息能够帮到你。如果你还有其他问题，请随时问我。</p>
+<p>第一个区别就是XGBoost使用的基学习器是决策树，而AdaBoost可以使用其他各种弱学习器。<br>第二个区别是XGBoost的目标函数发生了改变，由目标函数由损失函数和正则化项两部分组成，其中正则化项是描述决策树复杂度的。而AdaBoost的目标函数没有正则化项。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42740654">Adaboost, GBDT 与 XGBoost 的区别 - 知乎 (zhihu.com)</a></p>
+<ul>
+<li>adaboost 得到了多个线性分类器，把这些线性分类器的结果做一个线性组合</li>
+<li>不同的是，AdaBoost 是通过提升错分数据点的权重来定位模型的不足而 Gradient Boosting 是通过算梯度（gradient）来定位模型的不足。因此相比 AdaBoost, Gradient Boosting 可以使用更多种类的目标函数。</li>
+<li>AdaBoost用错分数据点来识别问题，通过调整错分数据点的权重来改进模型。Gradient Boosting通过负梯度来识别问题，通过计算负梯度来改进模型。</li>
+<li>从决策边界来说，线性回归的决策边界是一条直线，逻辑回归的决策边界根据是否使用核函数可以是一条直线或者曲线，而GBDT的决策边界可能是很多条线。</li>
+<li>xgboost与GBDT：<ul>
+<li>传统GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）。</li>
+<li>传统GBDT在优化时只用到一阶导数信息，xgboost则对代价函数进行了二阶泰勒展开，同时用到了一阶和二阶导数。顺便提一下，xgboost工具支持自定义代价函数，只要函数可一阶和二阶求导。</li>
+<li>xgboost在代价函数里加入了正则项，用于控制模型的复杂度。正则项里包含了树的叶子节点个数、每个叶子节点上输出的score的L2模的平方和。从Bias-variance tradeoff角度来讲，正则项降低了模型的variance，使学习出来的模型更加简单，防止过拟合，这也是xgboost优于传统GBDT的一个特性。</li>
+<li>。。。</li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Datawhale/article/details/103725122">深入理解XGBoost，优缺点分析，原理推导及工程实现_Datawhale的博客-CSDN博客</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mantch/p/11164221.html">终于有人说清楚了–XGBoost算法 - mantch - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<p>如果不考虑工程实现、解决问题上的一些差异，XGBoost与GBDT比较大的不同就是目标函数的定义<br>XGBoost的<strong>核心算法思想</strong>不难，基本就是：</p>
+<ol>
+<li><p>不断地添加树，不断地进行特征分裂来生长一棵树，每次添加一个树，其实是学习一个新函数**f(x)**，去拟合上次预测的残差。</p>
+</li>
+<li><p>当我们训练完成得到k棵树，我们要预测一个样本的分数，其实就是根据这个样本的特征，在每棵树中会落到对应的一个叶子节点，每个叶子节点就对应一个分数</p>
+</li>
+<li><p>最后只需要将每棵树对应的分数加起来就是该样本的预测值。</p>
+</li>
+<li><p>显然，我们的目标是要使得树群的预测值y′i′尽量接近真实值yi，而且有尽量大的泛化能力。类似之前GBDT的套路，XGBoost也是需要将多棵树的得分累加得到最终的预测得分（每一次迭代，都在现有树的基础上，增加一棵树去拟合前面树的预测结果与真实值之间的残差）。<br>设置树的最大深度、当样本权重和小于设定阈值时停止生长以防止过拟合<br> 当树达到最大深度时则停止建立决策树，设置一个超参数max_depth，避免树太深导致学习局部样本，从而过拟合<br> 样本权重和小于设定阈值时则停止建树。什么意思呢，即涉及到一个超参数-最小的样本权重和min_child_weight，和GBM的 min_child_leaf 参数类似，但不完全一样。大意就是一个叶子节点样本太少了，也终止同样是防止过拟合；</p>
+</li>
+<li><p>GBDT是机器学习算法，XGBoost是该算法的工程实现。</p>
+</li>
+<li><p>在使用CART作为基分类器时，XGBoost显式地加入了正则项来控制模 型的复杂度，有利于防止过拟合，从而提高模型的泛化能力。</p>
+</li>
+<li><p>GBDT在模型训练时只使用了代价函数的一阶导数信息，XGBoost对代价函数进行二阶泰勒展开，可以同时使用一阶和二阶导数。</p>
+</li>
+<li><p>传统的GBDT采用CART作为基分类器，XGBoost支持多种类型的基分类 器，比如线性分类器。</p>
+</li>
+<li><p>传统的GBDT在每轮迭代时使用全部的数据，XGBoost则采用了与随机 森林相似的策略，支持对数据进行采样。</p>
+</li>
+<li><p>传统的GBDT没有设计对缺失值进行处理，XGBoost能够自动学习出缺 失值的处理策略。</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/26-%E6%A8%A1%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">https://chierhy.github.io/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/26-%E6%A8%A1%E5%9E%8B-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/22-Anaconda/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Anaconda</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/29/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/27-%E6%A8%A1%E5%9E%8B-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">模型-深度学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">总</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">信号处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#coding"><span class="toc-number">3.</span> <span class="toc-text">coding</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81"><span class="toc-number">3.3.</span> <span class="toc-text">验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%BB%E5%9B%BE"><span class="toc-number">3.4.</span> <span class="toc-text">画图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0"><span class="toc-number">4.</span> <span class="toc-text">集成学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-number">5.</span> <span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Decion-Tree"><span class="toc-number">6.</span> <span class="toc-text">Decion Tree</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SVM"><span class="toc-number">7.</span> <span class="toc-text">SVM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#KNN"><span class="toc-number">8.</span> <span class="toc-text">KNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF"><span class="toc-number">9.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Random-Forest"><span class="toc-number">10.</span> <span class="toc-text">Random Forest</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GBDT"><span class="toc-number">11.</span> <span class="toc-text">GBDT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xgboost"><span class="toc-number">12.</span> <span class="toc-text">xgboost</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>调参大师 | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="常见error check‘optimizer &#x3D; torch.optim.Adam(params’的params的写法，不同模态叠加时候，params不同 当loss震荡，比较锯齿不平滑，设置小一点lr：optimizer &#x3D; torch.optim.Adam(params, lr&#x3D;0.00001) 【已解决】RuntimeError: CUDA error: de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调参大师">
+<meta property="og:url" content="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/%E8%B0%83%E5%8F%82%E5%A4%A7%E5%B8%88/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="常见error check‘optimizer &#x3D; torch.optim.Adam(params’的params的写法，不同模态叠加时候，params不同 当loss震荡，比较锯齿不平滑，设置小一点lr：optimizer &#x3D; torch.optim.Adam(params, lr&#x3D;0.00001) 【已解决】RuntimeError: CUDA error: de">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2024-07-28T06:02:00.000Z">
+<meta property="article:modified_time" content="2024-09-08T13:40:16.156Z">
+<meta property="article:author" content="神经蛙">
+<meta property="article:tag" content="code💻">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/%E8%B0%83%E5%8F%82%E5%A4%A7%E5%B8%88/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '调参大师',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-08 21:40:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">调参大师</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-28T06:02:00.000Z" title="发表于 2024-07-28 14:02:00">2024-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-08T13:40:16.156Z" title="更新于 2024-09-08 21:40:16">2024-09-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">713</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="调参大师"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="常见error"><a href="#常见error" class="headerlink" title="常见error"></a>常见error</h1><ol>
+<li>check‘optimizer &#x3D; torch.optim.Adam(params’的params的写法，不同模态叠加时候，params不同</li>
+<li>当loss震荡，比较锯齿不平滑，设置小一点lr：optimizer &#x3D; torch.optim.Adam(params, lr&#x3D;0.00001)</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/BetrayFree/article/details/134267306">【已解决】RuntimeError: CUDA error: device-side assert triggeredCUDA kernel errors might be asynchronous-CSDN博客</a></li>
+<li>大量NaN怎么办：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MTkwMTQ4NA==&mid=2247484438&idx=1&sn=43ae59a77c2ba68bd2ded55395528c01&chksm=cf5faed5f82827c329768f05b4b5051b0cbaf6eb34a96934dd68b86bb7943906ec044eb1836e&scene=21#wechat_redirect">大模型工程化必备技巧——模型训练过程中发现输出大量NaN怎么办？建议收藏 (qq.com)</a> <ol>
+<li>四个常见原因，包括梯度爆炸、学习率过大、数据本身过于稀疏或质量太差以及 backward 时出现 0 在分母上或有无穷大的数。</li>
+<li>针对学习率过大或数据质量差可调整学习率和进行数据消融，对梯度爆炸可在 model.step () 前进行梯度裁剪 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)  </span><br></pre></td></tr></table></figure></li>
+<li>对于出现 0 或无穷大的情况可打印运算结果并对出现 NaN 的值进行替换 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 假设a为第一次出现NaN的向量</span><br><span class="line">a = torch.where(torch.isnan(a), torch.full_like(a, 0), a)</span><br><span class="line"></span><br><span class="line"># 下面是当a中出现无穷大时</span><br><span class="line">a = torch.where(torch.isinf(a), torch.full_like(a, 0), a)</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li>训练不好，查看梯度变化，第几层导致。eg：MocoV3冻结<code>patch projection</code>可以解决训练不稳定的问题</li>
+</ol>
+<p>数据模态少了。loss一直飙升——过拟合</p>
+<ul>
+<li>增大epoch，增大lr，增大dropout，正则化</li>
+</ul>
+<p>调参</p>
+<ol>
+<li>lr<ol>
+<li>只是把 lr 从 1 e-6 改成 1 e-5，就跑了 80 个 epoch 就开始报 nan 的 loss。 ——方法是把 batch 调大</li>
+<li>数据量大了，learning rate 要调整小。</li>
+<li>loss 下降波动比较毛刺的时候，将 lr 调小，也不行，可能下降更慢</li>
+<li>‘the clip used on video-text retrieval is learning-rate sensitivity’无监督训练好的去做下游任务finetune时候，对lr很敏感，甚至moco设置的30，可以试下gradient search，多试试</li>
+</ol>
+</li>
+<li>scheduler<ol>
+<li>可以scheduler &#x3D; torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode&#x3D;’min’, factor&#x3D;0.1, patience&#x3D;10, min_lr&#x3D;1e-8)，</li>
+</ol>
+</li>
+<li>调小epoch size</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45662399/article/details/136836955">最详细最清晰的epoch、batchsize和iteration概念辨析_batch size和epoch-CSDN博客</a></li>
+<li>batch size <ol>
+<li>非常大所有数据一次性传，效果好了。</li>
+<li>在使用具有线性学习率缩放的标准 SGD&#x2F;Momentum 时，大批次的训练可能会不稳定（Goyal 等人，2017 年）。为了稳定训练，我们对所有批次规模都使用了 LARS 优化器（You 等人，2017 年）。</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/keiven_/article/details/129413016?spm=1001.2014.3001.5502">模型实验代码技巧_模型设置seed-CSDN博客</a> <strong>求导监测</strong> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正向传播开启自动求导异常侦测</span></span><br><span class="line">torch.autograd.set_detect_anomaly(<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看参数梯度和更新情况</span></span><br><span class="line"><span class="keyword">for</span> name, parms <span class="keyword">in</span> model.named_parameters():</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;更新前/后&quot;</span>)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;name:&#x27;</span>, name)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;para:&#x27;</span>, parms)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;grad_requirs:&#x27;</span>, parms.requires_grad)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;--&gt;grad_value:&#x27;</span>, parms.grad)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 反向传播求导侦测</span></span><br><span class="line"><span class="keyword">from</span> apex <span class="keyword">import</span> amp</span><br><span class="line"><span class="comment"># from torch.cuda import amp</span></span><br><span class="line"><span class="keyword">with</span> torch.autograd.detect_anomaly():</span><br><span class="line">    <span class="keyword">if</span> use_amp:</span><br><span class="line">        <span class="keyword">with</span> amp.scale_loss(loss, optimizer) <span class="keyword">as</span> scaled_loss:</span><br><span class="line">            scaled_loss.backward()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        loss.backward(retain_graph=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/%E8%B0%83%E5%8F%82%E5%A4%A7%E5%B8%88/">https://chierhy.github.io/2024/07/28/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/%E8%B0%83%E5%8F%82%E5%A4%A7%E5%B8%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/code%F0%9F%92%BB/">code💻</a></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/28/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/%E7%A7%91%E7%A0%94%E8%BD%AF%E4%BB%B6/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">科研软件</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/28/%E8%AE%BA%E6%96%87/%E5%90%88%E9%9B%86-CVPR2024/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">合集-CVPR2024</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/18/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/6-%E7%88%AC%E8%99%ABb%E7%AB%99%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/" title="爬虫b站音频视频"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-18</div><div class="title">爬虫b站音频视频</div></div></a></div><div><a href="/2023/09/23/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/8-python%20debug%E6%97%A5%E5%B8%B8/" title="python debug日常"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-23</div><div class="title">python debug日常</div></div></a></div><div><a href="/2023/02/25/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/18-Pytorch-1-%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" title="Pytorch-1-入门笔记"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-25</div><div class="title">Pytorch-1-入门笔记</div></div></a></div><div><a href="/2023/03/03/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/19-pytorch-2-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="pytorch-2-深度学习"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-03</div><div class="title">pytorch-2-深度学习</div></div></a></div><div><a href="/2023/03/03/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/20-pytorch-3-%E5%8F%AF%E8%A7%86%E5%8C%96/" title="pytorch-3-可视化"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-03</div><div class="title">pytorch-3-可视化</div></div></a></div><div><a href="/2022/11/15/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/2-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-Pytorch%20CNN%20model/" title="学习记录-Pytorch CNN model"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-15</div><div class="title">学习记录-Pytorch CNN model</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81error"><span class="toc-number">1.</span> <span class="toc-text">常见error</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

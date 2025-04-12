@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>对比学习-时序-合集 | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SoftCLT: 时间序列的软对比学习《Soft Contrastive Learning for Time Series》(时间序列、时序分类任务、软对比学习、实例上软赋值距离差异、数据空间非嵌入空间度量相似性) - ZERO- - 博客园 (cnblogs.com)   时间序列中的对比学习。在时间序列分析领域，考虑到时间序列的不变特性，已经提出了几种正对和负对的对比学习设计。表 1 比较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对比学习-时序-合集">
+<meta property="og:url" content="https://chierhy.github.io/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-%E6%97%B6%E5%BA%8F-%E5%90%88%E9%9B%86/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="SoftCLT: 时间序列的软对比学习《Soft Contrastive Learning for Time Series》(时间序列、时序分类任务、软对比学习、实例上软赋值距离差异、数据空间非嵌入空间度量相似性) - ZERO- - 博客园 (cnblogs.com)   时间序列中的对比学习。在时间序列分析领域，考虑到时间序列的不变特性，已经提出了几种正对和负对的对比学习设计。表 1 比较">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2024-07-30T05:21:00.000Z">
+<meta property="article:modified_time" content="2024-07-30T05:36:29.000Z">
+<meta property="article:author" content="神经蛙">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-%E6%97%B6%E5%BA%8F-%E5%90%88%E9%9B%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '对比学习-时序-合集',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-07-30 13:36:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">对比学习-时序-合集</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-30T05:21:00.000Z" title="发表于 2024-07-30 13:21:00">2024-07-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-30T05:36:29.000Z" title="更新于 2024-07-30 13:36:29">2024-07-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E7%A0%94/">科研</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">700</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="对比学习-时序-合集"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ZERO-/p/18266304">SoftCLT: 时间序列的软对比学习《Soft Contrastive Learning for Time Series》(时间序列、时序分类任务、软对比学习、实例上软赋值距离差异、数据空间非嵌入空间度量相似性) - ZERO- - 博客园 (cnblogs.com)</a></li>
+</ul>
+</blockquote>
+<p>时间序列中的对比学习。在时间序列分析领域，考虑到时间序列的不变特性，已经提出了几种正对和负对的对比学习设计。表 1 比较了包括我们在内的各种 TS 对比学习方法的若干特性。T-Loss（Franceschi 等人，2019 年）从一个 TS 中随机抽样一个子序列，如果属于该 TS 的子序列，则将其视为正序列；如果属于其他 TS 的子序列，则将其视为负序列。Self-Time（Fan 等人，2020 年）通过将同一 TS 的增强样本定义为正样本和负样本来捕捉 TS 之间的样本间关系，并通过解决分类任务来捕捉 TS 内部的时间关系，其中类标签使用子序列之间的时间距离来定义。TNC（Tonekaboni 等人，2021 年）使用正态分布定义窗口的时间邻域，并将邻域内的样本视为正样本。TS-SD（Shi 等人，2021 年）使用三元组相似性判别任务训练模型，目标是识别两个 TS 中哪个与给定的 TS 更相似，使用 DTW 来定义相似性。TS-TCC（Eldele 等人，2021 年）提出了一种时间对比损失，即让增强预测彼此的未来，而 CA-TCC（Eldele 等人，2023 年）是 TS-TCC 在半监督设置下的扩展，采用了相同的损失。TS2Vec（Yue 等人，2022 年）将 TS 分成两个子序列，并在实例和时间维度上定义了分层对比损失。Mixing-up（Wickstrøm 等人，2022 年）通过混合两个 TS 生成新的 TS，目标是预测混合权重。CoST（Woo 等人，2022 年）利用时域和频域对比损失来学习季节趋势表征。TimeCLR（Yang 等人，2022 年）引入了相移和振幅变化增强，这是一种基于 DTW 的数据增强方法。TF-C（Zhang 等人，2022 年）同时学习基于时间和频率的 TS 表示，并提出了一种新颖的时频一致性架构。在医疗领域，Subject-Aware CL（Cheng 等人，2020 年）提出了一种实例化的 CL 框架，通过架构设计将时间信息纠缠在一起；CLOCS（Kiyasseh 等人，2021 年）提出考虑其应用中特别可用的空间维度，这与一般 TS 中的信道接近。以前用于 TS 的 CL 方法计算的是硬对比损失，即所有负对之间的相似性同样最小化，而我们为 TS 引入了软对比损失。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-%E6%97%B6%E5%BA%8F-%E5%90%88%E9%9B%86/">https://chierhy.github.io/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-%E6%97%B6%E5%BA%8F-%E5%90%88%E9%9B%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/08/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-2019-MoCo/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">对比学习-2019-MoCo</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/30/%E8%AE%BA%E6%96%87/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0-%E6%97%B6%E5%BA%8F-2024-ICLR-SoftCLT/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">对比学习-2024-ICLR-SoftCLT</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

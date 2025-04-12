@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Generative AI | chiblog</title><meta name="author" content="神经蛙"><meta name="copyright" content="神经蛙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是生成式 AI？| 生成式 AI 完整指南 | Elastic 解码GAI，TMT企业如何拥抱GAI转型浪潮？ | 德勤中国 | 科技、传媒和电信行业 (deloitte.com) 解释：生成式 AI |麻省理工学院新闻 |麻省理工学院 (mit.edu) 生成式人工智能（AIGC）研究综述: 从Google Gemini到OpenAI Q*-腾讯云开发者社区-腾讯云 (tencent.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Generative AI">
+<meta property="og:url" content="https://chierhy.github.io/2024/01/25/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/Generative%20AI/index.html">
+<meta property="og:site_name" content="chiblog">
+<meta property="og:description" content="什么是生成式 AI？| 生成式 AI 完整指南 | Elastic 解码GAI，TMT企业如何拥抱GAI转型浪潮？ | 德勤中国 | 科技、传媒和电信行业 (deloitte.com) 解释：生成式 AI |麻省理工学院新闻 |麻省理工学院 (mit.edu) 生成式人工智能（AIGC）研究综述: 从Google Gemini到OpenAI Q*-腾讯云开发者社区-腾讯云 (tencent.c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg">
+<meta property="article:published_time" content="2024-01-25T10:52:00.000Z">
+<meta property="article:modified_time" content="2024-04-28T04:08:06.000Z">
+<meta property="article:author" content="神经蛙">
+<meta property="article:tag" content="笔记🎫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg"><link rel="shortcut icon" href="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg"><link rel="canonical" href="https://chierhy.github.io/2024/01/25/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/Generative%20AI/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Generative AI',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-28 12:08:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="chiblog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">chiblog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Generative AI</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-25T10:52:00.000Z" title="发表于 2024-01-25 18:52:00">2024-01-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-28T04:08:06.000Z" title="更新于 2024-04-28 12:08:06">2024-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E7%A7%91/">学科</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Generative AI"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/generative-ai">什么是生成式 AI？| 生成式 AI 完整指南 | Elastic</a></li>
+<li><a target="_blank" rel="noopener" href="https://www2.deloitte.com/cn/zh/pages/technology-media-and-telecommunications/articles/gai-age.html">解码GAI，TMT企业如何拥抱GAI转型浪潮？ | 德勤中国 | 科技、传媒和电信行业 (deloitte.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://news.mit.edu/2023/explained-generative-ai-1109">解释：生成式 AI |麻省理工学院新闻 |麻省理工学院 (mit.edu)</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2374977">生成式人工智能（AIGC）研究综述: 从Google Gemini到OpenAI Q*-腾讯云开发者社区-腾讯云 (tencent.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/661437195">万字综述：生成式AI技术栈全景图 - 知乎 (zhihu.com)</a>&gt; </li>
+<li><a target="_blank" rel="noopener" href="https://developer.baidu.com/article/detail.html?id=1798642">生成式AI：六大公司九大模型综述-百度开发者中心 (baidu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zephyr_wang/article/details/126588478">各种生成模型：VAE、GAN、flow、DDPM、autoregressive models-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/602360234">一文看尽所有生成式模型：9大类别21个模型全回顾！ - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/what-is/generative-ai/">什么是生成式人工智能？— 生成式人工智能详解 — AWS (amazon.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74586507">机器学习中的判别式模型和生成式模型 - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.gartner.com/en/topics/generative-ai">Generative AI: What Is It, Tools, Models, Applications and Use Cases (gartner.com)</a></li>
+</ul>
+</blockquote>
+<p>deep learning</p>
+<ol>
+<li>deep generative models</li>
+<li>deep discriminative models</li>
+<li>deep hybrid models</li>
+</ol>
+<p><strong>深度学习模型</strong>：生成式和判别式。<br>    - 判别模型是一种类型的模型，用于对数据点进行分类或预测标签，判别模型通常在一个带标签的数据点的数据集上进行训练。它们学习数据点的特征和标签之间的关系，一旦判别模型被训练好，它可以用来预测新数据点的标签。生成模型根据现有数据的概率分布生成新的数据实例，基于学习到的概率分布，因此生成模型会生成新内容和。判别模型学习条件概率分布或者 Y 的概率（即我们的输出），给定 X（即我们的输入），比如给一张狗的图片，并将其分类为狗而不是猫，生成模型学习联合概率分布或者 X 和 Y 的概率，并预测这是一只狗的概率，然后可以生成一张狗的图片。总结一下，生成模型可以生成新的数据实例，而判别模型在不同类型的数据实例之间进行区分。<br>    - 判别式和<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%94%9F%E6%88%90%E5%BC%8F&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:3338016672%7D">生成式</a>是人为赋予的概念，之所以这么区分是因为两者属于不同的流派，对于同样的任务目标，它们的处理 (建模)方式是不同的。<strong>通常而言，</strong><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:3338016672%7D">判别式模型</a>可认为是对条件概率 p (y|x) 建模；而生成式模型则是对<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:3338016672%7D">联合概率</a> p (x, y)建模。判别式学习函数找不同类别的差异性，生成模型学习这个类别 y 和对应特征 x 一起出现的概率，哪个类别概率大就哪个。<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:3338016672%7D">生成式模型</a>实质上能学到关于数据分布和内在特性的更多信息，并且它能够生成某个类别的新实例。不仅仅是判断某物属 A or B，而是能够创造出属于 A or B 的某物<br>区分什么是通用人工智能和什么不是通用人工智能可以用一个非常简单的方法，当输出是一个数字或者一个类别，例如垃圾邮件或非垃圾邮件或者一个概率时，它不是通用人工智能；当输出的是自然语言，如语言或文本、图像或者音频视频时，它是通用人工智能。</p>
+<ul>
+<li>生成式人工智能 (AI) 从现有数据中学习，然后生成具有类似特征的数据。例如，它可以生成文本、图像、音频、视频和计算机代码。</li>
+<li>生成式 AI 是人工智能的一个分支，其核心是能够生成原创内容的计算机模型。通过利用<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/large-language-models">大型语言模型</a>、<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/neural-network">神经网络</a>和<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/machine-learning">机器学习</a>的强大功能，生成式 AI 能够模仿人类创造力生成新颖的内容。这些模型使用大型数据集和深度学习算法进行训练，从而学习数据中存在的底层结构、关系和模式。根据用户的输入提示，生成新颖独特的输出结果，包括图像、视频、代码、音乐、设计、翻译、问题回答和文本。</li>
+</ul>
+<p>我的理解</p>
+<ul>
+<li>生成式 AI 是指可以根据输入生成图像、视频、代码、音乐、设计、翻译、问题回答和文本，而不仅仅是判别类别。包括 GAN、VAE、transformer、Diffusion 等等，其中 GAN、Diffusion 主要是生成图像，VAE 是图像、视频，Transformer 是文本、图像、语音等。 </li>
+<li>生成式模型是深度学习的一个派别，另一个是判别式模型。区别在于生成式模型是对联合概率建模，不仅是判别，还可生成某个类别的新实例。生成式模型包括自回归、自编码、GAN、朴素贝叶斯、KNN、混合高斯、HMM，判别式模型包括：线性回归、逻辑回归、支持向量机、决策树和随机森林等.<br> 生成式 AI 相当于生成式模型的生成新实例的应用？</li>
+</ul>
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p><img src="https://pic4.zhimg.com/v2-dc38e5759341e14f034da9d50d69155b_b.jpg"></p>
+<p><img src="https://developer.qcloudimg.com/http-save/yehe-4508757/047cc8e94cdd596db1ffa010490ef4e0.png" alt="()"></p>
+<ol>
+<li><strong>递归式生成模型（Autoregressive Model）</strong><br>递归式生成模型是一种基于条件概率的生成模型，能够生成与前面生成内容相关的后续内容。常见的递归式生成模型包括循环神经网络（RNN）和变换器（Transformer）等。递归式生成模型的缺点是无法同时考虑全局信息，因此容易出现局部不连贯的问题。</li>
+<li><strong>生成式对抗网络（Generative Adversarial Networks, GAN）</strong><br>生成式对抗网络是一种基于对抗学习的生成模型，能够生成逼真的数据，如图像、音频等。GAN 主要包括生成器和判别器两个部分.GAN 的优点是能够生成高质量的数据，但其训练过程相对复杂，需要平衡生成器和判别器的性能，避免生成器落入局部最优解。</li>
+</ol>
+<p>部分最常见的生成式 AI 模型包括：</p>
+<ul>
+<li>生成式对抗网络 (GAN)：GAN 由两个关键组件组成：生成器和鉴别器。生成器根据从训练数据中学习到的模式生成合成数据。鉴别器则充当鉴定人，评估所生成数据与真实数据相比的真实性，并决定数据的真假。训练过程将教会生成器生成更逼真的输出结果，而鉴别器则不断提高对真实数据和合成数据的区分能力。GAN 广泛应用于图像生成领域，并在创造异常逼真的视觉效果方面展现出了令人印象深刻的成果。GAN在生成细节方面表现较好，但训练难度较大</li>
+<li>变分自动编码器 (VAE)：- Variational Autoencoder.<ul>
+<li>VAE 是可学习编码和解码数据的神经网络。编码器用于将输入数据压缩为一个低维表示（称为潜在空间）。同时，解码器用于从潜在空间重建原始数据。VAE 能够通过对潜在空间中的点进行采样，并将其解码为有意义的输出，从而生成新数据。这种方法在图像和音频合成方面尤为有用，因为可以通过对潜在表示的处理，生成多种多样且有创意的输出。VAE（变分自编码器）是一种基于概率图模型的生成式 AI 模型，其通过学习和推断数据隐含的潜在表示，能够生成新的数据。VAE 采用变分推理和重参数化技巧，能够实现高效的学习和推断。VAE 在图像、文本和音频等领域也有广泛的应用。. AE 在保持数据结构和生成质量方面表现较好，但推理时间较长</li>
+<li>变分自动编码器（VAE）学习一种称为_潜在空间_的紧凑数据表示形式。潜在空间是数据的数学表示形式。可以将潜在空间视为唯一的代码，根据数据的所有属性来表示数据。例如，如果研究面部，则潜在空间包含代表眼睛形状、鼻子形状、颧骨和耳朵的数字。VAE 使用两个神经网络 — _编码器_和_解码器_。编码器神经网络将输入数据映射为潜在空间每个维度的均值和方差。该神经网络从高斯（正态）分布中生成随机样本。此样本是潜在空间中的一个点，表示输入数据的压缩简化版本。解码器神经网络从潜在空间中获取此取样点，然后将其重新构造回与原始输入相似的数据。使用数学函数衡量重新构造的数据与原始数据的匹配程度。</li>
+</ul>
+</li>
+<li>生成流模型、</li>
+<li>Diffusion  Model<ul>
+<li>扩散模型通过对初始数据样本进行迭代性的受控随机更改来创建新数据。这些模型以原始数据为起点，然后加入细微的变化（噪点），逐渐使其与原始数据不那么相似。这种噪点经过仔细控制，以确保生成的数据保持一致性和真实性。在多次迭代中添加噪点之后，扩散模型反转该过程。反向去噪会逐渐消除噪点，从而产生与原始数据样本相似的新数据样本。</li>
+</ul>
+</li>
+<li>Transformer 生成模型. <ul>
+<li>基于转换器的生成式人工智能模型建立在 VAE 的编码器和解码器概念之上。基于转换器的模型为编码器添加更多层，以提高理解、翻译和创意写作等文本式任务的处理性能。基于转换器的模型使用自注意力机制。在处理序列中的每个元素时，这些模型权衡输入序列中不同部分的重要性。另一个关键功能是这些人工智能模型实现_上下文嵌入_。序列元素的编码不仅取决于元素本身，还取决于其在序列中的上下文。</li>
+<li>自注意力可以帮助模型在处理每个单词时将注意力集中在相关的单词上。为获取单词之间不同类型的关系，基于转换器的生成式模型采用称为_注意力头_的多个编码器层。每个头都学习关注输入序列的不同部分。这样，模型就可以同时考虑数据的各个方面。每个层还会对上下文嵌入进行优化。这些层使嵌入的信息更丰富，同时可获取从语法句法到复杂语义的所有内容。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/large-language-models">大型语言模型 (LLM)</a>：像 ChatGPT（生成式预训练转换器）这类最常见类型的 LLM，都是基于大量文本数据训练出来的。这些复杂的语言模型使用了从教科书、网站到社交媒体帖文等多个领域的知识。它们利用转换器架构来理解并根据给定的提示生成连贯的文本。<a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/large-language-models#so-what-is-a-transformer-model">转换器模型</a>是大型语言模型中最常见的架构。它由编码器和解码器组成，通过将给定提示转换为词元来处理数据，从而发现词元之间的关系。</li>
+</ul>
+<p>扩散模型在生成 AI 空间中表现出令人印象深刻的能力。这些模型能够通过简单地使用文本提示来创建各种风格的图像，从逼真和未来主义到更多的艺术风格。</p>
+<p>Unconditioned generation&#x2F;conditioned generation </p>
+<ul>
+<li>From “Generative AI in Vision: A Survey on Models, Metrics and Applications”</li>
+<li>As the name suggests, unconditional generative models are trained to learn a target distribution and synthesize new samples without getting conditioned by any other input.</li>
+<li>On the contrary, conditional diffusion models take a prompt and some random initial noise and iteratively remove the noise to construct an image.</li>
+</ul>
+<h1 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h1><p>关键问题包括：</p>
+<ul>
+<li>数据偏见：生成式 AI 模型依赖于它们训练所使用的数据。如果训练数据存在偏见或局限性，这些偏见就会在输出结果中反映出来。组织可以通过仔细限制训练模型所使用的数据，或使用符合自身需求的定制专用模型来缓解这些风险。</li>
+<li>伦理方面的考虑：生成式 AI 模型创造逼真内容的能力引发了伦理方面的担忧，例如它对人类社会产生的影响，以及被滥用或操纵的可能性。确保以负责任且合乎伦理的方式使用生成式 AI 技术，将是一个持续存在的问题。</li>
+<li>输出不可靠：众所周知，生成式 AI 和 LLM 模型会产生幻觉反应，当模型无法获取相关信息时，这一问题就会更加严重。这可能会导致向用户提供错误的答案或误导性信息，而这些信息听起来却真实可信。内容听起来越真实，识别出不准确的信息就越难。</li>
+<li>领域特定性：缺乏对特定领域内容的了解是 ChatGPT 等这类生成式 AI 模型的一个常见局限。模型可以根据它们训练所使用的信息（通常是公开互联网数据）生成连贯且与上下文相关的回复，但它们通常无法访问特定领域的数据，也无法提供依赖于独特知识库（如组织的专有软件或内部文档）的答案。您可以通过提供对特定于领域的文档和数据的访问权限来最大限度地减少这些限制。</li>
+<li>时效性：模型的新鲜程度取决于它们训练所用的数据。模型所能提供的回复是基于“特定时间点”数据的，而非实时数据。</li>
+<li>计算要求：训练和运行大型生成式 AI 模型需要大量的计算资源，包括性能强大的硬件和大量的内存。这些要求可能会增加成本，并限制某些应用程序的可访问性和可扩展性。</li>
+<li>数据要求：训练大型生成式 AI 模型还需要访问大量的语料数据，这些数据的存储可能非常耗时且成本高昂。</li>
+<li>来源问题：生成式 AI 模型并不总是能确定所提取内容的来源，从而引发复杂的版权和归属问题。</li>
+<li>缺乏可解释性：生成式 AI 模型通常像“黑盒”一样运作，这使得理解其决策过程变得特别困难。缺乏可解释性可能会阻碍信任并限制在关键应用领域的采用。</li>
+</ul>
+<p>首先，作为近期火爆全球的新兴技术，其本身还存在一定的不成熟与监管漏洞。德勤总结以下9大主要风险：</p>
+<ul>
+<li><strong>偏差性</strong>：由于GAI依赖投喂的训练数据，若训练数据本身带有偏差性，如人口、种族等偏见，则输出结果也无法做到公平公正，因此仍需要人工监督与调整</li>
+<li><strong>成本</strong>：复杂模型的使用成本通常较高，大型模型的调整与运行成本甚至可以数万美元计，因此对于中小企业，借助第三方工具或许是更佳选择</li>
+<li><strong>使用道德</strong>：GAI的使用是否道德，取决于使用方式与使用目的。例如，在专利研究与学术发表时，AI的使用需要尤其关注其道德性</li>
+<li><strong>AI幻象</strong>：GAI生成的内容通常看起来极具说服力且专业，然而，由于用户无法获得来源和引文，需要时刻对内容的正确性保持警惕，并认真进行调查和验证</li>
+<li><strong>IP保护</strong>：若企业用第三方GAI应用，则需要尤其注意保护企业的机密数据安全，否则企业机密数据将有可能被用来进行二次训练，从而丧失其保密属性，影响企业竞争力</li>
+<li><strong>恶意行为</strong>：随着GAI的发展，对于安全性和客户信任的运维保护也愈发重要，企业应主动将网络恶意行为的风险进行管控</li>
+<li><strong>模拟性能</strong>：模型越大，输出质量越好，同时生成时间也越长，企业需要在二者中不断尝试，方可找到平衡</li>
+<li><strong>隐私</strong>：若使用云上服务的GAI提供商，数据可能面临隐私泄露与出境问题，需要考虑当地监管</li>
+<li><strong>规模限制</strong>：尽管基础模型在不断进步，其对可处理文档规模仍有限制</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://chierhy.github.io">神经蛙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chierhy.github.io/2024/01/25/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/Generative%20AI/">https://chierhy.github.io/2024/01/25/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/Generative%20AI/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://chierhy.github.io" target="_blank">chiblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AC%94%E8%AE%B0%F0%9F%8E%AB/">笔记🎫</a></div><div class="post_share"><div class="social-share" data-image="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/26/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87%E9%80%9F%E8%AF%BB-2024/"><img class="prev-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">论文速读-2024</div></div></a></div><div class="next-post pull-right"><a href="/2023/11/22/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/model-GAN/"><img class="next-cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GAN</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/29/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/Generative%20AI-LLM/" title="Generative AI-LLM"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-29</div><div class="title">Generative AI-LLM</div></div></a></div><div><a href="/2023/08/29/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87%E6%92%B0%E5%86%99/" title="论文撰写"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-29</div><div class="title">论文撰写</div></div></a></div><div><a href="/2023/11/09/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E8%AF%BE%E7%A8%8B-%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="课程-模式识别与机器学习"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-09</div><div class="title">课程-模式识别与机器学习</div></div></a></div><div><a href="/2023/02/22/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E8%AF%BE%E7%A8%8B-%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" title="课程-现代控制理论"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-22</div><div class="title">课程-现代控制理论</div></div></a></div><div><a href="/2023/08/29/%E5%AD%A6%E7%A7%91-%E7%AB%9E%E8%B5%9B-%E9%A1%B9%E7%9B%AE/%E8%AE%BA%E6%96%87%E9%80%9F%E8%AF%BB-2023/" title="论文速读-2023"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-29</div><div class="title">论文速读-2023</div></div></a></div><div><a href="/2023/09/12/%E7%94%9F%E6%B4%BB/%E6%88%91%E8%AF%BB=%E8%99%9A%E6%8B%9F%E6%98%BE%E7%A4%BA%EF%BC%9A%E5%BC%95%E9%A2%86%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E9%9D%A9%E5%91%BD/" title="我读&#x3D;虚拟显示：引领未来的人机交互革命"><img class="cover" src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-12</div><div class="title">我读&#x3D;虚拟显示：引领未来的人机交互革命</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic4.zhimg.com/v2-da217cabde0a382120e68118571d60e3_r.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">神经蛙</div><div class="author-info__description">chierhy@163.com</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">120</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chierhy"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-number">2.</span> <span class="toc-text">挑战</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器-GPU"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/1-%E6%9C%8D%E5%8A%A1%E5%99%A8-GPU/" title="服务器-GPU">服务器-GPU</a><time datetime="2025-04-12T09:49:28.477Z" title="发表于 2025-04-12 17:49:28">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="method-知识蒸馏"/></a><div class="content"><a class="title" href="/2025/04/12/%E6%8A%80%E6%9C%AF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%9E%8B/method-%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/" title="method-知识蒸馏">method-知识蒸馏</a><time datetime="2025-04-12T09:49:26.684Z" title="发表于 2025-04-12 17:49:26">2025-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/12/7/" title="无题"><img src="https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2025/04/12/7/" title="无题">无题</a><time datetime="2025-04-12T09:48:44.496Z" title="发表于 2025-04-12 17:48:44">2025-04-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic2.zhimg.com/v2-d29a9ed9425ed9aae1d78cd5e9f3a9f1_r.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 神经蛙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">See you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
